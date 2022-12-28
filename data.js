@@ -195,7 +195,7 @@ listaDeProductos = [
             nombre: "lubricantes",
         },
         precio: "$3200",
-    }, horquillas
+    },{
         id: "22",
         titulo: "Squirt 120ml",
         imagen: "./imagenes/squirt/squirt-12/ml.jpg",
@@ -411,7 +411,7 @@ listaDeProductos = [
             nombre: "sram",
         },
         precio: "$3200",
-    }{
+    },{
         id: "46",
         titulo: "Piñon SRAM 12v MTB XG-1299 10-50d XD Rainbown (XX1 Eagle)",
         imagen: "./imagenes/sram/Piñon SRAM 12v MTB XG-1299 10-50d XD Rainbown (XX1 Eagle).jpg",
