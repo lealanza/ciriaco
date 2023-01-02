@@ -114,6 +114,7 @@ h4{
 .flexitem{
     display: flex;
     align-items: center;
+    margin-right: 10px;
 }
 .flexcol{
     display: flex;
@@ -341,7 +342,7 @@ nav .fly-item{
 }
 .header-main{
     background-color: var(--color3);
-    padding: 1.5em 0;
+    padding: 1.28em 0;
     margin-bottom: 2em;
 }
 .dpt-cat{
@@ -451,6 +452,7 @@ form.search button:hover{
     height: var(--porcent100);
     touch-action: auto;
     padding: 1.5em;
+    border-right: 1px solid colo;
 }
 .off-canvas .canvas-head{
     color: var(--color5);
@@ -474,10 +476,10 @@ form.search button:hover{
     height: 32px;
     border-radius: var(--porcent50);
     background-color: var(--color5);
-    color: var(--color1);
+    color: red;
 }
 .t-close:hover{
-    background-color: var(--color1);
+    background-color: red;
     color: var(--color5);
     opacity: .75;
 }
@@ -498,7 +500,7 @@ form.search button:hover{
     padding-left: 3em;
     height: auto;
     max-height: 0;
-    overflow: hidden;
+    overflow-y: hidden;
     transition: max-height .3s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 .off-canvas .expand > :where(ul, .mega){
@@ -510,7 +512,7 @@ form.search button:hover{
     font-size: var(--font-small);
     line-height: 36px;
     padding-top: 1.25em;
-    margin: 1.25 0;
+    margin: 1.25em 0;
     border-top: 1px solid var(--color7);
 }
 .off-canvas nav .mega{
@@ -715,5 +717,12 @@ form.search button:hover{
         width: auto;
         min-width: var(--porcent100);
     }
-    
+    .flexitem {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+    }
+    .dpt-menu{
+        display: none;
+    }
 }
