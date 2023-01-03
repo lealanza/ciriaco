@@ -8,7 +8,11 @@ listaDeProductos = [
             nombre: "Cascos",
         },
         precio: "$15500",
-
+        description:["El casco Bell Avenue tiene 18 rejillas de ventilación, un interior de forro Sweat Guide y el sistema No-Twist Tri-Glides para un mayor ajuste",
+        "CARACTERÍSTICAS",
+        "Certificaciones: CPSC Bicycle", "CE EN1078 18 aperturas de ventilación",
+        "Talla única: 56-61cm Peso: 320 g",
+        "MIPS: Es una tecnología líder en desplazamiento plano dentro del casco, diseñado para reducir fuerzas rotacionales que pueden resultar de determinados impactos."]
     },
     {
         id: "2",
