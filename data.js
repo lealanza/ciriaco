@@ -1,510 +1,1205 @@
-listaDeProductos = [
-    {
-        id: "1",
-        titulo: "Casco Bell Avenue Mips",
-        imagen: "./imagenes/cascos/bell/casco bell avenue mips.jpg",
-        categoria: {
-            id: "Cascos",
-            nombre: "Cascos",
+const listaDeProductos = {
+    bicicletas: [
+        {
+            id: "1",
+            titulo: "Bicicleta Montaña Merida Big Nine 8000",
+            imagen: "./imagenes/biciletas/merida/big8000.jpg",
+            categoria: {
+                id: "mtb",
+                material: "carbono",
+            },
+            precio: "$2.888.690",
+            description: ["La Bicicleta Merida Big Nine 8000 es adecuada para conducción general, viajes por la ciudad y viajes de larga distancia.",
+                "Es rápida, confiable, liviana y versátil. Los ingenieros de Mérida nos prepararon una sorpresa: un Big Nine aún más cómodo y pasable, cuya característica distintiva son las ruedas Maxxis Ikon de 29 pulgadas. El Big Nine 8000 está construido sobre un cuadro de carbono. Transmisión Sram Carbon GX Eagle: 34 una rueda dentada adelante, 10-52 cassette atrás.",
+            ],
+            talle: "S",
+            cantidad: 1,
+            ficha: {
+                cuadro: "Big Nine CF5, carbono",
+                horquilla: "Rock Shox SID World Cup, recorrido 100mm",
+                cambio: "Sram XX1 12v",
+                manetas: "Sram XX1 Eagle trigger 12v",
+                frenos: "Sram Level Ultimate",
+                bielas: "Sram XX1",
+                platos: "34d",
+                casette: "Sram XG 1299 Eagle 12v, 10-50d",
+                cadena: "Sram X01 Eagle",
+                manillar: "Merida Team CC 720mm",
+                potencia: "Merida Team 3d forged 6061-T6 aluminium",
+                llantas: "Fulcrum Red Passion 3",
+                neumaticos: "Maxxis Ikon Exception 2.2 3C",
+                sillin: "Prologo Scratch 2 Nack",
+                tija: "Merida carbon Team S-Flex in line 30.9mm",
+                peso: "8,71 kg",
+            },
+        }, {
+            id: "2",
+            titulo: "Bicicleta Montaña Merida Big Nine 8000",
+            imagen: "./imagenes/biciletas/merida/big9000.png",
+            categoria: {
+                id: "mtb",
+                material: "carbono",
+            },
+            precio: "$2.888.690",
+            description: ["La Bicicleta Merida Big Nine 9000 es adecuada para conducción general, viajes por la ciudad y viajes de larga distancia.",
+                "Es rápida, confiable, liviana y versátil. Los ingenieros de Mérida nos prepararon una sorpresa: un Big Nine aún más cómodo y pasable, cuya característica distintiva son las ruedas Maxxis Ikon de 29 pulgadas. El Big Nine 8000 está construido sobre un cuadro de carbono. Transmisión Sram Carbon GX Eagle: 34 una rueda dentada adelante, 10-52 cassette atrás.",
+            ],
+            talle: "L",
+            cantidad: 1,
+            ficha: {
+                cuadro: "Big Nine CF5, carbono",
+                horquilla: "Rock Shox SID World Cup, recorrido 100mm",
+                cambio: "Sram XX1 12v",
+                manetas: "Sram XX1 Eagle trigger 12v",
+                frenos: "Sram Level Ultimate",
+                bielas: "Sram XX1",
+                platos: "34d",
+                casette: "Sram XG 1299 Eagle 12v, 10-50d",
+                cadena: "Sram X01 Eagle",
+                manillar: "Merida Team CC 720mm",
+                potencia: "Merida Team 3d forged 6061-T6 aluminium",
+                llantas: "Fulcrum Red Passion 3",
+                neumaticos: "Maxxis Ikon Exception 2.2 3C",
+                sillin: "Prologo Scratch 2 Nack",
+                tija: "Merida carbon Team S-Flex in line 30.9mm",
+                peso: "8,71 kg",
+            }
+        }, {
+            id: "3",
+            titulo: "Bicicleta de Montaña Cube Elite C:68X Race Carbon 29",
+            imagen: "./imagenes/biciletas/cube/cubec68xrace.jpg",
+            categoria: {
+                id: "mtb",
+                material: "carbono",
+            },
+            precio: "$2.685.490",
+            description: ["La eficiencia, ligereza y comodidad del cuadro de la Elite C:68X Race juegan un papel fundamental en esta tarea.",
+                "La eficiencia, ligereza y comodidad del cuadro de la Elite C:68X Race juegan un papel fundamental en esta tarea. Como también lo hacen sus ruedas Newmen Evolution, compatibles con sistema tubeless sin cámara, sus neumáticos Schwalbe ligeros y plegables y su nueva horquilla RockShox SID SL Ultimate. Al combinar todo esto con unos potentes frenos de disco hidráulicos Shimano XT y con la precisión de cambio de una transmisión Sram XX1 1x12 de amplio rango, se consigue un ritmo implacable unido a un control y una comodidad increíbles.",
+            ],
+            talle: "L",
+            cantidad: 1,
+            ficha: {
+                cuadro: "C:68X, Carbon Technology",
+                horquilla: "RockShox SID Ultimate",
+                cambio: "Sram X01 Eagle™ Trigger",
+                manetas: "Cube Race SL Grip 29.5mm, 1-Clamp",
+                frenos: "Sram Level Ultimate",
+                bielas: "Sram XX1",
+                platos: "34d",
+                casette: "Sram XG-1295, 10-52d",
+                cadena: "Sram PC-X01 Eagle",
+                manillar: "Newmen Advanced 318.0, Carbon, 740mm",
+                potencia: "Newmen Evolution SL 318.4, 31.8mm",
+                llantas: "Newmen Evolution SL X.A.25, 28 Rayos, Tubeless Ready",
+                neumaticos: "Schwalbe Racing Ray, Super Race, Addix Speedgrip, Kevlar, 2.25",
+                sillin: "Natural Fit Nuance SL",
+                tija: "Newmen Advanced Custom, Carbon, 27.2mm",
+                peso: "8,9 kg",
+            }
+        }, {
+            id: "4",
+            titulo: "Bicicleta Montaña Merida Ninety SIX RC XT",
+            imagen: "./imagenes/biciletas/merida/ninetysix.jpg",
+            categoria: {
+                id: "mtb",
+                material: "carbono",
+            },
+            precio: "$2.432.530",
+            description: ["La bicicleta de montaña Merida Ninety Six RC XT regresa mejor que nunca en 2021, lista para satisfacer las necesidades del corredor de XC moderno que quiere rodar en su mejor momento.",
+                "La bicicleta de montaña Merida Ninety Six RC XT regresa mejor que nunca en 2021, lista para satisfacer las necesidades del corredor de XC moderno que quiere rodar en su mejor momento. Mérida ha realizado grandes cambios en este modelo este año con un cuadro de carbono CF4 III completamente nuevo que es más elegante que el modelo anterior, construido para la combinación definitiva de durabilidad y velocidad. La geometría actualizada está diseñada teniendo en cuenta las preferencias de conducción modernas, construida con un ángulo de cabeza más flojo y un ángulo de asiento más pronunciado para combinar con una distancia entre ejes y un alcance más largos.",
+            ],
+            talle: "M",
+            cantidad: 1,
+            ficha: {
+                cuadro: "ModeloNINETY-SIX RC CF4 III - Carbono",
+                horquilla: "Horquillas Fox Performance",
+                cambio: "Shimano XT M8100 Shadow+",
+                manetas: "Rock Shox TwistLoc grip",
+                frenos: "Sram Level Ultimate",
+                bielas: "Shimano XT",
+                platos: "Shimano XT 32D",
+                casette: "Shimano XT - 10-51 D - 12 V",
+                cadena: "Shimano SLX",
+                manillar: "Merida Team CC 720mm",
+                potencia: "Merida Team 3d forged 6061-T6 aluminium",
+                llantas: "Maza delanteraShimano SLX ",
+                neumaticos: "Maxxis Rekon Race",
+                sillin: "Prologo Scratch 2 Nack",
+                tija: "Merida carbon Team S-Flex in line 30.9mm",
+                peso: "11.5 kg",
+            }
+        }, {
+            id: "5",
+            titulo: "Bicicleta de Montaña Cube Elite C:68X Pro 29",
+            imagen: "./imagenes/biciletas/cube/cubec68zpro.jpg",
+            categoria: {
+                id: "mtb",
+                material: "carbono",
+            },
+            precio: "$2.387.070",
+            description: ["La nueva Elite C:68X Pro aprovecha la comodidad y velocidad increíbles de nuestra plataforma cross-country de carbono de alta calidad C:68X y las combina con una cuidada selección de componentes fiables.",
+                "La nueva Elite C:68X Pro aprovecha la comodidad y velocidad increíbles de nuestra plataforma cross-country de carbono de alta calidad C:68X y las combina con una cuidada selección de componentes fiables. La transmisión Shimano 1x12 XT no necesita presentación, y las bielas Praxis Girder de carbono reducen el peso sin sacrificar el rendimiento. Los potentes frenos de disco hidráulicos Shimano XT son lo último en seguridad de frenada, y la horquilla Fox 32 Step-Cast se une a unas ruedas ligeras compatibles con cubiertas tubeless y a unos neumáticos Schwalbe con talón de kevlar que te llevarán directo a la línea de meta.",
+            ],
+            talle: "M",
+            cantidad: 1,
+            ficha: {
+                cuadro: "C:68X Monocoque Advanced Twin Mold Technology",
+                horquilla: "Fox 32 Float SC FIT4 Performance",
+                cambio: "Shimano XT RD-M8100-SGS, ShadowPlus, 12v",
+                manetas: "Shimano XT SL-M8100-IR, Conexion Directa",
+                frenos: "Shimano XT BR-M8100",
+                bielas: "Praxis Girder Carbon, Boost, 32d Sellada Enduro",
+                platos: "32d",
+                casette: "Shimano XT CS-M8100, 10-51d",
+                cadena: "Shimano CN-M6100",
+                manillar: "Newmen Advanced 318.0, Carbon, 740mm",
+                potencia: "	Newmen Evolution SL 318.4, 31.8mm",
+                llantas: "Newmen Evolution SL X.A.25 - Tubeless Ready",
+                neumaticos: "Schwalbe Racing Ralph, Super Race, Addix Speed, Kevlar",
+                sillin: "Natural Fit Nuance SL",
+                tija: "Newmen Advanced Custom, Carbono, 27.2mm",
+                peso: "9,7 kg",
+            }
+        }, {
+            id: "6",
+            titulo: "Bicicleta de MTB Cube Reaction C62 SL",
+            imagen: "./imagenes/biciletas/cube/cubec62sl.jpg",
+            categoria: {
+                id: "mtb",
+                material: "carbono",
+            },
+            precio: "$1.639.520",
+            description: ["Has acumulado kilómetros y ahora es el momento de ponerte a prueba en la competición. Si eres esta persona, entonces llevas tiempo esperando por la Reaction C:62 SL.",
+                "Has acumulado kilómetros y ahora es el momento de ponerte a prueba en la competición. Si eres esta persona, entonces llevas tiempo esperando por la Reaction C:62 SL. Equipada con la nueva horquilla RockShox SID Select y un juego de ruedas ligero y rígido preparado para montaje sin cámaras Fulcrum Red 77 y calzado con neumáticos Schwalbe de gran agarre con dibujo Kevlar, es el cohete ligero que estabas esperando. Las marchas Sram 1x12 de gran precisión ofrecen un rango amplio para los recorridos más abruptos y los potentes frenos de disco hidráulicos de Magura te proporcionan la energía que necesitas para darlo todo en la competición. Parece rápida porque es rápida.",
+            ],
+            talle: "S",
+            cantidad: 1,
+            ficha: {
+                cuadro: "C:62, Carbon Technology",
+                horquilla: "RockShox SID SL Select+, 100mm, OneLoc",
+                cambio: " Sram GX Eagle™, 1x12",
+                manetas: "Sram GS 12v",
+                frenos: "Magura MT8 Pro",
+                bielas: "Sram X1 Eagle™ Carbon",
+                platos: "32d",
+                casette: "Sram GX Eagle 12v, 10-52d",
+                cadena: "Sram X01 Eagle",
+                manillar: "Newmen Evolution 318.10, 720mm",
+                potencia: "Newmen Evolution 318.4, 31.8mm",
+                llantas: "Answer Attack AM",
+                neumaticos: "Schwalbe Racing Ray, Super Race, Addix Speedgrip",
+                sillin: " Natural Fit Venec",
+                tija: "Newmen Evolution, 27.2mm",
+                peso: "10,1 kg",
+            }
+        }, {
+            id: "7",
+            titulo: "Bicicleta de carbono MTB Cube Reaction C62 Race",
+            imagen: "./imagenes/biciletas/cube/cubec62race.png",
+            categoria: {
+                id: "mtb",
+                material: "carbono",
+            },
+            precio: "$1.560.030",
+            description: ["La Reaction C:62 Race desprende carácter competitivo por cada uno de los tubos y componentes de su cuadro, de ahí que se haya ganado el sobrenombre de «Race». Y sí, es justamente tan rápida como parece.",
+                "La Reaction C:62 Race desprende carácter competitivo por cada uno de los tubos y componentes de su cuadro, de ahí que se haya ganado el sobrenombre de «Race». Y sí, es justamente tan rápida como parece. Su elegante chasis condensa todo lo que nuestro equipo de ingenieros ha aprendido sobre la fabricación de cuadros de carbono de alto rendimiento en un cuadro ligero, resistente y receptivo. Desde sus cortas vainas y eje trasero Boost hasta sus delgados tirantes capaces de absorber cualquier vibración o su tubo de dirección cónico, cada detalle ha sido perfeccionado para la velocidad y la eficiencia. Lo cual significa, por descontado, que no hemos escatimado en componentes: contiene todo lo que un corredor ambicioso podría llegar a necesitar en una temporada con aspiraciones de podio. Una horquilla RockShox Reba con bloqueo remoto, la legendaria transmisión Sram 1x12 y frenos de disco hidráulicos Shimano XT, un juego de ruedas Answer Attack calzadas con cubiertas Schwalbe y componentes Newmen en el puesto de mando: no hay duda de que esta bicicleta te permitirá rendir al máximo. ¿Estás listo para poner a prueba tus límites? Porque, sin ninguna duda, la Reaction C:62 lo está.",
+            ],
+            talle: "XL",
+            cantidad: 1,
+            ficha: {
+                cuadro: "C:62 Monocoque Advanced Twin Mold Technology, ARG2",
+                horquilla: "RockShox Reba RL Air, Tapered, 15x110mm, 100mm, OneLoc",
+                cambio: " Sram GX Eagle™, 12-Speed",
+                manetas: " Sram GX Eagle™ Trigger",
+                frenos: "Shimano XT BR-M8100e",
+                bielas: "Sram Stylo Eagle™ 6K DUB ",
+                platos: "32d",
+                casette: "Sram XG-1275 Eagle™, 10-50t",
+                cadena: "Sram X01 Eagle",
+                manillar: "Newmen Evolution 318.10, 720mm",
+                potencia: "Newmen Evolution 318.4, 31.8mm",
+                llantas: ": Answer Attack AM, 15x110mm/12x148mm, Tubeless-Ready",
+                neumaticos: "Schwalbe Racing Ralph, Addix Performance, Kevlar, 2.25",
+                sillin: "Natural Fit Venec",
+                tija: "Newmen Evolution, 27.2mm",
+                peso: "10,71 kg",
+            }
+        }, {
+            id: "8",
+            titulo: "Bicicleta de Montaña Carbono Cube Reaction C:62 Race 29",
+            imagen: "./imagenes/biciletas/merida/big8000.jpg",
+            categoria: {
+                id: "mtb",
+                material: "carbono",
+            },
+            precio: "$1.638.030",
+            description: ["Cada milímetro de su elegante cuadro y sus soberbios componentes desprende su carácter competitivo, porque la Reaction C:62 Race es tu pase VIP al podio.",
+                " Con un juego de ruedas Answer Attack AM preparado para montaje sin cámaras y los neumáticos plegables Kevlar, acelera rapidísimo gracias a los rapidísimos cambios de marchas de la transmisión Shimano 1x12. Para ayudar a mantener la rueda agarrada al suelo y la dirección donde procede, cuenta con la horquilla de suspensión Fox Performance 32 Step-Cast y los frenos de disco hidráulicos Shimano XT te proporcionan toda la potencia que necesitas para mantener el control en subidas y descensos.",
+            ],
+            talle: "M",
+            cantidad: 1,
+            ficha: {
+                cuadro: "ModeloC:62, Carbon Technology",
+                horquilla: "orquillaFox 32 Float SC FIT4 Performance, Tapered, 15x110mm, 100mm,",
+                cambio: "Shimano XT RD-M8100-SGS, ShadowPlus, 12v",
+                manetas: "Shimano Deore SL-M6100-I, Direct Attach, Rapidfire-Plus",
+                frenos: "Shimano XT BR-M8100 Hidraulico",
+                bielas: "Shimano Deore FC-M6100-1, Boost, 32d",
+                platos: "32d",
+                casette: "Shimano Deore CS-M6100, 10-51d",
+                cadena: "Shimano CN-M6100e",
+                manillar: "Newmen Evolution 318.10, 720mm",
+                potencia: "Newmen Evolution",
+                llantas: "Fulcrum Red Passion 3",
+                neumaticos: "Cubiertas Schwalbe Racing Ray, Addix Performance",
+                sillin: "Prologo Scratch 2 Nack",
+                tija: "Newmen Evolution, 27.2mm",
+                peso: "9,71 kg",
+            }
+        }, {
+            id: "9",
+            titulo: "Bicicleta de Montaña Carbono Cube Reaction C:62 Pro 29",
+            imagen: "./imagenes/biciletas/cube/cubec62pro.jpg",
+            categoria: {
+                id: "mtb",
+                material: "carbono",
+            },
+            precio: "$1.363.480",
+            description: ["El bajo peso, la conducción precisa de Reaction C:62 Pro y la sorprendente comodidad durante el trayecto te proporcionan esa dosis de fuerza que necesitas para seguir adelante.",
+                "Esta fabricada con componentes seleccionados altamente fiables de 12 marchas de Shimano por sus suaves cambios y el amplio rango de marchas que ofrecen, y hemos añadido los potentes frenos de disco hidráulicos de Shimano XT (con un rotor más grande en la parte delantera) para asegurarnos de que siempre tengas el control total. Además, con su fácil ajuste y su suave rendimiento, la horquilla de suspensión de aire RockShox Judy Gold ayuda a mantener la rueda delantera en su sitio y apuntando en la dirección adecuada.",
+            ],
+            talle: "M",
+            cantidad: 1,
+            ficha: {
+                cuadro: "ModeloC:62, Carbon Technology - Boost 12x148mm",
+                horquilla: "RockShox Judy Gold RL Air, 15x110mm, Tapered, OneLoc, 100mm",
+                cambio: "Shimano XT RD-M8100-SGS, ShadowPlus, 12v",
+                manetas: "Shimano Deore SL-M6100-I, Direct Attach, Rapidfire-Plus",
+                frenos: "Shimano XT BR-M8100 Hidraulico, Disco",
+                bielas: "Shimano FC-MT511, Boost",
+                platos: "32d",
+                casette: "Shimano Deore CS-M6100, 10-51d",
+                cadena: "Shimano XT",
+                manillar: "CUBE Flat Race Bar, 720mm",
+                potencia: "CUBE Performance Post",
+                llantas: "Shimano HB-MT400-B",
+                neumaticos: "Maxxis Ikon Exception 2.2 3C",
+                sillin: "CUBE Performance Post",
+                tija: "Schwalbe Racing Ralph, Addix Performance, Kevlar, 2.2",
+                peso: "11.6 kg",
+            }
+        }, {
+            id: "10",
+            titulo: "Bicicleta de Gravel Carbono Cube Nuroad C:62 PRO 28",
+            imagen: "./imagenes/biciletas/cube/gravel1.jpg",
+            categoria: {
+                id: "ruta",
+                material: "carbono",
+            },
+            precio: "$924.805",
+            description: "Llegó la nueva línea de Bicicletas de Gravel de la marca Cube, ahora en este formato de carbono y equipada con los mejores componentes",
+            talle: "56",
+            cantidad: 1,
+            ficha: {
+                cuadro: "C:62 Advanced Twin Mold, Cableado Interno, AXN",
+                horquilla: "CUBE C:62 Technology",
+                cambio: "Trasero Shimano GRX RD-RX812, Direct Mount, 11-Speed",
+                manetas: "Shimano GRX ST-RX600",
+                frenos: "Shimano GRX BR-RX400, Hydr. Disc Brake",
+                bielas: "Shimano GRX FC-RX600",
+                platos: "40d",
+                casette: "Shimano SLX CS-M7000, 11-42T",
+                cadena: "Shimano CN-HG601-11",
+                manillar: "Newmen Advanced,",
+                potencia: "Newmen Evolution 318.4, 31.8mm",
+                llantas: "Fulcrum Red Passion 3",
+                neumaticos: "Schwalbe G-One Allround, Kevlar, 40-622",
+                sillin: "Natural Fit Nuance Lite",
+                tija: "Newmen Advanced, Carbon, 27.2mm",
+                peso: "8,71 kg",
+            }
+        }, {
+            id: "11",
+            titulo: "Bicicleta de Ruta rod 28 Cube Attain GTC Race Carbon 28",
+            imagen: "./imagenes/biciletas/cube/rutagtc1.jpg",
+            categoria: {
+                id: "ruta",
+                nmaterial: "carbono",
+            },
+            precio: "$1.068.050",
+            description: ["La Bicicleta Merida Big Nine 8000 es adecuada para conducción general, viajes por la ciudad y viajes de larga distancia.",
+                " Equipada con las legendarias y confiables marchas Shimano 105 2x11 y frenos de disco hidráulicos a juego, y también se pueden instalar guardabarros. Los neumáticos Continental Grand Sport Race SL en un juego de ruedas CUBE Aero Disc con llantas más anchas garantizan agarre y control en todo tipo de clima, y ​​los componentes de acabado CUBE y un sillín Natural Fit completan el paquete.",
+            ],
+            talle: "53",
+            cantidad: 1,
+            ficha: {
+                cuadro: "HPC, High Performance Composite - GTC Monocoque Twin Mold Technology",
+                horquilla: "	CUBE CSL Race, Full Carbon, 1 1/8' -1 1/4' Tapered",
+                cambio: "Shimano 105 R7000",
+                manetas: "Shimano 105 ST-R7020",
+                frenos: "Shimano 105 BR-R7070 - Hidraulicos",
+                bielas: "Shimano 105 FC-R7000, 50x34d, 170mm (50/53cm), 172.5mm (56/58cm)",
+                platos: "34d",
+                casette: "Shimano CS-R7000, 11-32d",
+                cadena: "Shimano CN-HG601-11",
+                manillar: "CUBE Compact Race Bar",
+                potencia: "CUBE Performance Stem SL, 31.8mm",
+                llantas: "	CUBE RA 1.9 Aero Disc",
+                neumaticos: "Conti Grand Sport Race SL, 28-622",
+                sillin: "Natural Fit Nuance Lite",
+                tija: "CUBE Performance Post, 27.2mm",
+                peso: "9,3 kg",
+            }
+        }, {
+            id: "12",
+            titulo: "Bicicleta de Montaña Cube Reaction C:62 One Carbon 29",
+            imagen: "./imagenes/biciletas/cube/cubec622021.jpg",
+            categoria: {
+                id: "mtb",
+                material: "carbono",
+            },
+            precio: "$1.071.590",
+            description: ["Nunca antes había sido tan buen momento para disfrutar del rendimiento de un cuadro de carbono. La nueva Reaction C:62 One combina peso reducido, una comodidad sublime y una conducción de carbono definida con la transmisión precisa 1x12 de Sram."],
+            talle: "M",
+            cantidad: 1,
+            ficha: {
+                cuadro: "C: 62 Monocoque Advanced Twin Mold Technology, ARG2",
+                horquilla: "RockShox Judy Silver TK AIR, 100 mm, PopLoc, 15x110 mm",
+                cambio: "Shimano Deore RD-M6100-SGS, 12 velocidades",
+                manetas: "Shimano Deore SL-M6100, Rapidfire-Plus",
+                frenos: " Shimano Deore BR-M6100, J-KIT, Hydr. Freno de disco (180/160)",
+                bielas: "Shimano FC-MT511, 32 dientes, Boost",
+                platos: "32d",
+                casette: "Shimano Deore CS-M6100, 10-51 dientes",
+                cadena: "Shimano CN-M6100",
+                manillar: "Newmen Evolution 318.10, 720mm",
+                potencia: "Newmen Evolution",
+                llantas: "Answer Atac AM 28h 29 tubeless ready",
+                neumaticos: " Schwalbe Racing Ralph, Addix Performance, Kevlar, 2.25 Tubeless Ready",
+                sillin: "Prologo Scratch 2 Nack",
+                tija: "Newmen Evolution",
+                peso: "11,5 kg",
+            }
+        }, {
+            id: "13",
+            titulo: "Bicicleta de MTB Carbono Cube Reaction C:62 One 29 (Nuevo)",
+            imagen: "./imagenes/biciletas/cube/cubec62nuevo.jpg",
+            categoria: {
+                id: "mtb",
+                material: "carbono",
+            },
+            precio: "$1.193.380",
+            description: "Nunca antes había sido tan buen momento para disfrutar del rendimiento de un cuadro de carbono. La nueva Reaction C:62 One combina peso reducido, una comodidad sublime y una conducción de carbono definida.",
+            talle: "XL",
+            cantidad: 1,
+            ficha: {
+                cuadro: "C:62 Monocoque Advanced Twin Mold Technology,ARG2, Tubo de dirección Tapered",
+                horquilla: "HorquillaRock Shox Judy Silver TK Air, 100mm",
+                cambio: "Sram NX Eagle™, 12-Speed",
+                manetas: "Sram SX Eagle trigger 12v",
+                frenos: "Magura MT Thirty, Front 2-Piston/Rear 2-Piston, Hydr. Disc Brake",
+                bielas: "Sram SX Eagle™ DUB",
+                platos: "32d",
+                casette: "Sram XG-1230 Eagle™, 11-50T",
+                cadena: "Sram SX Eagle",
+                manillar: "CUBE Flat Race Bar, 720mm",
+                potencia: "Merida Team 3d forged 6061-T6 aluminium",
+                llantas: "Answer Atac AM",
+                neumaticos: "Schwalbe Racing Ralph, Addix Performance, Kevlar, 2.25",
+                sillin: "Flat Race Bar",
+                tija: "CUBE Varioclose, 31.8mm",
+                peso: "11,5 kg",
+            }
+        }, {
+            id: "14",
+            titulo: "Bicicleta de Ruta Cube Nuroad Pro 28",
+            imagen: "./imagenes/biciletas/cube/cubepro282021.jpg",
+            categoria: {
+                id: "ruta",
+                material: "aluminio",
+            },
+            precio: "$709.943",
+            description: "La versatilidad de ir a cualquier parte tiene un nuevo nombre: la nueva Nuroad Pro ofrece la mayor holgura para los neumáticos que se han ofrecido..",
+            talle: "S",
+            cantidad: 2,
+            ficha: {
+                cuadro: "HPA, High Performance Aluminium 6061 T6 Superlite",
+                horquilla: "CUBE Nuroad Flat Mount Disc, Full Carbon, 1 1/8' - 1 1/4' Tapered, Fender & Lowrider Mounts, 12x100mm",
+                cambio: "Shimano Tiagra RD-4700GS, 10v",
+                manetas: "Shimano Tiagra ST-4700",
+                frenos: "TRP Spyre MD-C610C",
+                bielas: "Shimano Tiagra FC-4700, 50x34d, 170mm (50/53cm), 172.5mm (56/58cm), 175mm (61cm)",
+                platos: "50x34d",
+                casette: "Shimano CS-HG500, 11-34d",
+                cadena: "KMC X10",
+                manillar: "CUBE Gravel Race Bar",
+                potencia: "CUBE Performance Stem SL, 31.8mm",
+                llantas: "CUBE RA 0.8 CX",
+                neumaticos: "Schwalbe G-One Allround, 40-622",
+                sillin: "Natural Fit Venec Lite",
+                tija: "CUBE Performance Post, 27.2mm",
+                peso: "10.6 kg",
+            }
+        }, {
+            id: "15",
+            titulo: "Bicicleta de MTB Aluminio Cube Acid 29 (Nuevo)",
+            imagen: "./imagenes/biciletas/cube/cubeacid2022.jpg",
+            categoria: {
+                id: "mtb",
+                material: "aluminio",
+            },
+            precio: "$728.328",
+            description: "Totalmente renovada para el 2022, la estetica elegante de la nueva Acid es fruto de las soldaduras lisas de las juntas del tubo de direccion y del cano de asiento. Incluye un eje de pedalier de rosca y los cables estan colocados internamente.",
+            talle: "L",
+            cantidad: 1,
+            ficha: {
+                cuadro: "Aluminium Lite, AMF, Enrutamiento de cables interno",
+                horquilla: "RockShox Judy Silver TK AIR, 100mm, PopLoc",
+                cambio: "Sram NX Eagle™, 12-Speed",
+                manetas: "Sram NX Eagle™ Trigger",
+                frenos: "Shimano BR-MT200/UR300, Hydr. Disc Brake",
+                bielas: "Sram Stylo Eagle™ DUB, 32T, 170mm",
+                platos: "32d",
+                casette: "Sram PG-1210 Eagle™, 11-50T",
+                cadena: "Sram SX Eagle™",
+                manillar: "CUBE Rise Trail Bar, 680mm",
+                potencia: "CUBE Varioclose, 31.8mm",
+                llantas: "Shimano Deore HB-M6000, QR, Centerlock",
+                neumaticos: "Schwalbe Smart Sam, Active, 2.25",
+                sillin: " CUBE Performance Post",
+                tija: "CUBE Performance Post, 27.2mm",
+                peso: "13.5 kg",
+            }
+        }, {
+            id: "16",
+            titulo: "Bicicleta de MTB Aluminio Cube Attention SL 29",
+            imagen: "./imagenes/biciletas/cube/cubeatention.jpg",
+            categoria: {
+                id: "mtb",
+                material: "aluminio",
+            },
+            precio: "$693.493",
+            description: "Hay dos razones para adorar la Attention SL. En primer lugar, la horquilla de aire RockShox Judy Silver combina un ajuste fácil con un rendimiento suave y fiable en cualquier terreno pedregoso y una dirección precisa.",
+            talle: "L",
+            cantidad: 1,
+            ficha: {
+                cuadro: "Aluminium Lite, AMF",
+                horquilla: "RockShox Judy Silver TK AIR, 100mm, PopLoc",
+                cambio: "Shimano XT RD-M8100-SGS, ShadowPlus, 12-Speed",
+                manetas: "Shimano Deore SL-M6100, Rapidfire-Plus",
+                frenos: "Shimano BR-MT200/UR300, Hydr. Disc Brake",
+                bielas: "Shimano FC.MT511, Boost",
+                platos: "32d",
+                casette: "Shimano Deore CS-M6100, 10-51T",
+                cadena: "Shimano CN-M6100",
+                manillar: "CUBE Performance Post",
+                potencia: "CUBE Performance Post",
+                llantas: "CUBE ZX20, 32H, Disc",
+                neumaticos: "Schwalbe Smart Sam, Active, 2.25",
+                sillin: " CUBE Performance Post",
+                tija: " CUBE Performance Post, 27.2mm",
+                peso: "13,8 kg",
+            }
+        }, {
+            id: "17",
+            titulo: "Bicicleta de Ruta Aluminio Cube Attain Pro 28",
+            imagen: "./imagenes/biciletas/cube/cuberuta2.jpg",
+            categoria: {
+                id: "ruta",
+                material: "aluminio",
+            },
+            precio: "$613.610",
+            description: "No hay nada que supere a los frenos de disco en su potencia de frenada segura y determinante en todo tipo de condiciones meteorológicas. Por eso hemos equipado la Attain Pro con frenos fiables y por cable de TRP.",
+            talle: "50",
+            cantidad: 1,
+            ficha: {
+                cuadro: "Aluminium 6061 T6 Superlite ",
+                horquilla: "CUBE CSL Race Disc, Full Carbon, 1 1/8 - 1 1/4 Tapered, Flat Mount, 12x100mm",
+                cambio: "Shimano Sora R3000, 9-Speed",
+                manetas: "Shimano Sora ST-R3000",
+                frenos: "Freno TRP Spyre MD-C610C, Flat Mount",
+                bielas: "Shimano Sora FC-R3000, 9-Speed",
+                platos: "50x34T",
+                casette: "Shimano CS-HG200, 11-34T",
+                cadena: "KMC X9",
+                manillar: "Cube Attain",
+                potencia: "Cube Attain",
+                llantas: "CUBE RA 1.9 Aero Disc",
+                neumaticos: "Conti Ultra Sport 3 SL, Kevlar, 28-622",
+                sillin: "Cube Attain",
+                tija: "Cube Attain",
+                peso: "10.2 kg",
+            }
+        }, {
+            id: "18",
+            titulo: "Bicicleta de Montaña Cube Attention SL",
+            imagen: "./imagenes/biciletas/cube/cubeatention2021.jpg",
+            categoria: {
+                id: "mtb",
+                material: "aluminio",
+            },
+            precio: "$574.360",
+            description: "Hay dos razones para adorar la Attention SL. En primer lugar, la horquilla de aire RockShox Judy Silver combina un ajuste fácil con un rendimiento suave y fiable en cualquier terreno pedregoso y una dirección precisa.",
+            talle: "L",
+            cantidad: 1,
+            ficha: {
+                cuadro: "Aluminium Lite, AMF, Internal Cable Routing, Easy Mount Kickstand Ready",
+                horquilla: "RockShox Judy Silver TK AIR, 100mm, PopLoc",
+                cambio: "Shimano XT RD-M8100-SGS, ShadowPlus, 12-Speed",
+                manetas: "Shimano Deore SL-M6100, Rapidfire-Plus",
+                frenos: "Shimano BR-MT200, Hydr. Disc Brake (180/160)",
+                bielas: "Shimano FC-MT511, 32T, Boost",
+                platos: "32T",
+                casette: "Shimano Deore CS-M6100, 10-51T",
+                cadena: "Shimano CN-M6100",
+                manillar: "CUBE Rise Trail Bar, 680mm",
+                potencia: "CUBE Varioclose, 31.8m",
+                llantas: "CUBE ZX20, 32H, Disc",
+                neumaticos: "Schwalbe Smart Sam, Active, 2.25",
+                sillin: "CUBE Performance Post",
+                tija: "CUBE Performance Post, 27.2mm",
+                peso: "13.5 kg",
+            }
+        }, {
+            id: "19",
+            titulo: "Bicicleta de Montaña Cube Acid 29",
+            imagen: "./imagenes/biciletas/cube/cubeacid2021.jpg",
+            categoria: {
+                id: "mtb",
+                material: "aluminio",
+            },
+            precio: "$579.936",
+            description: "Es el momento de replantearse cómo de buena debe ser una rígida de trail. La transmisión Sram NX Eagle 1x12 de Acid está concebida para ofrecer unos cambios precisos y rápidos vez tras vez, con un rango de marchas lo suficientemente amplio.",
+            talle: "M",
+            cantidad: 1,
+            ficha: {
+                cuadro: "HPA, High Performance Aluminium, con ruteo interno de cables",
+                horquilla: "RockShox Judy Silver TK Air, 100mm, PopLoc",
+                cambio: "Sram NX Eagle™, 11-50T, 1x12",
+                manetas: "Sram XX1 Eagle trigger 12v",
+                frenos: "Shimano BR-MT400",
+                bielas: "Sram NX Eagle",
+                platos: "34d",
+                casette: "Sram PG-1210 Eagle™, 11-50T",
+                cadena: "Sram SX Eagle",
+                manillar: "Cube",
+                potencia: "Cube",
+                llantas: "CUBE ZX20, 32H, Disc",
+                neumaticos: "Schwalbe Smart Sam, Active, 2.25",
+                sillin: "Cube",
+                tija: "Cube",
+                peso: "13.5 kg",
+            }
+        }, {
+            id: "20",
+            titulo: "Bicicleta de Ruta Aluminio Cube Attain 28",
+            imagen: "./imagenes/biciletas/cube/cuberuta3.jpg",
+            categoria: {
+                id: "ruta",
+                material: "aluminio",
+            },
+            precio: "$491.504",
+            description: "Nueva versión de la bicicleta rutera de la marca Cube, modelo Attain 2022.",
+            talle: "50",
+            cantidad: 2,
+            ficha: {
+                cuadro: "HPA, High Performance Aluminium 6061 T6 Superlite",
+                horquilla: "CUBE CSL Race, Full Carbon, 1 1/8 - 1 1/4 Tapered, Fender Mount Option",
+                cambio: "Shimano Claris RD-R2000-GS, 8-Speed",
+                manetas: "Shimano Claris ST-R2000",
+                frenos: "Tektro MD-C310C, Flat Mount",
+                bielas: "Shimano Claris FC-R2000, BB-RS500",
+                platos: "50x34T",
+                casette: "Shimano CS-HG31, 11-34T",
+                cadena: "KMC Z7",
+                manillar: "CUBE Compact Race Bar",
+                potencia: "CUBE Performance  SL, 31.8mm",
+                llantas: "CUBE RA 1.9 Disc",
+                neumaticos: " Conti Ultra Sport 3, 28-622",
+                sillin: "Natural Fit Venec Lite",
+                tija: "CUBE Performance",
+                peso: "10.6 kg",
+            }
         },
-        precio: "$15500",
-        description:["El casco Bell Avenue tiene 18 rejillas de ventilación, un interior de forro Sweat Guide y el sistema No-Twist Tri-Glides para un mayor ajuste",
-        "CARACTERÍSTICAS",
-        "Certificaciones: CPSC Bicycle", "CE EN1078 18 aperturas de ventilación",
-        "Talla única: 56-61cm Peso: 320 g",
-        "MIPS: Es una tecnología líder en desplazamiento plano dentro del casco, diseñado para reducir fuerzas rotacionales que pueden resultar de determinados impactos."]
-    },
-    {
-        id: "2",
-        titulo: "Casco Bell Strat",
-        imagen: "./imagenes/cascos/bell/casco bell strat.jpg",
-        categoria: {
-            id: "Cascos",
-            nombre: "Cascos",
+    ],
+    horquillas: [
+        {
+            id: 21,
+            titulo: "",
+            imagen: "./imagenes/grupos/sram/electronico1.jpg",
+            categoria: {
+                id: "horquilla",
+            },
+            precio: "$1.440.360",
+            description: "El set de grupo de cambios de 6 agujeros de SRAM Red eTap AXS™ HRD FM para 2x12 disco te ofrece un equipo con funciones intuitivas orientadas al rendimiento.",
+        }, {
+            id: 22,
+            titulo: "",
+            imagen: "./imagenes/grupos/sram/electronico2.jpg",
+            categoria: {
+                id: "horquilla",
+            },
+            precio: "$888.618",
+            description: "Grupo de bicicleta de ruta Electrónico Inalambrico 2x12 Sram Force AXS, con frenos de disco hidraulicos, para núcleos XDR.",
+          
+        }, {
+            id: 23,
+            titulo: "",
+            imagen: "./imagenes/grupos/sram/gxEgle.jpg",
+            categoria: {
+                id: "horquilla",
+            },
+            precio: "$264.968",
+            description: "GX Eagle combina la capacidad completa de las tecnologías Eagle, en un grupo que se da cuenta del potencial dentro de cada construcción. Aquí es donde encontrarás las mejores bielas de aluminio para MTB.",
+            
+        }, 
+    ],
+    transmision:[
+        {
+            id:24,
+            titulo:"Plato Palanca MTB Sram XX1 Eagle, DUB 12v, 170mm 34T Boost",
+            imagen:"./imagenes/grupos/sram/sram-imagen1.jpg",
+            categoria:{
+                id:"plato",
+            },
+            precio:"$264.968",
+            cantidad:10,
+            description:"Juego de plato palanca Sram XX1 Eagle de 12 velocidades para bicicleta de montaña, bielas de 170mm, eje DUB y plato de 34 dientes.",
+        }, {
+            id: 25,
+            titulo:"Palancas MTB Sram 12v XX1 Eagle DUB 170mm 148 Boost 34T DM Grey",
+            imagen:"./imagenes/grupos/sram/sram-imagen2.jpg",
+            categoria:{
+                id:"plato",
+            },
+            precio:" $264.968",
+            cantidad:10,
+            description:"Juego de plato palanca Sram XX1 Eagle de 11/12 velocidades para bicicleta de montaña, bielas de 170mm, eje DUB y plato de 34 dientes.",
+        }, {
+            id: 26,
+            titulo:"Plato Palanca MTB Sram X01 Eagle Carbon DUB 12v, 170mm 32T DM Boost 148",
+            imagen:"./imagenes/grupos/sram/sram-imagen3.jpg",
+            categoria:{
+                id:"plato",
+            },
+            precio:"$206.021",
+            cantidad:10,
+            description:"Juego de plato palanca Sram X01 Eagle de 12 velocidades para bicicleta de montaña, bielas de 170mm, eje DUB y plato de 32 dientes.",
+        }, {
+            id: 27,
+            titulo:"Piñon MTB Sram X01 Eagle XG-1295 12v 10-50d XD Polar Grey",
+            imagen:"./imagenes/grupos/sram/sram-imagen4.jpg",
+            categoria:{
+                id:"piñon",
+            },
+            precio:"$191.284",
+            cantidad:10,
+            description:"Piñon de Bicicleta de montaña del grupo Sram X01 Eagle de 12 velocidades, con dentado 10-50 y compatible con núcleos XD.",
+        }, {
+            id: 28,
+            titulo:"Cambio Trasero SRAM MTB 12v 52d XX1 Eagle Lunar",
+            imagen:"./imagenes/grupos/sram/sram-imagen5.jpg",
+            categoria:{
+                id:"cambio",
+            },
+            precio:"$161.810",
+            cantidad:10,
+            description:"La sensación de cambio nítida y precisa de XX1 ™ en la que confían los atletas ahora presenta una geometría de jaula actualizada para una mejor gestión de la cadena.",
+        }, {
+            id: 29,
+            titulo:"Piñon SRAM 12v MTB XG-1295 10-50d XD Black (X01 Eagle)",
+            imagen:"./imagenes/grupos/sram/sram-imagen6.jpg",
+            categoria:{
+                id:"piñon",
+            },
+            precio:"$191.284",
+            cantidad:10,
+            description:"Piñon de Bicicleta de montaña del grupo Sram X01 Eagle de 12 velocidades, con dentado 10-50. Compatible con núcleo XD.",
+        }, {
+            id: 30,
+            titulo:"Plato Palanca MTB Sram GX Carbon Eagle, DUB 12v, 170mm 32T Boost 148 DM Lunar",
+            imagen:"./imagenes/grupos/sram/sram-imagen7.jpg",
+            categoria:{
+                id:"plato",
+            },
+            precio:"$155.916",
+            cantidad:10,
+            description:"Plato-Palanca para bicicletas de montaña Sram Carbon GX Eagle, con Monoplato de 32 dientes, para sistemas de 12 velocidades. El largo de las bielas es de 170mm y el eje es DUB.",
+        }, {
+            id: 31,
+            titulo:"Shifter Gripshift MTB Sram XX1 Eagle 1x12v",
+            imagen:"./imagenes/grupos/sram/sram-imagen8.jpg",
+            categoria:{
+                id:"shifter",
+            },
+            precio:"$79.284",
+            cantidad:10,
+            description:"Gripshift de bicicleta de Montaña Sram XX1 Eagle , de 12 velocidades.",
+        },{
+            id: 32,
+            titulo:"Shifter Trasero MTB Sram XX1 Eagle Trigger 12v Lunar",
+            imagen:"./imagenes/grupos/sram/sram-imagen9.jpg",
+            categoria:{
+                id:"shifter",
+            },
+            precio:"$88.126",
+            cantidad:10,
+            description:"Shifter Trasero para bicicletas de MTB Sram XX1 Eagle Trigger 12v.",
+        },{
+            id: 33,
+            titulo:"Cambio Trasero Sram GX Eagle 12v 52d Long Cage Lunar",
+            imagen:"./imagenes/grupos/sram/sram-imagen10.jpg",
+            categoria:{
+                id:"cambio",
+            },
+            precio:"$64.253",
+            cantidad:10,
+            description:"Descarrilador trasero - 12 velocidades - Para platos con un maximo de 52 dientes - Jaula larga de Aluminio.",
+        },{
+            id: 34,
+            titulo:"Plato Palanca MTB Sram SX Eagle DUB 12v, 175mm 32T DM",
+            imagen:"./imagenes/grupos/sram/sram-imagen11.jpg",
+            categoria:{
+                id:"plato",
+            },
+            precio:"$52.758",
+            cantidad:10,
+            description:"Juego de plato palanca Sram SX Eagle de 12 velocidades para bicicleta de montaña, bielas de 175mm, eje DUB y plato de 32 dientes.",
+        },{
+            id: 35,
+            titulo:"Shifter Gripshift MTB Sram X01 Eagle 1x12v",
+            imagen:"./imagenes/grupos/sram/sram-imagen12.jpg",
+            categoria:{
+                id:"shifter",
+            },
+            precio:"$60.999",
+            cantidad:10,
+            description:"Gripshift de bicicleta de Montaña Sram X01 Eagle de 12 velocidades.",
+        },{
+            id: 36,
+            titulo:"Cambio Trasero SRAM MTB 12v 50d NX Eagle",
+            imagen:"./imagenes/grupos/sram/sram-imagen13.jpg",
+            categoria:{
+                id:"cambio",
+            },
+            precio:"$52.758",
+            cantidad:10,
+            description:"Cambio trasero de bicicleta de montaña Sram NX Eagle de 12 velocidades..",
+        },{
+            id: 37,
+            titulo:"Cambio Trasero de Bicicleta de Montaña Sram SX Eagle 12 velocidades.",
+            imagen:"./imagenes/grupos/sram/sram-imagen14.jpg",
+            categoria:{
+                id:"cambio",
+            },
+            precio:"$46.863",
+            cantidad:10,
+            description:"Cambio trasero de 12 velocidades para bicicletas de montaña Sram SX Eagle.",
+        },{
+            id: 38,
+            titulo:"Cambio Trasero Sram Force 22 11v Short Cage 28T Silver",
+            imagen:"./imagenes/grupos/sram/sram-imagen15.jpg",
+            categoria:{
+                id:"cambio",
+            },
+            precio:"$49.810",
+            cantidad:10,
+            description:"doptando todas las tecnologías que proporcionan cambios rápidos y silenciosos, el cambio trasero SRAM Force 22 ha sido diseñado con la tecnología EXACT ACTUATION ™ para cambios precisos y eficientes en toda la gama de cambios.",
+        },{
+            id: 39,
+            titulo:"Cambio Trasero SRAM MTB 12v 50d SX Eagle Long Cage",
+            imagen:"./imagenes/grupos/sram/sram-imagen16.jpg",
+            categoria:{
+                id:"cambio",
+            },
+            precio:"$46.863",
+            cantidad:10,
+            description:"Cambio trasero de 12 velocidades para bicicletas de montaña Sram SX Eagle.",
+        },{
+            id: 40,
+            titulo:"Cambio Trasero Sram Apex 1 11v 42T Long Cage",
+            imagen:"./imagenes/grupos/sram/sram-imagen17.jpg",
+            categoria:{
+                id:"cambio",
+            },
+            precio:"$40.968",
+            cantidad:10,
+            description:"Descarrilador trasero - 11 velocidades - Para platos con un maximo de 42 dientes - Jaula larga de Aluminio",
+        },{
+            id: 41,
+            titulo:"Batería para grupo Sram Etap/AXS",
+            imagen:"./imagenes/grupos/sram/sram-imagen18.jpg",
+            categoria:{
+                id:"bateria",
+            },
+            precio:"$38.021",
+            cantidad:10,
+            description:"Batería para grupos electrónicos Sram Red Etap/AXS.",
+        },{
+            id: 42,
+            titulo:"Shifter de bicicleta de montaña Sram SX Eagle Trigger 1x12",
+            imagen:"./imagenes/grupos/sram/sram-imagen19.jpg",
+            categoria:{
+                id:"shifter",
+            },
+            precio:"$20.337",
+            cantidad:10,
+            description:"El mando de cambio SRAM SX Eagle Trigger de 12 velocidades es compatible con todas las otras transmisiones SRAM Eagle. También disponible como opción de cambio Eagle específico para E-MTB.",
+        },{
+            id: 43,
+            titulo:"Cambio Trasero SRAM Roldanas de Cambio Force 22 /Rrival 22 11v",
+            imagen:"./imagenes/grupos/sram/sram-imagen20.jpg",
+            categoria:{
+                id:"cambio",
+            },
+            precio:"$10.316",
+            cantidad:10,
+            description:"El conjunto de roldanas SRAM es adecuado para los descarriladores trasero SRAM Force 22 y Rrival 22 (11x2).",
+        },{
+            id: 44,
+            titulo:"Cambio Trasero SRAM Roldanas de Cambio Force/Rrival/Apex",
+            imagen:"./imagenes/grupos/sram/sram-imagen21.jpg",
+            categoria:{
+                id:"cambio",
+            },
+            precio:"$9.432",
+            cantidad:10,
+            description:"El conjunto de roldanas de cerámica SRAM es adecuado para los descarrilador trasero SRAM Force/Rrival/Apex.",
+        },{
+            id: 45,
+            titulo:"Piñon SRAM 12v MTB PG-1230 11-50d HG Black (NX Eagle)",
+            imagen:"./imagenes/grupos/sram/sram-imagen23.jpg",
+            categoria:{
+                id:"piñon",
+            },
+            precio:"$55.705",
+            cantidad:10,
+            description:"Piñon para bicicletas de montaña de 12 velocidades Sram NX Eagle (XG1230), con dentado de 11-50 y compatible con núcleos estriados de 9/10/11v.",
+        },{
+            id: 46,
+            titulo:"Cadena Bicicleta de 12 velocidades Sram PC XX1 Eagle",
+            imagen:"./imagenes/grupos/sram/sram-imagen22.jpg",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"$49.810",
+            cantidad:10,
+            description:"Cadena de bicicleta de montaña de 12 velocidades Sram PC XX1 Eagle.",
+        },{
+            id: 47,
+            titulo:"Cadena Bicicleta de 12 velocidades Sram PC X01 Eagle",
+            imagen:"./imagenes/grupos/sram/sram-imagen24.jpg",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"$35.074",
+            cantidad:10,
+            description:"Cadena de bicicleta de montaña de 12 velocidades Sram PC X01 Eagle.",
+        },{
+            id: 47,
+            titulo:"Cadena de Bicicleta de 12 velocidades Sram Red AXS",
+            imagen:"./imagenes/grupos/sram/sram-imagen25.jpg",
+            categoria:{
+                id:"cambio",
+            },
+            precio:"$38.316",
+            cantidad:10,
+            description:"Cadena de Bicicleta de ruta de 12 velocidades Sram Red Etap.",
+        },{
+            id: 48,
+            titulo:"Cadena de Bicicleta de 11 velocidades Sram PC RED 22",
+            imagen:"./imagenes/grupos/sram/sram-imagen26.jpg",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"$23.284",
+            cantidad:10,
+            description:"Cadena de 11 velocidades Sram PC RED 22.",
+        },{
+            id: 49,
+            titulo:"Conector de Cadena Sram Powerlink",
+            imagen:"./imagenes/grupos/sram/sram-imagen27.jpg",
+            categoria:{
+                id:"cambio",
+            },
+            precio:"$1.400",
+            cantidad:10,
+            description:"Conector de cadena SRAM.",
         },
-        precio: "$24000",
 
-    }, {
-        id: "3",
-        titulo: "Casco Bell Trace Mips",
-        imagen: "./imagenes/cascos/bell/casco bell trace mips.jpg",
-        categoria: {
-            id: "Cascos",
-            nombre: "Cascos",
-        },
-        precio: "$22000",
-
-    }, {
-        id: "4",
-        titulo: "Casco Giro Aether Spherical",
-        imagen: "./imagenes/cascos/giro/casco giro aether spherical.jpg",
-        categoria: {
-            id: "Cascos",
-            nombre: "Cascos",
-        },
-        precio: "$24300",
-
-    }, {
-        id: "5",
-        titulo: "Absolute Black Oval Dorado",
-        imagen: "./imagenes/absolute black/PLATOS/absolute black Oval dorado.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "Platos",
-        },
-        precio: "$13000",
-
-    }, {
-        id: "6",
-        titulo: "Absolute Black Oval Naranja",
-        imagen: "./imagenes/absolute black/PLATOS/absolute black Oval Naranja .jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "Platos",
-        },
-        precio: "$13000",
-
-    }, {
-        id: "7",
-        titulo: "Absolute Black Oval Negro",
-        imagen: "./imagenes/absolute black/PLATOS/absolute black Oval negro.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "Platos",
-        },
-        precio: "$13000",
-    }, {
-        id: "8",
-        titulo: "Absolute Black Oval Purpura",
-        imagen: "./imagenes/absolute black/PLATOS/absolute black Oval Púrpura.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "Platos",
-        },
-        precio: "$13000",
-    }, {
-        id: "9",
-        titulo: "Absolute Black Oval Rojo",
-        imagen: "./imagenes/absolute black/PLATOS/absolute black Oval rojo.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "Platos",
-        },
-        precio: "$13000",
-    }, {
-        id: "10",
-        titulo: "Absolute Black Oval Titanium",
-        imagen: "./imagenes/absolute black/PLATOS/absolute black Oval Titanium.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "Platos",
-        },
-        precio: "$13000",
-    }, {
-        id: "11",
-        titulo: "Absolute Black Rendodo Negro",
-        imagen: "./imagenes/absolute black/PLATOS/absolute black redondo negro.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "Platos",
-        },
-        precio: "$13000",
-    }, {
-        id: "12",
-        titulo: "Roldana Absolute Black",
-        imagen: "imagenes/absolute black/ROLDANAS/absoluteBLACK-HOLLOWcage-SRAM-AXS-aero-hollow-ceramic-derailleur-pulley-upgrade_colors.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "Roldanas",
-        },
-        precio: "$8200",
-    }, {
-        id: "13",
-        titulo: "HOLLOWcage Cargbon Ceramic Oversized Derailleur Pulley Cage black",
-        imagen: "./imagenes/absolute black/ROLDANAS/HOLLOWcage Cargbon Ceramic Oversized Derailleur Pulley Cage black.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "Roldanas",
-        },
-        precio: "$8200",
-    }, {
-        id: "14",
-        titulo: "HOLLOWcage Cargbon Ceramic Oversized Derailleur Pulley Cage red",
-        imagen: "./imagenes/absolute black/ROLDANAS/HOLLOWcage Cargbon Ceramic Oversized Derailleur Pulley Cage red.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "Roldanas",
-        },
-        precio: "$8200",
-    }, {
-        id: "15",
-        titulo: "HOLLOWcage Cargbon Ceramic Oversized Derailleur Pulley Cage Yellow",
-        imagen: "./imagenes/absolute black/ROLDANAS/HOLLOWcage Cargbon Ceramic Oversized Derailleur Pulley Cage Yellow.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "Roldanas",
-        },
-        precio: "$8200",
-    }, {
-        id: "16",
-        titulo: "Finish Line Chill Zone",
-        imagen: "./imagenes/finish line/aerosol chill zone.jpg",
-        categoria: {
-            id: "lubricantes",
-            nombre: "lubricantes",
-        },
-        precio: "$3200",
-    }, {
-        id: "17",
-        titulo: "Finish Line Gel fiber Grip",
-        imagen: "imagenes/finish line/gel fiber grip.jpg",
-        categoria: {
-            id: "lubricantes",
-            nombre: "lubricantes",
-        },
-        precio: "$3200",
-    }, {
-        id: "18",
-        titulo: "Finish Line Grasa Ceramica",
-        imagen: "./imagenes/finish line/grasa ceramica.jpg",
-        categoria: {
-            id: "lubricantes",
-            nombre: "lubricantes",
-        },
-        precio: "$3200",
-    }, {
-        id: "19",
-        titulo: "Finish Line Grasa Premium",
-        imagen: "./imagenes/finish line/grasa premium.jpg",
-        categoria: {
-            id: "lubricantes",
-            nombre: "lubricantes",
-        },
-        precio: "$3200",
-    }, {
-        id: "20",
-        titulo: "Finish Line Lubricante Humedo",
-        imagen: "./imagenes/finish line/lubircante humedo.jpg",
-        categoria: {
-            id: "lubricantes",
-            nombre: "lubricantes",
-        },
-        precio: "$3200",
-    }, {
-        id: "21",
-        titulo: "Squit 15ml",
-        imagen: "./imagenes/squirt/squirt-15ml.jpg",
-        categoria: {
-            id: "lubricantes",
-            nombre: "lubricantes",
-        },
-        precio: "$3200",
-    },{
-        id: "22",
-        titulo: "Squirt 120ml",
-        imagen: "./imagenes/squirt/squirt-12/ml.jpg",
-        categoria: {
-            id: "lubricantes",
-            nombre: "lubricantes",
-        },
-        precio: "$3200",
-    }, {
-        id: "23",
-        titulo: "Horquilla Rockshox Judy",
-        imagen: "./imagenes/horquillas/Horquilla Rockshox Judy.jpg",
-        categoria: {
-            id: "horquillas",
-            nombre: "horquillas",
-        },
-        precio: "$3200",
-    }, {
-        id: "24",
-        titulo: "Horquilla Rockshox Reba RL 29 SoloAir 100mm 15mm Boost Tapered OneLoc",
-        imagen: "./imagenes/horquillas/Horquilla Rockshox Reba RL 29 SoloAir 100mm 15mm Boost Tapered OneLoc.jpg",
-        categoria: {
-            id: "horquillas",
-            nombre: "horquillas",
-        },
-        precio: "$3200",
-    }, {
-        id: "25",
-        titulo: "Horquilla Rockshox Recon Silver RL 29 Solo Air",
-        imagen: "./imagenes/horquillas/Horquilla Rockshox Recon Silver RL 29 Solo Air.jpg",
-        categoria: {
-            id: "horquillas",
-            nombre: "horquillas",
-        },
-        precio: "$3200",
-    }, {
-        id: "26",
-        titulo: "Horquilla Rockshox SID SL Select 29 DebonAir 100mm 15mm Boost Tapered TwistLoc",
-        imagen: "./imagenes/horquillas/Horquilla Rockshox SID SL Select 29 DebonAir 100mm 15mm Boost Tapered TwistLoc.jpg",
-        categoria: {
-            id: "horquillas",
-            nombre: "horquillas",
-        },
-        precio: "$3200",
-    }, {
-        id: "27",
-        titulo: "Flores AcuarelHorquilla Rockshox SID SL Ultimate 29 DebonAir 100mm 15mm Boost Tapered TwiLoc",
-        imagen: "./imagenes/horquillas/Horquilla Rockshox SID SL Ultimate 29 DebonAir 100mm 15mm Boost Tapered TwiLoc..jpg",
-        categoria: {
-            id: "horquillas",
-            nombre: "horquillas",
-        },
-        precio: "$3200",
-    }, {
-        id: "28",
-        titulo: "SID SL Ultimate",
-        imagen: "./imagenes/horquillas/SID SL Ultimate.png",
-        categoria: {
-            id: "horquillas",
-            nombre: "horquillas",
-        },
-        precio: "$3200",
-    }, {
-        id: "29",
-        titulo: "Cube Reaction C62 Race 2021",
-        imagen: "./imagenes/linea cube/Bicicleta Cube Reaction C62 Race 2021.jpg",
-        categoria: {
-            id: "bicicletas",
-            nombre: "bicicletas",
-        },
-        precio: "$3200",
-    },{
-        id: "30",
-        titulo: "Cube Acid 2021",
-        imagen: "./imagenes/linea cube/cube acid 2021.jpg",
-        categoria: {
-            id: "bicicletas",
-            nombre: "bicicletas",
-        },
-        precio: "$3200",
-    },{
-        id: "31",
-        titulo: "Cube Aim 2021",
-        imagen: "./imagenes/linea cube/cube aim 2021.jpg",
-        categoria: {
-            id: "bicicletas",
-            nombre: "bicicletas",
-        },
-        precio: "$3200",
-    },{
-        id: "32",
-        titulo: "Cube Analog 2021",
-        imagen: "./imagenes/linea cube/cube analog 2021.jpg",
-        categoria: {
-            id: "bicicletas",
-            nombre: "bicicletas",
-        },
-        precio: "$3200",
-    },{
-        id: "33",
-        titulo: "Cube Atention 2021",
-        imagen: "./imagenes/linea cube/cube atention 2021.jpg",
-        categoria: {
-            id: "bicicletas",
-            nombre: "bicicletas",
-        },
-        precio: "$3200",
-    },{
-        id: "34",
-        titulo: "Cube Attain GTC SL 28 2021",
-        imagen: "./imagenes/linea cube/Cube Attain GTC SL 28 2021.jpg",
-        categoria: {
-            id: "bicicletas",
-            nombre: "bicicletas",
-        },
-        precio: "$3200",
-    },{
-        id: "35",
-        titulo: "Cube Elite C68X Pro",
-        imagen: "./imagenes/linea cube/cube elite c68x pro.jpg",
-        categoria: {
-            id: "bicicletas",
-            nombre: "bicicletas",
-        },
-        precio: "$3200",
-    },{
-        id: "36",
-        titulo: "cube elite c68x",
-        imagen: "./imagenes/linea cube/cube elite c68x.jpg",
-        categoria: {
-            id: "bicicletas",
-            nombre: "bicicletas",
-        },
-        precio: "$3200",
-    },{
-        id: "37",
-        titulo: "cube reaction c62",
-        imagen: "./imagenes/linea cube/cube reaction c62.jpg",
-        categoria: {
-            id: "bicicletas",
-            nombre: "bicicletas",
-        },
-        precio: "$3200",
-    },{
-        id: "38",
-        titulo: "Rotor Elvedes",
-        imagen: "./imagenes/rotores Elvedes/rotor ELVEDES.jpg",
-        categoria: {
-            id: "varios",
-            nombre: "VArios",
-        },
-        precio: "$3200",
-    },{
-        id: "39",
-        titulo: "Shimano Deore 4100",
-        imagen: "./imagenes/deore 4100.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "shimano",
-        },
-        precio: "$3200",
-    },{
-        id: "40",
-        titulo: "Shimano Deore 5400",
-        imagen: "./imagenes/shimano/deore 5400.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "shimano",
-        },
-        precio: "$3200",
-    },{
-        id: "41",
-        titulo: "Shimano Deore 6100",
-        imagen: "./imagenes/shimano/deore m6100.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "shimano",
-        },
-        precio: "$3200",
-    },{
-        id: "42",
-        titulo: "Shimano Deore XT",
-        imagen: "./imagenes/shimano/deore xt.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "shimano",
-        },
-        precio: "$3200",
-    },{
-        id: "43",
-        titulo: "Grupa Sram GX Eagle 1x12v",
-        imagen: "./imagenes/sram/Grupo MTB SRAM GX Eagle 1x12v 10-52d Boost 175mm DUB 32d Lunar.jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "sram",
-        },
-        precio: "$3200",
-    },{
-        id: "44",
-        titulo: "Piñon SRAM 12v MTB XG-1295 10-50d XD Black (X01 Eagle)",
-        imagen: "./imagenes/sram/Piñon SRAM 12v MTB XG-1295 10-50d XD Black (X01 Eagle).jpeg",
-        categoria: {
-            id: "transmision",
-            nombre: "sram",
-        },
-        precio: "$3200",
-    },{
-        id: "45",
-        titulo: "Piñon SRAM 12v MTB XG-1295 10-50d XD Polar Grey (X01 Eagle)",
-        imagen: "./imagenes/sram/Piñon SRAM 12v MTB XG-1295 10-50d XD Polar Grey (X01 Eagle).jpeg",
-        categoria: {
-            id: "transmision",
-            nombre: "sram",
-        },
-        precio: "$3200",
-    },{
-        id: "46",
-        titulo: "Piñon SRAM 12v MTB XG-1299 10-50d XD Rainbown (XX1 Eagle)",
-        imagen: "./imagenes/sram/Piñon SRAM 12v MTB XG-1299 10-50d XD Rainbown (XX1 Eagle).jpg",
-        categoria: {
-            id: "transmision",
-            nombre: "sram",
-        },
-        precio: "$3200",
-    },{
-        id: "47",
-        titulo: "Frenos Shimano MT200 ",
-        imagen: "./imagenes/shimano/shimano mt200.jpg",
-        categoria: {
-            id: "frenos",
-            nombre: "shimano",
-        },
-        precio: "$3200",
-    },{
-        id: "48",
-        titulo: "Frenos Shimano MT6100",
-        imagen: "./img/foto29.jpeg",
-        categoria: {
-            id: "frenos",
-            nombre: "shimano",
-        },
-        precio: "$3200",
-    }/*,{
-        id: "49",
-        titulo: "Frenos Sram",
-        imagen: "./imagenes/sram/frenos sram sb/foto29.jpeg",
-        categoria: {
-            id: "frenos",
-            nombre: "sram",
-        },
-        precio: "$3200",
-    },{
-        id: "50",
-        titulo: "Particiones",
-        imagen: "./img/foto29.jpeg",
-        categoria: {
-            id: "cuadros",
-            nombre: "Cuadros",
-        },
-        precio: "$3200",
-    },{
-        id: "51",
-        titulo: "Particiones",
-        imagen: "./img/foto29.jpeg",
-        categoria: {
-            id: "cuadros",
-            nombre: "Cuadros",
-        },
-        precio: "$3200",
-    },{
-        id: "52",
-        titulo: "Particiones",
-        imagen: "./img/foto29.jpeg",
-        categoria: {
-            id: "cuadros",
-            nombre: "Cuadros",
-        },
-        precio: "$3200",
-    },{
-        id: "53",
-        titulo: "Particiones",
-        imagen: "./img/foto29.jpeg",
-        categoria: {
-            id: "cuadros",
-            nombre: "Cuadros",
-        },
-        precio: "$3200",
-    },{
-        id: "54",
-        titulo: "Particiones",
-        imagen: "./img/foto29.jpeg",
-        categoria: {
-            id: "cuadros",
-            nombre: "Cuadros",
-        },
-        precio: "$3200",
-    },{
-        id: "55",
-        titulo: "Particiones",
-        imagen: "./img/foto29.jpeg",
-        categoria: {
-            id: "cuadros",
-            nombre: "Cuadros",
-        },
-        precio: "$3200",
-    }*/
-
-]
+    ],
+    cascos:[
+        {
+            id:50,
+            titulo:"Casco Giro Aether Spherical",
+            imagen:"./imagenes/cascos/1.jpg",
+            categoria:{
+                id:"cascos",
+            },
+            precio:"$127.610",
+            cantidad:2,
+            talle:"unico",
+            description:"Desde la elegante silueta de su diseño industrial hasta la forma en que este casco gestiona la energía del impacto, el aether spherical no se parece a ningún otro casco jamás creado y es un verdadero testimonio de la innovación en el rendimiento.",
+        },{
+            id:51,
+            titulo:"Casco Giro Manifest Spherical",
+            imagen:"./imagenes/cascos/2.jpg",
+            categoria:{
+                id:"cascos",
+            },
+            precio:"$106.579",
+            cantidad:3,
+            talle:"L",
+            description:"Con tecnología esférica, la mejor ventilación de su clase, cobertura profunda y comodidad de lujo, manifest es el casco de montaña más premium disponible.",
+        },{
+            id:52,
+            titulo:"Casco Giro Helios Spherical",
+            imagen:"./imagenes/cascos/3.jpg",
+            categoria:{
+                id:"cascos",
+            },
+            precio:"$107.716",
+            cantidad:4,
+            talle:"M",
+            description:"El CASCO GIRO HELIOS SPHERICAL MIPS es perfecto para quienes practican el ciclismo de ruta.",
+        },{
+            id:53,
+            titulo:"Casco Bell Star Pro",
+            imagen:"./imagenes/cascos/4.jpg",
+            categoria:{
+                id:"cascos",
+            },
+            precio:"$94.642",
+            cantidad:1,
+            talle:"unico",
+            description:"No es un modelo muy convencional, sino que se trata de un casco con perfil aerodinámico, con varios detalles que normalmente la gran mayoría no traen.",
+        },{
+            id:54,
+            titulo:"Casco Giro Synthe Mips II",
+            imagen:"./imagenes/cascos/5.jpg",
+            categoria:{
+                id:"cascos",
+            },
+            precio:"$90.663",
+            cantidad:3,
+            talle:"54-58",
+            description:"El Synthe MIPS II es un ícono, actualizado para ser más fresco y cómodo que nunca.",
+        },{
+            id:55,
+            titulo:"Casco de ciclismo Lazer modelo Century",
+            imagen:"./imagenes/cascos/6.jpg",
+            categoria:{
+                id:"cascos",
+            },
+            precio:"$71.695",
+            cantidad:3,
+            talle:"L",
+            description:"El casco Century es el resultado de 100 años de experiencia. Mediante la integración de todo el conocimiento y las necesidades de los usuarios en un concepto, el Century ofrece una nueva referencia que no requiere prioridades en cuanto a protección.",
+        },{
+            id:56,
+            titulo:"Casco Ciclismo Bell XR Spherical Mips",
+            imagen:"./imagenes/cascos/7.jpg",
+            categoria:{
+                id:"cascos",
+            },
+            precio:"83.158",
+            cantidad:2,
+            talle:"unico",
+            description:"El XR Spherical es un casco versátil que puede utilizarse para ruta, para montaña o ser parte de tu viaje del mundo. Es el casco que abre las posibilidades para una exploración sin fin.",
+        },{
+            id:57,
+            titulo:"Casco Ciclismo Giro Cinder Mips",
+            imagen:"./imagenes/cascos/8.jpg",
+            categoria:{
+                id:"cascos",
+            },
+            precio:" $67.926",
+            cantidad:2,
+            talle:"unico",
+            description:"El casco Giro Cinder MIPS llega con una estética similar al popular modelo Synthe pero incorpora el sistema de ajuste Roc Loc 5 que permite un mejor ajuste del casco a la cabeza, el interior Air-FX que mejora el confort y el sistema de seguridad MIPS.",
+        },{
+            id:58,
+            titulo:"Casco Ciclismo Giro Ember Mips",
+            imagen:"./imagenes/cascis/9.jpg",
+            categoria:{
+                id:"cascos",
+            },
+            precio:" $67.926",
+            cantidad:1,
+            talle:"s",
+            description:"El casco Giro Ember MIPS para mujer llega con una estética similar al popular modelo Synthe pero incorpora el sistema de ajuste RocLoc 5 que permite un mejor ajuste del casco a la cabeza.",
+        },/*{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:,
+            description:"",
+        },{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:;
+            description:"";
+        },{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:;
+            description:"";
+        },{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:;
+            description:"";
+        },{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:;
+            description:"";
+        },{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:;
+            description:"";
+        },{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:;
+            description:"";
+        },{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:;
+            description:"";
+        },{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:;
+            description:"";
+        },{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:;
+            description:"";
+        },{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:;
+            description:"";
+        },{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:;
+            description:"";
+        },{
+            id:50,
+            titulo:"",
+            imagen:"./imagenes/",
+            categoria:{
+                id:"cadena",
+            },
+            precio:"",
+            cantidad:;
+            description:"";
+        },*/
+    ],
+    grupos: [
+        {
+            id: "21",
+            titulo: "Grupo Electronico Ruta Sram Red eTap AXS 2X D1 HRD FM Freno Hidraulico 2x12",
+            imagen: "./imagenes/grupos/sram/electronico1.jpg",
+            categoria: {
+                id: "grupos",
+            },
+            precio: "$1.440.360",
+            description: "El set de grupo de cambios de 6 agujeros de SRAM Red eTap AXS™ HRD FM para 2x12 disco te ofrece un equipo con funciones intuitivas orientadas al rendimiento.",
+            levas: "Big Nine CF5, carbono",
+            descarrilador: "SRAM Red eTap AXS con batería recargable",
+            frenos: "Disco de frenos CLX Ti, 6-Agujeros, 2 Adaptadores Flat Mount ø160 mm",
+            extras: "Cargador y Cable SRAM",
+        }, {
+            id: "22",
+            titulo: "Grupo Electronico Ruta Sram Force eTap AXS , Frenos hidraulicos 2x12",
+            imagen: "./imagenes/grupos/sram/electronico2.jpg",
+            categoria: {
+                id: "grupos",
+            },
+            precio: "$888.618",
+            description: "Grupo de bicicleta de ruta Electrónico Inalambrico 2x12 Sram Force AXS, con frenos de disco hidraulicos, para núcleos XDR.",
+            levas: " cambios/frenos SRAM Force eTap AXS HRD FM",
+            descarrilador: "SRAM Force eTap AXS con batería recargable",
+            frenos: "SRAM Centerline CLX Ti, 6 agujeros, 2 piezas 160 mm",
+            extras: "Cargador y Cable SRAM",
+        }, {
+            id: "23",
+            titulo: "Grupo MTB Sram GX Eagle DUB Boost 175mm 32T 1x12 Lunar",
+            imagen: "./imagenes/grupos/sram/gxEgle.jpg",
+            categoria: {
+                id: "grupos",
+            },
+            precio: "$264.968",
+            description: "GX Eagle combina la capacidad completa de las tecnologías Eagle, en un grupo que se da cuenta del potencial dentro de cada construcción. Aquí es donde encontrarás las mejores bielas de aluminio para MTB.",
+            levas: " GX Eagle Trigger de gatillo, con abrazadera",
+            descarrilador: "Palanca de cambios GX Eagle Trigger",
+            frenos: "Disco de frenos CLX Ti, 6-Agujeros, 2 Adaptadores Flat Mount ø160 mm",
+            extras: "Sram XG-1275 10-52t",
+        }, 
+    ],
+}

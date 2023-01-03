@@ -644,7 +644,7 @@ form.search button:hover{
         padding: 0;
         align-items: center;
         position: relative;
-        top: -160px;
+        margin: auto;
     }
 
     nav .mega .products .row{
@@ -668,7 +668,7 @@ form.search button:hover{
     nav .mega .products .text-content h4{
         font-size: 2em;
         font-weight: var(--fw8);
-        text-align: cneter;
+        text-align: center;
         color: var(--color5);
     }
     .header-main .right{
