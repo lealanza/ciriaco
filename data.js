@@ -1,11 +1,11 @@
-const listaDeProductos = {
-    bicicletas: [
+const listaDeProductos =[
         {
-            id: "1",
+            id: 1,
             titulo: "Bicicleta Montaña Merida Big Nine 8000",
             imagen: "./imagenes/biciletas/merida/big8000.jpg",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta",
                 material: "carbono",
             },
             precio: "$2.888.690",
@@ -33,11 +33,12 @@ const listaDeProductos = {
                 peso: "8,71 kg",
             },
         }, {
-            id: "2",
+            id: 2,
             titulo: "Bicicleta Montaña Merida Big Nine 8000",
             imagen: "./imagenes/biciletas/merida/big9000.png",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta",
                 material: "carbono",
             },
             precio: "$2.888.690",
@@ -65,11 +66,12 @@ const listaDeProductos = {
                 peso: "8,71 kg",
             }
         }, {
-            id: "3",
+            id: 3,
             titulo: "Bicicleta de Montaña Cube Elite C:68X Race Carbon 29",
             imagen: "./imagenes/biciletas/cube/cubec68xrace.jpg",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta",
                 material: "carbono",
             },
             precio: "$2.685.490",
@@ -97,11 +99,12 @@ const listaDeProductos = {
                 peso: "8,9 kg",
             }
         }, {
-            id: "4",
+            id: 4,
             titulo: "Bicicleta Montaña Merida Ninety SIX RC XT",
             imagen: "./imagenes/biciletas/merida/ninetysix.jpg",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta",
                 material: "carbono",
             },
             precio: "$2.432.530",
@@ -129,11 +132,12 @@ const listaDeProductos = {
                 peso: "11.5 kg",
             }
         }, {
-            id: "5",
+            id: 5,
             titulo: "Bicicleta de Montaña Cube Elite C:68X Pro 29",
             imagen: "./imagenes/biciletas/cube/cubec68zpro.jpg",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta",
                 material: "carbono",
             },
             precio: "$2.387.070",
@@ -161,11 +165,12 @@ const listaDeProductos = {
                 peso: "9,7 kg",
             }
         }, {
-            id: "6",
+            id: 6,
             titulo: "Bicicleta de MTB Cube Reaction C62 SL",
             imagen: "./imagenes/biciletas/cube/cubec62sl.jpg",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta", 
                 material: "carbono",
             },
             precio: "$1.639.520",
@@ -193,11 +198,12 @@ const listaDeProductos = {
                 peso: "10,1 kg",
             }
         }, {
-            id: "7",
+            id: 7,
             titulo: "Bicicleta de carbono MTB Cube Reaction C62 Race",
             imagen: "./imagenes/biciletas/cube/cubec62race.png",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta",
                 material: "carbono",
             },
             precio: "$1.560.030",
@@ -225,11 +231,12 @@ const listaDeProductos = {
                 peso: "10,71 kg",
             }
         }, {
-            id: "8",
+            id: 8,
             titulo: "Bicicleta de Montaña Carbono Cube Reaction C:62 Race 29",
             imagen: "./imagenes/biciletas/merida/big8000.jpg",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta",
                 material: "carbono",
             },
             precio: "$1.638.030",
@@ -257,11 +264,12 @@ const listaDeProductos = {
                 peso: "9,71 kg",
             }
         }, {
-            id: "9",
+            id: 9,
             titulo: "Bicicleta de Montaña Carbono Cube Reaction C:62 Pro 29",
             imagen: "./imagenes/biciletas/cube/cubec62pro.jpg",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta", 
                 material: "carbono",
             },
             precio: "$1.363.480",
@@ -289,11 +297,12 @@ const listaDeProductos = {
                 peso: "11.6 kg",
             }
         }, {
-            id: "10",
+            id: 10,
             titulo: "Bicicleta de Gravel Carbono Cube Nuroad C:62 PRO 28",
             imagen: "./imagenes/biciletas/cube/gravel1.jpg",
             categoria: {
                 id: "ruta",
+                nombre:"bicicleta",
                 material: "carbono",
             },
             precio: "$924.805",
@@ -319,11 +328,12 @@ const listaDeProductos = {
                 peso: "8,71 kg",
             }
         }, {
-            id: "11",
+            id: 11,
             titulo: "Bicicleta de Ruta rod 28 Cube Attain GTC Race Carbon 28",
             imagen: "./imagenes/biciletas/cube/rutagtc1.jpg",
             categoria: {
                 id: "ruta",
+                nombre:"bicicleta",
                 nmaterial: "carbono",
             },
             precio: "$1.068.050",
@@ -351,11 +361,12 @@ const listaDeProductos = {
                 peso: "9,3 kg",
             }
         }, {
-            id: "12",
+            id: 12,
             titulo: "Bicicleta de Montaña Cube Reaction C:62 One Carbon 29",
             imagen: "./imagenes/biciletas/cube/cubec622021.jpg",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta",
                 material: "carbono",
             },
             precio: "$1.071.590",
@@ -381,11 +392,12 @@ const listaDeProductos = {
                 peso: "11,5 kg",
             }
         }, {
-            id: "13",
+            id: 13,
             titulo: "Bicicleta de MTB Carbono Cube Reaction C:62 One 29 (Nuevo)",
             imagen: "./imagenes/biciletas/cube/cubec62nuevo.jpg",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta",
                 material: "carbono",
             },
             precio: "$1.193.380",
@@ -411,11 +423,12 @@ const listaDeProductos = {
                 peso: "11,5 kg",
             }
         }, {
-            id: "14",
+            id: 14,
             titulo: "Bicicleta de Ruta Cube Nuroad Pro 28",
             imagen: "./imagenes/biciletas/cube/cubepro282021.jpg",
             categoria: {
                 id: "ruta",
+                nombre:"bicicleta", 
                 material: "aluminio",
             },
             precio: "$709.943",
@@ -441,11 +454,12 @@ const listaDeProductos = {
                 peso: "10.6 kg",
             }
         }, {
-            id: "15",
+            id: 15,
             titulo: "Bicicleta de MTB Aluminio Cube Acid 29 (Nuevo)",
             imagen: "./imagenes/biciletas/cube/cubeacid2022.jpg",
             categoria: {
                 id: "mtb",
+                noombre:"bicicleta",
                 material: "aluminio",
             },
             precio: "$728.328",
@@ -471,11 +485,12 @@ const listaDeProductos = {
                 peso: "13.5 kg",
             }
         }, {
-            id: "16",
+            id: 16,
             titulo: "Bicicleta de MTB Aluminio Cube Attention SL 29",
             imagen: "./imagenes/biciletas/cube/cubeatention.jpg",
             categoria: {
                 id: "mtb",
+                nombre:"bicileta",
                 material: "aluminio",
             },
             precio: "$693.493",
@@ -501,11 +516,12 @@ const listaDeProductos = {
                 peso: "13,8 kg",
             }
         }, {
-            id: "17",
+            id: 17,
             titulo: "Bicicleta de Ruta Aluminio Cube Attain Pro 28",
             imagen: "./imagenes/biciletas/cube/cuberuta2.jpg",
             categoria: {
                 id: "ruta",
+                nombre:"bicicleta",
                 material: "aluminio",
             },
             precio: "$613.610",
@@ -531,11 +547,12 @@ const listaDeProductos = {
                 peso: "10.2 kg",
             }
         }, {
-            id: "18",
+            id: 18,
             titulo: "Bicicleta de Montaña Cube Attention SL",
             imagen: "./imagenes/biciletas/cube/cubeatention2021.jpg",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta",
                 material: "aluminio",
             },
             precio: "$574.360",
@@ -561,11 +578,12 @@ const listaDeProductos = {
                 peso: "13.5 kg",
             }
         }, {
-            id: "19",
+            id: 19,
             titulo: "Bicicleta de Montaña Cube Acid 29",
             imagen: "./imagenes/biciletas/cube/cubeacid2021.jpg",
             categoria: {
                 id: "mtb",
+                nombre:"bicicleta",
                 material: "aluminio",
             },
             precio: "$579.936",
@@ -591,11 +609,12 @@ const listaDeProductos = {
                 peso: "13.5 kg",
             }
         }, {
-            id: "20",
+            id:20,
             titulo: "Bicicleta de Ruta Aluminio Cube Attain 28",
             imagen: "./imagenes/biciletas/cube/cuberuta3.jpg",
             categoria: {
                 id: "ruta",
+                nombre:"bicicleta",
                 material: "aluminio",
             },
             precio: "$491.504",
@@ -619,11 +638,8 @@ const listaDeProductos = {
                 sillin: "Natural Fit Venec Lite",
                 tija: "CUBE Performance",
                 peso: "10.6 kg",
-            }
-        },
-    ],
-    horquillas: [
-        {
+            },
+        },{
             id: 21,
             titulo: "",
             imagen: "./imagenes/grupos/sram/electronico1.jpg",
@@ -652,10 +668,7 @@ const listaDeProductos = {
             precio: "$264.968",
             description: "GX Eagle combina la capacidad completa de las tecnologías Eagle, en un grupo que se da cuenta del potencial dentro de cada construcción. Aquí es donde encontrarás las mejores bielas de aluminio para MTB.",
             
-        }, 
-    ],
-    transmision:[
-        {
+        },{
             id:24,
             titulo:"Plato Palanca MTB Sram XX1 Eagle, DUB 12v, 170mm 34T Boost",
             imagen:"./imagenes/grupos/sram/sram-imagen1.jpg",
@@ -925,11 +938,7 @@ const listaDeProductos = {
             precio:"$1.400",
             cantidad:10,
             description:"Conector de cadena SRAM.",
-        },
-
-    ],
-    cascos:[
-        {
+        },{
             id:50,
             titulo:"Casco Giro Aether Spherical",
             imagen:"./imagenes/cascos/1.jpg",
@@ -1028,140 +1037,7 @@ const listaDeProductos = {
             cantidad:1,
             talle:"s",
             description:"El casco Giro Ember MIPS para mujer llega con una estética similar al popular modelo Synthe pero incorpora el sistema de ajuste RocLoc 5 que permite un mejor ajuste del casco a la cabeza.",
-        },/*{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:,
-            description:"",
         },{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:;
-            description:"";
-        },{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:;
-            description:"";
-        },{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:;
-            description:"";
-        },{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:;
-            description:"";
-        },{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:;
-            description:"";
-        },{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:;
-            description:"";
-        },{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:;
-            description:"";
-        },{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:;
-            description:"";
-        },{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:;
-            description:"";
-        },{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:;
-            description:"";
-        },{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:;
-            description:"";
-        },{
-            id:50,
-            titulo:"",
-            imagen:"./imagenes/",
-            categoria:{
-                id:"cadena",
-            },
-            precio:"",
-            cantidad:;
-            description:"";
-        },*/
-    ],
-    grupos: [
-        {
             id: "21",
             titulo: "Grupo Electronico Ruta Sram Red eTap AXS 2X D1 HRD FM Freno Hidraulico 2x12",
             imagen: "./imagenes/grupos/sram/electronico1.jpg",
@@ -1200,6 +1076,5 @@ const listaDeProductos = {
             descarrilador: "Palanca de cambios GX Eagle Trigger",
             frenos: "Disco de frenos CLX Ti, 6-Agujeros, 2 Adaptadores Flat Mount ø160 mm",
             extras: "Sram XG-1275 10-52t",
-        }, 
-    ],
-}
+        },
+]
