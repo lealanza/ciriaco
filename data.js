@@ -1,4 +1,4 @@
-const listaDeProductos =[
+listaDeProductos =[
         {
             id: 1,
             titulo: "Bicicleta Montaña Merida Big Nine 8000",
@@ -13,7 +13,7 @@ const listaDeProductos =[
                 "Es rápida, confiable, liviana y versátil. Los ingenieros de Mérida nos prepararon una sorpresa: un Big Nine aún más cómodo y pasable, cuya característica distintiva son las ruedas Maxxis Ikon de 29 pulgadas. El Big Nine 8000 está construido sobre un cuadro de carbono. Transmisión Sram Carbon GX Eagle: 34 una rueda dentada adelante, 10-52 cassette atrás.",
             ],
             talle: "S",
-            cantidad: 1,
+            cantidad:2,
             ficha: {
                 cuadro: "Big Nine CF5, carbono",
                 horquilla: "Rock Shox SID World Cup, recorrido 100mm",
@@ -134,7 +134,7 @@ const listaDeProductos =[
         }, {
             id: 5,
             titulo: "Bicicleta de Montaña Cube Elite C:68X Pro 29",
-            imagen: "./imagenes/biciletas/cube/cubec68zpro.jpg",
+            imagen: "./imagenes/biciletas/cube/cubec68xpro.jpg",
             categoria: {
                 id: "mtb",
                 nombre:"bicicleta",
@@ -233,7 +233,7 @@ const listaDeProductos =[
         }, {
             id: 8,
             titulo: "Bicicleta de Montaña Carbono Cube Reaction C:62 Race 29",
-            imagen: "./imagenes/biciletas/merida/big8000.jpg",
+            imagen: "./imagenes/biciletas/cube/cubec62race.png",
             categoria: {
                 id: "mtb",
                 nombre:"bicicleta",
@@ -394,7 +394,7 @@ const listaDeProductos =[
         }, {
             id: 13,
             titulo: "Bicicleta de MTB Carbono Cube Reaction C:62 One 29 (Nuevo)",
-            imagen: "./imagenes/biciletas/cube/cubec62nuevo.jpg",
+            imagen: "./imagenes/biciletas/cube/cubec62nuevo22.jpg",
             categoria: {
                 id: "mtb",
                 nombre:"bicicleta",
@@ -639,7 +639,7 @@ const listaDeProductos =[
                 tija: "CUBE Performance",
                 peso: "10.6 kg",
             },
-        },{
+        },/*{
             id: 21,
             titulo: "",
             imagen: "./imagenes/grupos/sram/electronico1.jpg",
@@ -668,32 +668,32 @@ const listaDeProductos =[
             precio: "$264.968",
             description: "GX Eagle combina la capacidad completa de las tecnologías Eagle, en un grupo que se da cuenta del potencial dentro de cada construcción. Aquí es donde encontrarás las mejores bielas de aluminio para MTB.",
             
-        },{
+        },*/{
             id:24,
-            titulo:"Plato Palanca MTB Sram XX1 Eagle, DUB 12v, 170mm 34T Boost",
+            titulo:"Plato Palanca MTB Sram XX1 Eagle, DUB 12v",
             imagen:"./imagenes/grupos/sram/sram-imagen1.jpg",
             categoria:{
-                id:"plato",
+                id:"componentes",
             },
             precio:"$264.968",
             cantidad:10,
             description:"Juego de plato palanca Sram XX1 Eagle de 12 velocidades para bicicleta de montaña, bielas de 170mm, eje DUB y plato de 34 dientes.",
         }, {
             id: 25,
-            titulo:"Palancas MTB Sram 12v XX1 Eagle DUB 170mm 148 Boost 34T DM Grey",
+            titulo:"Palancas MTB Sram 12v XX1 Eagle DUB Grey",
             imagen:"./imagenes/grupos/sram/sram-imagen2.jpg",
             categoria:{
-                id:"plato",
+                id:"componentes",
             },
             precio:" $264.968",
             cantidad:10,
             description:"Juego de plato palanca Sram XX1 Eagle de 11/12 velocidades para bicicleta de montaña, bielas de 170mm, eje DUB y plato de 34 dientes.",
         }, {
             id: 26,
-            titulo:"Plato Palanca MTB Sram X01 Eagle Carbon DUB 12v, 170mm 32T DM Boost 148",
+            titulo:"Plato Palanca MTB Sram X01 Eagle Carbon DUB 12v",
             imagen:"./imagenes/grupos/sram/sram-imagen3.jpg",
             categoria:{
-                id:"plato",
+                id:"componentes",
             },
             precio:"$206.021",
             cantidad:10,
@@ -703,7 +703,7 @@ const listaDeProductos =[
             titulo:"Piñon MTB Sram X01 Eagle XG-1295 12v 10-50d XD Polar Grey",
             imagen:"./imagenes/grupos/sram/sram-imagen4.jpg",
             categoria:{
-                id:"piñon",
+                id:"componentes",
             },
             precio:"$191.284",
             cantidad:10,
@@ -713,7 +713,7 @@ const listaDeProductos =[
             titulo:"Cambio Trasero SRAM MTB 12v 52d XX1 Eagle Lunar",
             imagen:"./imagenes/grupos/sram/sram-imagen5.jpg",
             categoria:{
-                id:"cambio",
+                id:"componentes",
             },
             precio:"$161.810",
             cantidad:10,
@@ -723,7 +723,7 @@ const listaDeProductos =[
             titulo:"Piñon SRAM 12v MTB XG-1295 10-50d XD Black (X01 Eagle)",
             imagen:"./imagenes/grupos/sram/sram-imagen6.jpg",
             categoria:{
-                id:"piñon",
+                id:"componentes",
             },
             precio:"$191.284",
             cantidad:10,
@@ -733,7 +733,7 @@ const listaDeProductos =[
             titulo:"Plato Palanca MTB Sram GX Carbon Eagle, DUB 12v, 170mm 32T Boost 148 DM Lunar",
             imagen:"./imagenes/grupos/sram/sram-imagen7.jpg",
             categoria:{
-                id:"plato",
+                id:"componentes",
             },
             precio:"$155.916",
             cantidad:10,
@@ -743,7 +743,7 @@ const listaDeProductos =[
             titulo:"Shifter Gripshift MTB Sram XX1 Eagle 1x12v",
             imagen:"./imagenes/grupos/sram/sram-imagen8.jpg",
             categoria:{
-                id:"shifter",
+                id:"componentes",
             },
             precio:"$79.284",
             cantidad:10,
@@ -753,7 +753,7 @@ const listaDeProductos =[
             titulo:"Shifter Trasero MTB Sram XX1 Eagle Trigger 12v Lunar",
             imagen:"./imagenes/grupos/sram/sram-imagen9.jpg",
             categoria:{
-                id:"shifter",
+                id:"componentes",
             },
             precio:"$88.126",
             cantidad:10,
@@ -763,7 +763,7 @@ const listaDeProductos =[
             titulo:"Cambio Trasero Sram GX Eagle 12v 52d Long Cage Lunar",
             imagen:"./imagenes/grupos/sram/sram-imagen10.jpg",
             categoria:{
-                id:"cambio",
+                id:"componentes",
             },
             precio:"$64.253",
             cantidad:10,
@@ -773,7 +773,7 @@ const listaDeProductos =[
             titulo:"Plato Palanca MTB Sram SX Eagle DUB 12v, 175mm 32T DM",
             imagen:"./imagenes/grupos/sram/sram-imagen11.jpg",
             categoria:{
-                id:"plato",
+                id:"componentes",
             },
             precio:"$52.758",
             cantidad:10,
@@ -783,7 +783,7 @@ const listaDeProductos =[
             titulo:"Shifter Gripshift MTB Sram X01 Eagle 1x12v",
             imagen:"./imagenes/grupos/sram/sram-imagen12.jpg",
             categoria:{
-                id:"shifter",
+                id:"componentes",
             },
             precio:"$60.999",
             cantidad:10,
@@ -793,7 +793,7 @@ const listaDeProductos =[
             titulo:"Cambio Trasero SRAM MTB 12v 50d NX Eagle",
             imagen:"./imagenes/grupos/sram/sram-imagen13.jpg",
             categoria:{
-                id:"cambio",
+                id:"componentes",
             },
             precio:"$52.758",
             cantidad:10,
@@ -803,7 +803,7 @@ const listaDeProductos =[
             titulo:"Cambio Trasero de Bicicleta de Montaña Sram SX Eagle 12 velocidades.",
             imagen:"./imagenes/grupos/sram/sram-imagen14.jpg",
             categoria:{
-                id:"cambio",
+                id:"componentes",
             },
             precio:"$46.863",
             cantidad:10,
@@ -813,7 +813,7 @@ const listaDeProductos =[
             titulo:"Cambio Trasero Sram Force 22 11v Short Cage 28T Silver",
             imagen:"./imagenes/grupos/sram/sram-imagen15.jpg",
             categoria:{
-                id:"cambio",
+                id:"componentes",
             },
             precio:"$49.810",
             cantidad:10,
@@ -823,7 +823,7 @@ const listaDeProductos =[
             titulo:"Cambio Trasero SRAM MTB 12v 50d SX Eagle Long Cage",
             imagen:"./imagenes/grupos/sram/sram-imagen16.jpg",
             categoria:{
-                id:"cambio",
+                id:"componentes",
             },
             precio:"$46.863",
             cantidad:10,
@@ -833,7 +833,7 @@ const listaDeProductos =[
             titulo:"Cambio Trasero Sram Apex 1 11v 42T Long Cage",
             imagen:"./imagenes/grupos/sram/sram-imagen17.jpg",
             categoria:{
-                id:"cambio",
+                id:"componentes",
             },
             precio:"$40.968",
             cantidad:10,
@@ -843,7 +843,7 @@ const listaDeProductos =[
             titulo:"Batería para grupo Sram Etap/AXS",
             imagen:"./imagenes/grupos/sram/sram-imagen18.jpg",
             categoria:{
-                id:"bateria",
+                id:"componentes",
             },
             precio:"$38.021",
             cantidad:10,
@@ -853,7 +853,7 @@ const listaDeProductos =[
             titulo:"Shifter de bicicleta de montaña Sram SX Eagle Trigger 1x12",
             imagen:"./imagenes/grupos/sram/sram-imagen19.jpg",
             categoria:{
-                id:"shifter",
+                id:"componentes",
             },
             precio:"$20.337",
             cantidad:10,
@@ -863,7 +863,7 @@ const listaDeProductos =[
             titulo:"Cambio Trasero SRAM Roldanas de Cambio Force 22 /Rrival 22 11v",
             imagen:"./imagenes/grupos/sram/sram-imagen20.jpg",
             categoria:{
-                id:"cambio",
+                id:"componentes",
             },
             precio:"$10.316",
             cantidad:10,
@@ -873,7 +873,7 @@ const listaDeProductos =[
             titulo:"Cambio Trasero SRAM Roldanas de Cambio Force/Rrival/Apex",
             imagen:"./imagenes/grupos/sram/sram-imagen21.jpg",
             categoria:{
-                id:"cambio",
+                id:"componentes",
             },
             precio:"$9.432",
             cantidad:10,
@@ -883,7 +883,7 @@ const listaDeProductos =[
             titulo:"Piñon SRAM 12v MTB PG-1230 11-50d HG Black (NX Eagle)",
             imagen:"./imagenes/grupos/sram/sram-imagen23.jpg",
             categoria:{
-                id:"piñon",
+                id:"componentes",
             },
             precio:"$55.705",
             cantidad:10,
@@ -893,7 +893,7 @@ const listaDeProductos =[
             titulo:"Cadena Bicicleta de 12 velocidades Sram PC XX1 Eagle",
             imagen:"./imagenes/grupos/sram/sram-imagen22.jpg",
             categoria:{
-                id:"cadena",
+                id:"componentes",
             },
             precio:"$49.810",
             cantidad:10,
@@ -903,7 +903,7 @@ const listaDeProductos =[
             titulo:"Cadena Bicicleta de 12 velocidades Sram PC X01 Eagle",
             imagen:"./imagenes/grupos/sram/sram-imagen24.jpg",
             categoria:{
-                id:"cadena",
+                id:"componentes",
             },
             precio:"$35.074",
             cantidad:10,
@@ -913,7 +913,7 @@ const listaDeProductos =[
             titulo:"Cadena de Bicicleta de 12 velocidades Sram Red AXS",
             imagen:"./imagenes/grupos/sram/sram-imagen25.jpg",
             categoria:{
-                id:"cambio",
+                id:"componentes",
             },
             precio:"$38.316",
             cantidad:10,
@@ -923,7 +923,7 @@ const listaDeProductos =[
             titulo:"Cadena de Bicicleta de 11 velocidades Sram PC RED 22",
             imagen:"./imagenes/grupos/sram/sram-imagen26.jpg",
             categoria:{
-                id:"cadena",
+                id:"componentes",
             },
             precio:"$23.284",
             cantidad:10,
@@ -933,7 +933,7 @@ const listaDeProductos =[
             titulo:"Conector de Cadena Sram Powerlink",
             imagen:"./imagenes/grupos/sram/sram-imagen27.jpg",
             categoria:{
-                id:"cambio",
+                id:"componentes",
             },
             precio:"$1.400",
             cantidad:10,
@@ -1029,7 +1029,7 @@ const listaDeProductos =[
         },{
             id:58,
             titulo:"Casco Ciclismo Giro Ember Mips",
-            imagen:"./imagenes/cascis/9.jpg",
+            imagen:"./imagenes/cascos/9.jpg",
             categoria:{
                 id:"cascos",
             },
@@ -1038,7 +1038,7 @@ const listaDeProductos =[
             talle:"s",
             description:"El casco Giro Ember MIPS para mujer llega con una estética similar al popular modelo Synthe pero incorpora el sistema de ajuste RocLoc 5 que permite un mejor ajuste del casco a la cabeza.",
         },{
-            id: "21",
+            id: 59,
             titulo: "Grupo Electronico Ruta Sram Red eTap AXS 2X D1 HRD FM Freno Hidraulico 2x12",
             imagen: "./imagenes/grupos/sram/electronico1.jpg",
             categoria: {
@@ -1051,7 +1051,7 @@ const listaDeProductos =[
             frenos: "Disco de frenos CLX Ti, 6-Agujeros, 2 Adaptadores Flat Mount ø160 mm",
             extras: "Cargador y Cable SRAM",
         }, {
-            id: "22",
+            id: 60,
             titulo: "Grupo Electronico Ruta Sram Force eTap AXS , Frenos hidraulicos 2x12",
             imagen: "./imagenes/grupos/sram/electronico2.jpg",
             categoria: {
@@ -1064,7 +1064,7 @@ const listaDeProductos =[
             frenos: "SRAM Centerline CLX Ti, 6 agujeros, 2 piezas 160 mm",
             extras: "Cargador y Cable SRAM",
         }, {
-            id: "23",
+            id: 61,
             titulo: "Grupo MTB Sram GX Eagle DUB Boost 175mm 32T 1x12 Lunar",
             imagen: "./imagenes/grupos/sram/gxEgle.jpg",
             categoria: {
