@@ -3,9 +3,21 @@ const btnCategory = document.querySelectorAll('.btn-categoria');
 const changeTitle = document.getElementById('titulo-principal');
 let btnAddProduct = document.querySelectorAll(".btd-add-product");
 const numberCart = document.querySelector('#numerito')
+const searchInput = document.getElementById('#search-input')
+const formu = document.getElementById("formulario");
+const agregarBtn = document.getElementById("idButton");
+
+const findProducto = (value) => listaDeProductos.find(producto => producto.marca == value)
+
+const showEmptyError = () => {
+    divProductos.innerHTML = `
+    <div class="cardError">
+        <h2 class="error-title">Articulo no encontrado</h2>
+    </div>`
+    divProductos.append(div);
+}
 
 //slider
- 
 const swiper = new Swiper('.swiper', {
     loop: true,
     pagination: {
@@ -37,17 +49,52 @@ cargarProductos = (productosElegidos) => {
     </div> 
         `;
         divProductos.append(div);
-        
+     
     });
    refreshBtnAdd();
    
 };
+
+const renderResult = (producto) => {
+    if(!producto){
+        divProductos.innerHTML = `
+        <div class="productos-detalles">
+        <h3 class="producto-titulo">Articulo no encontrado</h3>
+        </div>`
+        divProductos.append(div);
+    }else{
+        divProductos.innerHTML =`<div class="producto">
+        <img class="prodcuto-imagen" src="${producto.imagen}">
+        <div class="productos-detalles">
+            <h3 class="producto-titulo">${producto.titulo}</h3>
+            <p class="producto-precio">${producto.precio}</p>
+            <a href="detalles.html" class="btd-details-product btd-product" id="${producto.id}">Detalles</a>
+            <a class="btd-add-product" id="${producto.id}">Agregar</a>
+        </div>
+        
+        </div>
+    </div> `;
+    divProductos.append(div);
+    }
+}
 const refreshBtnAdd = () =>{
     btnAddProduct = document.querySelectorAll('.btd-add-product');
     btnAddProduct.forEach(boton => {
         boton.addEventListener("click", agregarCarrito)});
 }
-
+const searchProducto = (e) =>{
+    e.preventDefault();
+    const valorBuscador = searchInput.value;
+    if(!valorBuscador){
+        showEmptyError();
+        return;
+    }
+    const searchedProduct = findProducto(marca(valorBuscador))
+   
+        cargarProductos(searchedProduct);
+        valorBuscador.value="";
+        formu.reset();
+}
 
 
 const productosCarrito= [];
@@ -61,26 +108,22 @@ const agregarCarrito = (e) =>{
         
         productosCarrito[index].cantidad++;
         listaDeProductos.cantidad--;
-        console.log(listaDeProductos.cantidad)
-        if(listaDeProductos.cantidad!=0){
-            
-            alert("no hay stock");
-            btnCategory.forEach(boton => boton.classList.add("active"));
-            e.currentTarget.classList.add("dissable");
-        }
+        
     } else {
-        productoAdd.cantidad =1;
+        productoAdd.cantidad;
         productosCarrito.push(productoAdd);
+        productoAdd.cantidad-1;
     }
-    refreshNumberCart()
+    refreshNumberCart();
     localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
 }
     
-
 const refreshNumberCart =()=>{
     let numerito = productosCarrito.reduce((acc, producto) => acc + producto.cantidad,0)
     numberCart.innerHTML=numerito;
 }
+
+
 cargarProductos(listaDeProductos);
 
 
@@ -99,3 +142,9 @@ btnCategory.forEach(boton => {
         }
     })
 });
+
+const init = ()=>{
+    formu.addEventListener("submit", searchProducto);
+}
+
+init();
