@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <title>Bike Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -29,9 +30,9 @@
                     <div class="wrapper flexitem">
                         <div class="left">
                             <ul class="flexitem main-links">
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Featured Products</a></li>
-                                <li><a href="#">Wishlist</a></li>
+                                <li><a href="#">Whatsapp</a></li>
+                                <li><a href="#">Instagram</a></li>
+                                <li><a href="#">Facebook</a></li>
                             </ul>
                         </div>
                         <div class="right">
@@ -53,27 +54,22 @@
                             <nav class="mobile-hide">
                                 <ul class="flexitem second-links">
                                     <li><a href="index.html">Home</a></li>
-                                   
-
+                                    <li><a href="#tienda">Shop</a></li>
                                 </ul>
                             </nav>
                         </div>
                         <div class="right">
                             <ul class="flexitem second-links">
-                                <li class="mobile-hide"><a href="#">
-                                        <div class="icon-large"><i class="ri-heart-line"></i></div>
-                                        <div class="fly-item"><span class="item-number">0</span></div>
-                                    </a></li>
                                 <li><a href="#" class="iscart">
                                         <div class="icon-large">
                                             <i class="ri-shopping-cart-line"></i>
-                                            <div class="fly-item"><span class="item-number">0</span></div>
+                                            <div class="fly-item"><span id="numerito" class="item-number numerito" >0</span></div>
                                         </div>
                                         <div class="icon-text">
                                             <div class="mini-text">Total</div>
                                             <div class="cart-total">$0.00</div>
                                         </div>
-                                    </a></li>
+                                </a></li>
                             </ul>
                         </div>
                     </div>
@@ -84,91 +80,15 @@
                     <div class="wrapper flexitem">
                         <div class="left">
                             <div class="dpt-cat">
-                                <div class="dpt-head">
-                                    <div class="mini-text">All Departments</div>
-                                    <div class="mini-text mobile-hide">Total 1059 Products</div>
-                                    <a href="#" class="dpt-trigger mobile-hide">
-                                        <i class="ri-menu-3-line ri-xl"></i>
-                                    </a>
-                                </div>
-                                <div class="dpt-menu">
-                                    <ul class="second-links">
-                                        <li class="has-child">
-                                            <a href="#" id="servicios">
-                                                <div class="icon-large"><i class="ri-bike-line"></i></div>
-                                                Servicios
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#" id="servicios-standar">Standar</a></li>
-                                                <li><a href="#" id="servicios-full">Full</a></li>
-                                                <li><a href="#" id="servicios-frenos">Frenos</a></li>
-                                                <li><a href="#" id="servicios-suspension">Suspension</a></li>
-
-                                            </ul>
-                                        </li>
-                                        <li class="has-child">
-                                            <a href="#" id="bici-mtb">
-                                                <div class="icon-large"><i class="ri-bike-line"></i></div>
-                                                Mtb
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#">Carbono</a></li>
-                                                <li><a href="#">Aluminio</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="ruta" id="bici-ruta">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-bike-line"></i></div>
-                                                Ruta
-                                            </a>
-
-                                        </li>
-                                        <li class="has-child">
-                                            <a href="#" id="grupos">
-                                                <div class="icon-large"><i class="ri-settings-5-fill"></i></div>
-                                                Grupos
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <h4><a href="">Shimano</a></h4>
-                                                <li><a href="#" id="grupo-shimano">Shimano Deore M4100</a></li>
-                                                <li><a href="#" id="grupo-shimano">Shimano Deore M5100</a></li>
-                                                <li><a href="#" id="grupo-shimano">Shimano Deore M6100 </a></li>
-                                                <li><a href="#" id="grupo-shimano">Shimano SLX</a></li>
-                                                <li><a href="#" id="grupo-shimano">Shimano XT</a></li>
-                                                <li><a href="#" id="grupo-shimano">Shimano XTR</a></li>
-
-                                                <h4><a href="">Sram</a></h4>
-                                                <li><a href="#" id="grupo-sram">Sram NX Eagle</a></li>
-                                                <li><a href="#" id="grupo-sram">Sram GX Eagle</a></li>
-                                                <li><a href="#" id="grupo-sram">Sram X0</a></li>
-                                                <li><a href="#" id="grupo-sram">Sram X1</a></li>
-                                                <li><a href="#" id="grupo-sram">Sram X01</a></li>
-                                                <li><a href="#" id="grupo-sram">Sram X01 EAGLE</a></li>
-                                                <li><a href="#" id="grupo-sram">Sram XX1</a></li>
-                                                <li><a href="#" id="grupo-sram">Sram Sram XX1 Eagle</a></li>
-                                                <li><a href="#" id="grupo-sram">Sram X01 Eagle AXS</a></li>
-                                                <li><a href="#" id="grupo-sram">Sram XX1 Eagle AXS</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child">
-                                            <a href="#" id="cascos">
-                                                <div class="icon-large"><i class="ri-bike-line"></i></div>
-                                                Cascos
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                               
                             </div>
                         </div>
                         <div class="right">
                             <div class="search-box">
-                                <form action="" class="search">
+                                <form action="" id="formulario" class="search">
                                     <span class="icon-large"><i class="ri-search-line"></i></span>
-                                    <input type="search" placeholder="Search for products">
-                                    <button type="submit">Search</button>
+                                    <input  type="text" id="search-input" placeholder="Search for products" name="search">
+                                    <button  id="idButton" type="submit">Search</button>
                                 </form>
                             </div>
                         </div>
@@ -177,15 +97,47 @@
             </div>
         </header>
         <main>
-            <div class="div-container-productos-detalles" id="div-container-productos-detalles">
+            <div class="product-container" id="tienda">
+                <h2 class="titulo-principal" id="titulo-principal">Todos Los Productos</h2>
+                <div class="div-tienda">
+                    
+                    <div class="list-menu">
+                        <h4 class="titulo-principal" id="titulo-aside">Todos Los Productos</h4>
+                        <button id="todos" class="btn-categoria btn-aside">
+                            Todos
+                        </button>
+                        <button href="#tienda" id="cascos" class="btn-categoria btn-aside" >
+                            Cascos
+                        </button>
+                        <button href="#tienda" id="grupos" class="btn-categoria btn-aside" >
+                            Grupos
+                        </button>
+                        <button href="#tienda" id="mtb" class="btn-categoria btn-aside">
+                            Mtb
+                        </button>
+                        <button href="#tienda"  id="ruta" class="btn-categoria btn-aside">
+                            Ruta
+                        </button>
+                        <button href="#tienda"  id="componentes" class="btn-categoria btn-aside" >
+                           Componentes
+                        </button>
+                    </div>
+                    
+                    <div class="div-container-productos" id="div-container-productos-details">
+                    
+                    </div>
+                </div>
+                
                 
             </div>
+           
 
         </main>
         <footer>
 
         </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
 </body>

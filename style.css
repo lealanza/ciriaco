@@ -591,7 +591,7 @@ form.search button:hover{
 
 .div-container-productos{
     margin: 5px;
-    max-width: 1400px;
+    max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
@@ -670,9 +670,40 @@ form.search button:hover{
     color: var(--color1);
 }
 .dissable{
-    
-    display: none;
+        display: none;
+        
 }
+.list-menu{
+   
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: sticky;
+    top:20px;
+    right: 100%;
+    height: 100vh;
+    width: 120px;
+    text-align: center;
+}
+.btn-aside{
+    border: 3px solid var(--color1);
+    color: var(--color5);
+    border-radius: 1rem;
+    gap: 10px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color:  var(--color3);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-aside:hover{
+    background-color: var(--color5);
+    color: var(--color1);
+}
+
 
 
 .product-container{
@@ -682,10 +713,11 @@ form.search button:hover{
     justify-content: space-between;
     align-items: center;
 }
-.image{
-   width: 400px;
-}
+.div-tienda{
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
 
+}
 
 
 
