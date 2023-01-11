@@ -390,10 +390,10 @@ nav .fly-item{
 .header-main .right{
     flex: 1;
 }
-form{
+#formulario{
     position: relative;
 }
-form.search input{
+div.search input{
     line-height: 3.25em;
     padding: 0 7em 0 4.5em;
     border: 0;
@@ -403,7 +403,7 @@ form.search input{
     font-size: 0.9em;
     font-weight: var(--fw3);
 }
-form.search :where(span,button){
+div.search :where(span,button){
     position: absolute;
     top: 0;
     padding: 0.55em 1.5em;
@@ -412,7 +412,7 @@ form.search :where(span,button){
     height: var(--porcent100);
 }
 
-form.search button{
+div.search button{
     right: 0;
     border: 0;
     outline: 0;
@@ -425,7 +425,7 @@ form.search button{
     transition: var(--trans-background);
 }
 
-form.search button:hover{
+div.search button:hover{
     background-color: var(--color5);
     color: var(--color1);
     transition: var(--trans-background-color);
