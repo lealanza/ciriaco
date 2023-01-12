@@ -11,6 +11,8 @@ const divProductosDetails = document.getElementById("#div-container-productos-de
 const searchResultado = document.querySelector('.searchResultado')
 const listMenu = document.querySelector('.list-menu')
 let btnDetailsProducts = document.querySelectorAll('.btd-product')
+const mostarResultados = document.querySelector('.div-tienda')
+const cartTotal = document.querySelector('.cart-total')
 
 const search = () => {
     const texto = searchInput.value.toLowerCase();
@@ -18,7 +20,11 @@ const search = () => {
     for (let producto of listaDeProductos) {
         let titulo = producto.titulo.toLowerCase();
         if (titulo.indexOf(texto) !== -1) {
-            listMenu.classList.add("dissable")
+            changeTitleAside.classList.add("dissable")
+            listMenu.classList.remove("list-menu")
+            listMenu.classList.add("searchresult")
+            mostarResultados.classList.remove("div-tienda")
+            mostarResultados.classList.add("div-tienda-resultado")
             const div = document.createElement('div');
             div.innerHTML = `
             <div class="producto">
@@ -26,25 +32,29 @@ const search = () => {
                 <div class="productos-detalles">
                     <h3 class="producto-titulo">${producto.titulo}</h3>
                     <p class="producto-precio">${producto.precio}</p>
-                    <button class="btd-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>detalles</button>
+                    <button class="btd-product" id="${producto.id}" data-id='${producto.id}'>Detalles</button>
                     <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</button>
                 </div>
             </div>`;
+            searchResultado.append(div);
             divProductos.append(div);
         }
         refreshBtnAdd();
     }
-    if (divProductos.innerHTML === "") {
+    if (searchResultado.innerHTML === "") {
         const div = document.createElement('div');
         div.innerHTML = `
             <h3 class="producto-titulo">Producto no encontrado</h3>
         `;
-        divProductos.append(div);
+        searchResultado.append(div);
+            
     }
 };
 cargarProductos = (productosElegidos) => {
+    searchResultado.classList.add("dissable")
     divProductos.innerHTML = "";
     productosElegidos.forEach((producto) => {
+        
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="producto">
@@ -52,7 +62,7 @@ cargarProductos = (productosElegidos) => {
             <div class="productos-detalles">
                 <h3 class="producto-titulo">${producto.titulo}</h3>
                 <p class="producto-precio">${producto.precio}</p>
-                <button class="btd-product" id="${producto.id}" >Detalles</button>
+                <button class="btd-product" id="${producto.id}" data-id='${producto.id}'>Detalles</button>
                 <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</button>
 
             </div>
@@ -64,8 +74,19 @@ cargarProductos = (productosElegidos) => {
 };
 cargarProductosDetallado = (productosElegidos) => {
     divProductos.innerHTML = "";
+    searchResultado.innerHTML = "";
     productosElegidos.forEach((producto) => {
+        changeTitleAside.classList.add("dissable")
+        searchResultado.classList.remove("dissable")
+        listMenu.classList.remove("list-menu")
+        listMenu.classList.add("searchresult")
+        mostarResultados.classList.remove("div-tienda")
+        mostarResultados.classList.add("div-tienda-resultado")
         const div = document.createElement('div');
+        const fichaResult = JSON.stringify(producto.ficha);
+        if(fichaResult==="undefined"){
+           console.log(fichaResult)
+        }
         div.innerHTML = `
         <div class="producto-detalles">
             <img class="prodcuto-imagen" src="${producto.imagen}">
@@ -75,14 +96,14 @@ cargarProductosDetallado = (productosElegidos) => {
                 <p>${producto.marca}</p>
                 <p>${producto.precio}</p>
                 <p>${producto.description}</p>
-                
+                <p class="producto-ficha-detalles">${producto.toString().ficha}</p>
                 <p class="producto-precio-detalles">${producto.precio}</p>
                 <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</button>
 
             </div>
         </div>`;
-        divProductos.append(div);
-       
+        searchResultado.append(div);
+        refreshBtnAdd();
     });
     refreshBtnAdd();
 };
@@ -119,6 +140,8 @@ const agregarCarrito = (e) => {
         productoAdd.cantidad = 1;
         productosCarrito.push(productoAdd);
     }
+    
+    actualizarTotal();
     refreshNumberCart();
     localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
 }
@@ -137,18 +160,38 @@ btnCategory.forEach(boton => {
         btnCategory.forEach(boton => boton.classList.remove("active"));
         e.currentTarget.classList.add("active");
         if (e.currentTarget.id != "todos") {
+            
+            changeTitleAside.classList.remove("dissable")
+            listMenu.classList.add("list-menu")
+            listMenu.classList.remove("searchresult")
+            mostarResultados.classList.add("div-tienda")
+            mostarResultados.classList.remove("div-tienda-resultado")
             const productosCategorias = listaDeProductos.find(producto => producto.categoria.id == e.currentTarget.id)
             changeTitle.innerHTML = productosCategorias.categoria.id;
             changeTitleAside.innerHTML = productosCategorias.categoria.id;
             const productoBtn = listaDeProductos.filter(producto => producto.categoria.id == e.currentTarget.id)
             cargarProductos(productoBtn)
+            refreshBtnAdd();
         } else {
+            
+            changeTitleAside.classList.remove("dissable")
+            listMenu.classList.add("list-menu")
+            listMenu.classList.remove("searchresult")
+            mostarResultados.classList.add("div-tienda")
+            mostarResultados.classList.remove("div-tienda-resultado")
+           
             changeTitle.innerHTML = "Todos los productos"
             changeTitleAside.innerHTML = "Todos los productos"
             cargarProductos(listaDeProductos)
+            refreshBtnAdd();
         }
     })
 });
 
+
+function actualizarTotal() {
+    const totalCalculado = productosCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+    cartTotal.innerText = `$${totalCalculado}`;
+}
 searchInput.addEventListener('keyup', search);
 agregarBtn.addEventListener('click', search);

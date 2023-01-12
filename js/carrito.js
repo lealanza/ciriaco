@@ -14,10 +14,10 @@ const botonComprar = document.querySelector("#carrito-acciones-comprar");
 function cargarProductosCarrito() {
     if (productosCarrito && productosCarrito.length > 0) {
 
-        contenedorCarritoVacio.classList.add("disabled");
-        contenedorCarritoProductos.classList.remove("disabled");
-        contenedorCarritoAcciones.classList.remove("disabled");
-        contenedorCarritoComprado.classList.add("disabled");
+        contenedorCarritoVacio.classList.add("dissable");
+        contenedorCarritoProductos.classList.remove("dissable");
+        contenedorCarritoAcciones.classList.remove("dissable");
+        contenedorCarritoComprado.classList.add("dissable");
     
         contenedorCarritoProductos.innerHTML = "";
     
@@ -43,7 +43,8 @@ function cargarProductosCarrito() {
                     <small>Subtotal</small>
                     <p>$${producto.precio * producto.cantidad}</p>
                 </div>
-                <button class="carrito-producto-eliminar" id="${producto.id}"><i class="bi bi-trash-fill"></i></button>
+                <button class="carrito-producto-eliminar" id="${producto.id}"><i class="ri-delete-bin-line"></i></i>
+                </button>
             `;
     
             contenedorCarritoProductos.append(div);
@@ -87,6 +88,7 @@ function vaciarCarrito() {
     productosCarrito.length = 0;
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosCarrito));
     cargarProductosCarrito();
+    localStorage.clear();
 }
 
 
@@ -97,13 +99,14 @@ function actualizarTotal() {
 
 botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
-
+    
     productosCarrito.length = 0;
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosCarrito));
     
-    contenedorCarritoVacio.classList.add("disabled");
-    contenedorCarritoProductos.classList.add("disabled");
-    contenedorCarritoAcciones.classList.add("disabled");
-    contenedorCarritoComprado.classList.remove("disabled");
+    contenedorCarritoVacio.classList.add("dissable");
+    contenedorCarritoProductos.classList.add("dissable");
+    contenedorCarritoAcciones.classList.add("dissable");
+    contenedorCarritoComprado.classList.remove("dissable");
+    localStorage.clear()
 
 }

@@ -637,7 +637,7 @@ div.search button:hover{
     color: var(--color7);
 }
 
-.btd-product{
+.btd-product, .carrito-acciones-comprar, .carrito-acciones-vaciar{
     text-align: center;
     border: 0;
     padding: .3rem;
@@ -651,8 +651,15 @@ div.search button:hover{
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
+.carrito-producto-eliminar{
+    border-radius: var(--porcent50);
+    color: var(--color1);
+    max-width: 30px;
+    height: 30px;
+    border-color: color1;
+}
 
-.btd-product:hover{
+.btd-product:hover, .carrito-acciones-comprar:hover, .carrito-acciones-vaciar:hover{
     background-color: var(--color5);
     color: var(--color1);
 }
@@ -675,9 +682,25 @@ div.search button:hover{
     background-color: var(--color5);
     color: var(--color1);
 }
+.searchresult{
+    gap: 20px;
+        display: flex;
+        flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.searchresult>a{
+    width: 120px;
+    text-align: center;
+}
+.div-tienda-resultado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
 .dissable{
-        display: none;
-        
+    display: none;
 }
 .list-menu{
    
@@ -725,9 +748,18 @@ div.search button:hover{
 
 }
 
-
-
-
+.carrito-producto{
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
+}
+.contenedor-carrito{
+    height: 100vh;
+    max-width: 1200px;
+}
+.carrito-acciones{
+    position: relative;
+    left: 100%;
+}
 
 
 
