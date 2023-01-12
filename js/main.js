@@ -10,7 +10,7 @@ const agregarBtn = document.querySelector("#idButton");
 const divProductosDetails = document.getElementById("#div-container-productos-details")
 const searchResultado = document.querySelector('.searchResultado')
 const listMenu = document.querySelector('.list-menu')
-let btnDetailsProducts = document.querySelectorAll(".btd-details-product")
+let btnDetailsProducts = document.querySelectorAll('.btd-product')
 
 const search = () => {
     const texto = searchInput.value.toLowerCase();
@@ -26,12 +26,13 @@ const search = () => {
                 <div class="productos-detalles">
                     <h3 class="producto-titulo">${producto.titulo}</h3>
                     <p class="producto-precio">${producto.precio}</p>
-                    <a class="btd-details-product btd-product" id="${producto.id}">Detalles</a>
-                    <a class="btd-add-product" id="${producto.id}">Agregar</a>
+                    <button class="btd-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>detalles</button>
+                    <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</button>
                 </div>
             </div>`;
             divProductos.append(div);
         }
+        refreshBtnAdd();
     }
     if (divProductos.innerHTML === "") {
         const div = document.createElement('div');
@@ -51,47 +52,59 @@ cargarProductos = (productosElegidos) => {
             <div class="productos-detalles">
                 <h3 class="producto-titulo">${producto.titulo}</h3>
                 <p class="producto-precio">${producto.precio}</p>
-                <a class="btd-details-product btd-product" id="${producto.id}">Detalles</a>
-                <a class="btd-add-product" id="${producto.id}">Agregar</a>
+                <button class="btd-product" id="${producto.id}" >Detalles</button>
+                <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</button>
+
             </div>
         </div>`;
         divProductos.append(div);
-        console.log(btnDetailsProducts.value)
+       
+    });
+    refreshBtnAdd();
+};
+cargarProductosDetallado = (productosElegidos) => {
+    divProductos.innerHTML = "";
+    productosElegidos.forEach((producto) => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+        <div class="producto-detalles">
+            <img class="prodcuto-imagen" src="${producto.imagen}">
+            <div class="productos-detalles-resultado">
+                <h3 class="producto-titulo-detalles">${producto.titulo}</h3>
+                
+                <p>${producto.marca}</p>
+                <p>${producto.precio}</p>
+                <p>${producto.description}</p>
+                
+                <p class="producto-precio-detalles">${producto.precio}</p>
+                <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</button>
+
+            </div>
+        </div>`;
+        divProductos.append(div);
+       
     });
     refreshBtnAdd();
 };
 const mostarDetalles = (e) => {
-    const idBtn = e.currentarget.id;
-    console.log(idBtn)
-    divProductos.innerHTML = "";
-    for (let prodcuto of listaDeProductos) {
-        if (listaDeProductos.indexOf(idBtn) !== -1) {
-            const div = document.createElement('div');
-            div.innerHTML = `
-            <div class="producto">
-                <img class="prodcuto-imagen" src="${producto.imagen}">
-                <div class="productos-detalles">
-                    <h3 class="producto-titulo">${producto.titulo}</h3>
-                    <p class="producto-precio">${producto.precio}</p>
-                    <a class="btd-details-product btd-product" id="${producto.id}">Detalles</a>
-                    <a class="btd-add-product" id="${producto.id}">Agregar</a>
-                </div>
-            </div>`;
-            divProductos.append(div);
-        }
-    }
+    const idBtn = e.currentTarget.id;
+    const productoid= listaDeProductos.filter(producto => producto.id == idBtn);
+    cargarProductosDetallado(productoid);
 }
 
+    
 
 const refreshBtnAdd = () => {
     btnAddProduct = document.querySelectorAll('.btd-add-product');
     btnAddProduct.forEach(boton => {
         boton.addEventListener("click", agregarCarrito)
+        
     });
-    btnDetailsProducts = document.querySelectorAll(".btd-details-product")
+    btnDetailsProducts = document.querySelectorAll('.btd-product');
     btnDetailsProducts.forEach(boton => {
-        addEventListener("click", mostarDetalles)
-    })
+        boton.addEventListener("click", mostarDetalles)
+        
+    });
 
 }
 const productosCarrito = [];
@@ -124,10 +137,10 @@ btnCategory.forEach(boton => {
         btnCategory.forEach(boton => boton.classList.remove("active"));
         e.currentTarget.classList.add("active");
         if (e.currentTarget.id != "todos") {
-            const productosCategorias = listaDeProductos.find(producto => producto.categoria.id === e.currentTarget.id)
+            const productosCategorias = listaDeProductos.find(producto => producto.categoria.id == e.currentTarget.id)
             changeTitle.innerHTML = productosCategorias.categoria.id;
             changeTitleAside.innerHTML = productosCategorias.categoria.id;
-            const productoBtn = listaDeProductos.filter(producto => producto.categoria.id === e.currentTarget.id)
+            const productoBtn = listaDeProductos.filter(producto => producto.categoria.id == e.currentTarget.id)
             cargarProductos(productoBtn)
         } else {
             changeTitle.innerHTML = "Todos los productos"

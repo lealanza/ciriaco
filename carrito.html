@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <title>Bike Store</title>
+   
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -60,7 +61,7 @@
                         </div>
                         <div class="right">
                             <ul class="flexitem second-links">
-                                <li><a href="#" class="iscart">
+                                <li><a href="carrito.html" class="iscart">
                                         <div class="icon-large">
                                             <i class="ri-shopping-cart-line"></i>
                                             <div class="fly-item"><span id="numerito" class="item-number numerito" >0</span></div>
@@ -85,11 +86,11 @@
                         </div>
                         <div class="right">
                             <div class="search-box">
-                                <form action="" id="formulario" class="search">
-                                    <span class="icon-large"><i class="ri-search-line"></i></span>
+                                <div id="formulario" class="search">
+                                    
                                     <input  type="text" id="search-input" placeholder="Search for products" name="search">
-                                    <button  id="idButton" type="submit">Search</button>
-                                </form>
+                                    <button  id="idButton" >Search</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -98,48 +99,72 @@
         </header>
         <main>
             <div class="product-container" id="tienda">
+                <div class="searchResultado"></div>
                 <h2 class="titulo-principal" id="titulo-principal">Todos Los Productos</h2>
                 <div class="div-tienda">
-                    
-                    <div class="list-menu">
-                        <h4 class="titulo-principal" id="titulo-aside">Todos Los Productos</h4>
-                        <button id="todos" class="btn-categoria btn-aside">
-                            Todos
-                        </button>
-                        <button href="#tienda" id="cascos" class="btn-categoria btn-aside" >
-                            Cascos
-                        </button>
-                        <button href="#tienda" id="grupos" class="btn-categoria btn-aside" >
-                            Grupos
-                        </button>
-                        <button href="#tienda" id="mtb" class="btn-categoria btn-aside">
-                            Mtb
-                        </button>
-                        <button href="#tienda"  id="ruta" class="btn-categoria btn-aside">
-                            Ruta
-                        </button>
-                        <button href="#tienda"  id="componentes" class="btn-categoria btn-aside" >
-                           Componentes
-                        </button>
-                    </div>
-                    
-                    <div class="div-container-productos" id="div-container-productos-details">
-                    
-                    </div>
+                        <div class="list-menu">
+                            <h4 class="titulo-principal" id="titulo-aside">Todos Los Productos</h4>
+                            <a href="index.html#tienda" id="todos" class="btn-categoria btn-aside">
+                                Todos
+                            </a>
+                            <a href="#tienda" id="cascos" class="btn-categoria btn-aside" >
+                                Cascos
+                            </a>
+                            <a href="#tienda" id="grupos" class="btn-categoria btn-aside" >
+                                Grupos
+                            </a>
+                            <a href="#tienda" id="mtb" class="btn-categoria btn-aside">
+                                Mtb
+                            </a>
+                            <a href="#tienda"  id="ruta" class="btn-categoria btn-aside">
+                                Ruta
+                            </a>
+                            <a href="#tienda"  id="componentes" class="btn-categoria btn-aside" >
+                               Componentes
+                            </a>
+                        </div>
                 </div>
-                
+                    
+                    <div class="div-cart-productos" id="div-cart-productos">
+                        
+                        <h2 class="titulo-principal">Carrito</h2>
+                        <div class="contenedor-carrito">
+                            <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío. <i class="bi bi-emoji-frown"></i></p>
+            
+                            <div id="carrito-productos" class="carrito-productos disabled">
+                                <!-- Esto se va a completar con el JS -->
+                            </div>
+            
+                            <div id="carrito-acciones" class="carrito-acciones disabled">
+                                <div class="carrito-acciones-izquierda">
+                                    <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+                                </div>
+                                <div class="carrito-acciones-derecha">
+                                    <div class="carrito-acciones-total">
+                                        <p>Total:</p>
+                                        <p id="total">$3000</p>
+                                    </div>
+                                    <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar ahora</button>
+                                </div>
+                            </div>
+            
+                            <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra. <i class="bi bi-emoji-laughing"></i></p>
+            
+                        </div> 
+                    
+                    </div>
                 
             </div>
-           
-
         </main>
-        <footer>
-
+        <footer id="main-footer">
+                    <a href="#" class="footer-links">Términos de uso</a>
+                    <a href="#" class="footer-links">Trabajá con nosotros</a>
+                    <a href="#" class="footer-links">Soporte</a>
         </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+    
+    
+    <script src="./js/carrito.js"></script>
 </body>
 
 </html>

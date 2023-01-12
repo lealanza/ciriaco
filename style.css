@@ -330,9 +330,15 @@ nav .fly-item{
 .header-nav .right .fly-item{
     top: 0;
     right: 16px;
-    width: 16px;
-    background-color: var(--color3);
+    width: 20px;
+    height: 20px;
+    background-color: var(--color5);
     border-radius: var(--porcent50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color1);
+    border: 1px solid var(--color1);
 }
 .mega .flexcol{
     flex: 1;
@@ -737,7 +743,18 @@ div.search button:hover{
 
 
 
-
+#main-footer{
+    border-top-left-radius: var(--porcent50);
+    border-top-right-radius: var(--porcent50);
+    margin-top: 2rem;
+    background-color: var(--color1);
+    color: var(--color5);
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+}
 
 
 

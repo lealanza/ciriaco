@@ -9,7 +9,7 @@ listaDeProductos =[
                 material: "carbono",
             },
             marca:"Merida",
-            precio: "$2.888.690",
+            precio: 2888690,
             description: ["La Bicicleta Merida Big Nine 8000 es adecuada para conducción general, viajes por la ciudad y viajes de larga distancia.",
                 "Es rápida, confiable, liviana y versátil. Los ingenieros de Mérida nos prepararon una sorpresa: un Big Nine aún más cómodo y pasable, cuya característica distintiva son las ruedas Maxxis Ikon de 29 pulgadas. El Big Nine 8000 está construido sobre un cuadro de carbono. Transmisión Sram Carbon GX Eagle: 34 una rueda dentada adelante, 10-52 cassette atrás.",
             ],
