@@ -8,7 +8,7 @@
     --color5:#fff;
     --color6:#9c9c9c88;
     --color7:#000000;
-
+    --gradient:linear-gradient(#fff,#1333e6, #fff);
     --font-small: 18px;
     --font-smaller: 14px;
 
@@ -761,18 +761,20 @@ div.search button:hover{
 .carrito-producto{
     display: grid;
     grid-template-columns: 1fr 3fr;
-    border-bottom: 14px solid;
+    border-bottom: 14px solid var(--gradient);
   
 }
 .contenedor-carrito{
     max-width: 1200px;
     min-height: auto;
-    background-color: linear-gradient(var(--color5),var( --color1), var(--color5));
+    background-color: 
 }
 .carrito-acciones{
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-direction: row;  
     position: sticky;
     left: 100%; 
     height: 10vh;  

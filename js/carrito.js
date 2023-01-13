@@ -72,18 +72,24 @@ function eliminarDelCarrito(e) {
     const index = productosCarrito.findIndex(producto => producto.id === idBoton);
     productosCarrito.splice(index, 1);
     cargarProductosCarrito();
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosCarrito));
+    localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
     console.log(productosCarrito.length)
     if(productosCarrito.length==0){
+        localStorage.clear();
         contenedorCarritoAcciones.classList.add("dissable")
         contenedorCarritoAcciones.classList.remove("carrito-acciones")
     }
 }
-
+console.log(productosCarrito)
+if(productosCarrito==null){
+    
+    contenedorCarritoAcciones.classList.add("dissable")
+    contenedorCarritoAcciones.classList.remove("carrito-acciones")
+}
 botonVaciar.addEventListener("click", vaciarCarrito);
 function vaciarCarrito() {
     productosCarrito.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosCarrito));
+    localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
     cargarProductosCarrito();
     localStorage.clear();
     contenedorCarritoAcciones.classList.add("dissable");
@@ -100,7 +106,7 @@ botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
     
     productosCarrito.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosCarrito));
+    localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
     
     contenedorCarritoVacio.classList.add("dissable");
     contenedorCarritoProductos.classList.add("dissable");
