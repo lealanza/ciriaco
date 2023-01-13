@@ -13,7 +13,7 @@ const listMenu = document.querySelector('.list-menu')
 let btnDetailsProducts = document.querySelectorAll('.btd-product')
 const mostarResultados = document.querySelector('.div-tienda')
 const cartTotal = document.querySelector('.cart-total')
-
+const tituloH4Detalles = document.querySelector('.titulo-principal-detalles')
 const search = () => {
     const texto = searchInput.value.toLowerCase();
     divProductos.innerHTML = "";
@@ -31,7 +31,7 @@ const search = () => {
                 <img class="prodcuto-imagen" src="${producto.imagen}">
                 <div class="productos-detalles">
                     <h3 class="producto-titulo">${producto.titulo}</h3>
-                    <p class="producto-precio">${producto.precio}</p>
+                    <p class="producto-precio">$${producto.precio}</p>
                     <button class="btd-product" id="${producto.id}" data-id='${producto.id}'>Detalles</button>
                     <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</button>
                 </div>
@@ -52,6 +52,10 @@ const search = () => {
 };
 cargarProductos = (productosElegidos) => {
     searchResultado.classList.add("dissable")
+    tituloH4Detalles.classList.add("dissable")
+    tituloH4Detalles.classList.remove("active")
+    changeTitle.classList.remove("dissable")
+    
     divProductos.innerHTML = "";
     productosElegidos.forEach((producto) => {
         
@@ -61,7 +65,7 @@ cargarProductos = (productosElegidos) => {
             <img class="prodcuto-imagen" src="${producto.imagen}">
             <div class="productos-detalles">
                 <h3 class="producto-titulo">${producto.titulo}</h3>
-                <p class="producto-precio">${producto.precio}</p>
+                <p class="producto-precio">$${producto.precio}</p>
                 <button class="btd-product" id="${producto.id}" data-id='${producto.id}'>Detalles</button>
                 <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</button>
 
@@ -77,6 +81,9 @@ cargarProductosDetallado = (productosElegidos) => {
     searchResultado.innerHTML = "";
     productosElegidos.forEach((producto) => {
         changeTitleAside.classList.add("dissable")
+        changeTitle.classList.add("dissable")
+        tituloH4Detalles.classList.remove("dissable")
+        tituloH4Detalles.classList.add("active")
         searchResultado.classList.remove("dissable")
         listMenu.classList.remove("list-menu")
         listMenu.classList.add("searchresult")
@@ -84,23 +91,20 @@ cargarProductosDetallado = (productosElegidos) => {
         mostarResultados.classList.add("div-tienda-resultado")
         const div = document.createElement('div');
         const fichaResult = JSON.stringify(producto.ficha);
+        tituloH4Detalles.innerHTML =producto.titulo;
         if(fichaResult==="undefined"){
            console.log(fichaResult)
         }
         div.innerHTML = `
-        <div class="producto-detalles">
+        <div class="producto-contendor-resultado">
             <img class="prodcuto-imagen" src="${producto.imagen}">
             <div class="productos-detalles-resultado">
                 <h3 class="producto-titulo-detalles">${producto.titulo}</h3>
-                
-                <p>${producto.marca}</p>
-                <p>${producto.precio}</p>
                 <p>${producto.description}</p>
-                <p class="producto-ficha-detalles">${producto.toString().ficha}</p>
-                <p class="producto-precio-detalles">${producto.precio}</p>
-                <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</button>
-
-            </div>
+                <p class="producto-precio-detalles">$${producto.precio}</p>
+                <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'> Comprar </button>
+                </div>
+                
         </div>`;
         searchResultado.append(div);
         refreshBtnAdd();
