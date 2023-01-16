@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
     <title>Bike Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,16 +31,18 @@
                     <div class="wrapper flexitem">
                         <div class="left">
                             <ul class="flexitem main-links">
-                                <li><a href="#">Whatsapp</a></li>
-                                <li><a href="#">Instagram</a></li>
-                                <li><a href="#">Facebook</a></li>
+                                <li><a href="https://api.whatsapp.com/send?phone=%2B5493408674777&fbclid=IwAR2MMNV155bHjzZqs4zlJ8WIyYH1DRTOjtp0ZbFUq-92lCNKzUq8iaIgEfs"
+                                        target="_blank"><i class="ri-whatsapp-line"> </i> Whatsapp</a></li>
+                                <li><a href="https://www.instagram.com/taller_don_ciriaco/" target="_blank"><i
+                                            class="ri-instagram-line"> </i> Instagram</a></li>
+                                <li><a href="https://www.facebook.com/TallerDonCiriaco" target="_blank"><i
+                                            class="ri-facebook-box-fill"> </i> Facebook</a></li>
                             </ul>
                         </div>
                         <div class="right">
                             <ul class="flexitem main-links">
-                                <li><a href="#">Registrarse</a></li>
-                                <li><a href="#">Mi Cuenta</a></li>
-                                <li><a href="#">Seguimiento de Orden</a></li>
+                                <li><a href="#"><i class="ri-login-box-line"></i>Registrarse</a></li>
+                                <li><a href="#"><i class="ri-user-line"></i>Mi Cuenta</a></li>
                             </ul>
                         </div>
                     </div>
@@ -64,13 +66,14 @@
                                 <li><a href="carrito.html" class="iscart">
                                         <div class="icon-large">
                                             <i class="ri-shopping-cart-line"></i>
-                                            <div class="fly-item"><span id="numerito" class="item-number numerito" >0</span></div>
+                                            <div class="fly-item"><span id="numerito"
+                                                    class="item-number numerito">0</span></div>
                                         </div>
                                         <div class="icon-text">
                                             <div class="mini-text">Total</div>
                                             <div class="cart-total">$0.00</div>
                                         </div>
-                                </a></li>
+                                    </a></li>
                             </ul>
                         </div>
                     </div>
@@ -81,15 +84,16 @@
                     <div class="wrapper flexitem">
                         <div class="left">
                             <div class="dpt-cat">
-                               
+
                             </div>
                         </div>
                         <div class="right">
                             <div class="search-box">
                                 <div id="formulario" class="search">
-                                    
-                                    <input  type="text" id="search-input" placeholder="Search for products" name="search">
-                                    <button  id="idButton" >Search</button>
+
+                                    <input type="text" id="search-input" placeholder="Search for products"
+                                        name="search">
+                                    <button id="idButton">Search</button>
                                 </div>
                             </div>
                         </div>
@@ -98,20 +102,67 @@
             </div>
         </header>
         <main>
+
+            <div class="hero-container">
+                <div class="description-container">
+                    <div class="text-container">
+                        <h1>Ciclismo</h1>
+                        <p>El deporte de ciclismo es una disciplina sumamente competitiva que puede llevarse a cabo en
+                            equipo o de manera individual. Es un deporte extremo que acarrea el uso de la fuerza
+                            muscular.</p>
+                        <p>Por ende, como todo deporte donde se incluya una bicicleta, ahí estamos nosotros para darle
+                            el mantenmiento que se merece, tanto la bicicleta como el atleta para lograr rendimiento
+                            maximo.</p>
+                        <p>Cuidando todos los apectos necesarios, para ello siempre se ultilizan las mejores marcas para
+                            lograr esos resultados</p>
+                    </div>
+                    <a class="btn-build">Build Dreams</a>
+                    <div class="mostrar-videos disabled"></div>
+                </div>
+                <div class="hero-img"></div>
+
+            </div>
+            
+            <div class="div-line-container"></div>
             <div class="product-container" id="tienda">
-               
+                <div class="row-banner">
+                    <div class="col-lg-4 centered">
+                        <div class="centered-content"><i class="ri-truck-line"></i>
+                            <div class="text-area">
+                                <h3>EL ENVIO MÁS RAPIDO</h3>
+                                <p>a todo el pais</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 centered">
+                        <div class="centered-content"><i class="ri-bank-card-line"></i>
+                            <div class="text-area">
+                                <h3>MEDIOS DE PAGO</h3>
+                                <p>Compra con Ahora 12, 18 y 24</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 centered">
+                        <div class="centered-content"><i class="ri-archive-line"></i>
+                            <div class="text-area">
+                                <h3>RETIRO GRATIS</h3>
+                                <p>en nuestro taller</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <h2 class="titulo-principal" id="titulo-principal">Todos Los Productos</h2>
                 <div class="div-tienda">
-                    
+
                     <div class="list-menu" id="list-menu">
                         <h4 class="titulo-principal" id="titulo-aside">Todos Los Productos</h4>
-                        <a  id="todos" class="btn-categoria btn-aside">
+                        <a id="todos" class="btn-categoria btn-aside">
                             Todos
                         </a>
-                        <a id="cascos" class="btn-categoria btn-aside" >
+                        <a id="cascos" class="btn-categoria btn-aside">
                             Cascos
                         </a>
-                        <a id="grupos" class="btn-categoria btn-aside" >
+                        <a id="grupos" class="btn-categoria btn-aside">
                             Grupos
                         </a>
                         <a id="mtb" class="btn-categoria btn-aside">
@@ -120,24 +171,65 @@
                         <a id="ruta" class="btn-categoria btn-aside">
                             Ruta
                         </a>
-                        <a id="componentes" class="btn-categoria btn-aside" >
-                           Componentes
+                        <a id="componentes" class="btn-categoria btn-aside">
+                            Componentes
                         </a>
                     </div>
                     <h2 class="titulo-principal-detalles" id="titulo-principal">Todos Los Productos</h2>
                     <div class="div-container-productos" id="div-container-productos"></div>
                     <div class="searchResultado"></div>
                 </div>
-                
-                
+
+
             </div>
-           
+            <div class="div-line-container"></div>
+            <section class="new_footer">
+
+                <ul>
+                    <h5>Categorias</h5>
+                    <li>
+                        <a href="#tienda">Todos</a>
+                    </li>
+                    <li><a href="#tienda">Cascos</a></li>
+                    <li><a href="#tienda">Grupos</a></li>
+                    <li><a href="#tienda">Mtb</a></li>
+                    <li><a href="#tienda">Ruta</a></li>
+                    <li><a href="#tienda">Componentes</a></li>
+                </ul>
+                <ul>
+                    <h3>Contactanos</h3>
+                    <li><a href="https://api.whatsapp.com/send?phone=%2B5493408674777&fbclid=IwAR2MMNV155bHjzZqs4zlJ8WIyYH1DRTOjtp0ZbFUq-92lCNKzUq8iaIgEfs"
+                            class="icon-small"><i class="ri-whatsapp-line"></i>03408-15674777</a>
+                    </li>
+                    <li><a href="#tienda" class="icon-small"><i class="ri-mail-line"></i> consultas@ciriaco.com.ar</a>
+                    </li>
+                    <li> </li><a href="#tienda" class="icon-small"><i class="ri-map-2-line"></i> Ituzaingo 1359 (Santa
+                        Fe)</a></li>
+                    <li>
+                        <a href="#tienda" class="icon-small"><i class="ri-time-line"></i> Lunes a Viernes de 9 a 13 y de
+                            16:30 a
+                            20:30hs.&nbsp;Sábado de 9 a 13hs</a>
+                    </li>
+                </ul>
+                <ul class="ul-container">
+                    <h3>Redes Sociales</h3>
+                    <a href="#tienda" target="_blank" class="icon-small"><i class="ri-instagram-line"></i></a>
+                    <a href="https://www.facebook.com/TallerDonCiriaco" target="_blank" class="icon-small"><i
+                            class="ri-facebook-box-fill"></i></a>
+
+                </ul>
+
+
+
+
+
+            </section>
 
         </main>
         <footer id="main-footer">
-                    <a href="#" class="footer-links">Términos de uso</a>
-                    <a href="#" class="footer-links">Trabajá con nosotros</a>
-                    <a href="#" class="footer-links">Soporte</a>
+            <a href="#" class="footer-links">Términos de uso</a>
+            <a href="#" class="footer-links">Trabajá con nosotros</a>
+            <a href="#" class="footer-links">Soporte</a>
         </footer>
         <div class="add-modal"></div>
     </div>

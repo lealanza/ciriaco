@@ -6,12 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <title>Bike Store</title>
-   
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div id="page" class="site">
         <aside class="site-off desktop-hide">
@@ -31,9 +29,9 @@
                     <div class="wrapper flexitem">
                         <div class="left">
                             <ul class="flexitem main-links">
-                                <li><a href="#">Whatsapp</a></li>
-                                <li><a href="#">Instagram</a></li>
-                                <li><a href="#">Facebook</a></li>
+                                <li><a href="https://api.whatsapp.com/send?phone=%2B5493408674777&fbclid=IwAR2MMNV155bHjzZqs4zlJ8WIyYH1DRTOjtp0ZbFUq-92lCNKzUq8iaIgEfs" target="_blank"><i class="ri-whatsapp-line"> </i> Whatsapp</a></li>
+                                <li><a href="https://www.instagram.com/taller_don_ciriaco/" target="_blank"><i class="ri-instagram-line"> </i> Instagram</a></li>
+                                <li><a href="https://www.facebook.com/TallerDonCiriaco" target="_blank"><i class="ri-facebook-box-fill"> </i> Facebook</a></li>
                             </ul>
                         </div>
                         <div class="right">
@@ -59,7 +57,7 @@
                                 </ul>
                             </nav>
                         </div>
-                       </div>
+                    </div>
                 </div>
             </div>
             <div class="header-main mobile-hide">
@@ -67,7 +65,7 @@
                     <div class="wrapper flexitem">
                         <div class="right">
                             <div class="search-box">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -76,45 +74,84 @@
         </header>
         <main>
             <div class="product-container" id="tienda">
-                <div class="searchResultado dissable"></div>
+                <div class="searchResultado disabled"></div>
                 <div class="div-cart-productos" id="div-cart-productos">
-                     <h2 class="titulo-principal">Carrito</h2>
-                        <div class="contenedor-carrito">
-                            <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío. <i class="bi bi-emoji-frown"></i></p>
-            
-                            <div id="carrito-productos" class="carrito-productos disabled">
-                                <!-- Esto se va a completar con el JS -->
+                    <h2 class="titulo-principal">Carrito</h2>
+                    <div class="contenedor-carrito">
+                        <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío. <i
+                                class="bi bi-emoji-frown"></i></p>
+                        <div id="carrito-productos" class="carrito-productos disabled">
+                            <!-- Esto se va a completar con el JS -->
+                        </div>
+                        <div id="carrito-acciones" class="carrito-acciones ">
+                            <div class="carrito-acciones-izquierda ">
+                                <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar
+                                    carrito</button>
                             </div>
-            
-                            <div id="carrito-acciones" class="carrito-acciones ">
-                                <div class="carrito-acciones-izquierda ">
-                                    <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+                            <div class="carrito-acciones-derecha ">
+                                <div class="carrito-acciones-total">
+                                    <p>Total:</p>
+                                    <p id="total">$3000</p>
                                 </div>
-                                <div class="carrito-acciones-derecha ">
-                                    <div class="carrito-acciones-total">
-                                        <p>Total:</p>
-                                        <p id="total">$3000</p>
-                                    </div>
-                                    <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar ahora</button>
-                                </div>
+                                <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar
+                                    ahora</button>
                             </div>
-            
-                            <p id="carrito-comprado" class="carrito-comprado dissable">Muchas gracias por tu compra. <i class="bi bi-emoji-laughing"></i></p>
-            
-                        </div> 
-                    
+                        </div>
+                        <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra. <i
+                                class="bi bi-emoji-laughing"></i></p>
                     </div>
-                
+                </div>
             </div>
+            <div class="div-line-container"></div>
+            <section class="new_footer">
+                <ul>
+                    <h5>Categorias</h5>
+                    <li>
+                        <a href="#tienda">Todos</a>
+                    </li>
+                    <li><a href="#tienda">Cascos</a></li>
+                    <li><a href="#tienda">Grupos</a></li>
+                    <li><a href="#tienda">Mtb</a></li>
+                    <li><a href="#tienda">Ruta</a></li>
+                    <li><a href="#tienda">Componentes</a></li>
+                </ul>
+                <ul>
+                    <h3>Contactanos</h3>
+                    <li><a href="https://api.whatsapp.com/send?phone=%2B5493408674777&fbclid=IwAR2MMNV155bHjzZqs4zlJ8WIyYH1DRTOjtp0ZbFUq-92lCNKzUq8iaIgEfs"
+                            class="icon-small"><i class="ri-whatsapp-line"></i>03408-15674777</a>
+                    </li>
+                    <li><a href="#tienda" class="icon-small"><i class="ri-mail-line"></i> consultas@ciriaco.com.ar</a>
+                    </li>
+                    <li> </li><a href="#tienda" class="icon-small"><i class="ri-map-2-line"></i> Ituzaingo 1359 (Santa
+                        Fe)</a></li>
+                    <li>
+                        <a href="#tienda" class="icon-small"><i class="ri-time-line"></i> Lunes a Viernes de 9 a 13 y de
+                            16:30 a
+                            20:30hs.&nbsp;Sábado de 9 a 13hs</a>
+                    </li>
+                </ul>
+                <ul class="ul-container">
+                    <h3>Redes Sociales</h3>
+                    <a href="#tienda" target="_blank" class="icon-small"><i class="ri-instagram-line"></i></a>
+                    <a href="https://www.facebook.com/TallerDonCiriaco" target="_blank" class="icon-small"><i
+                            class="ri-facebook-box-fill"></i></a>
+
+                </ul>
+
+
+
+
+
+            </section>
         </main>
         <footer id="main-footer">
-                    <a href="#" class="footer-links">Términos de uso</a>
-                    <a href="#" class="footer-links">Trabajá con nosotros</a>
-                    <a href="#" class="footer-links">Soporte</a>
+            <a href="#" class="footer-links">Términos de uso</a>
+            <a href="#" class="footer-links">Trabajá con nosotros</a>
+            <a href="#" class="footer-links">Soporte</a>
         </footer>
     </div>
-    
-    
+
+
     <script src="./js/carrito.js"></script>
 </body>
 

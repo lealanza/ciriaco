@@ -14,13 +14,23 @@ let btnDetailsProducts = document.querySelectorAll('.btd-product')
 const mostarResultados = document.querySelector('.div-tienda')
 const cartTotal = document.querySelector('.cart-total')
 const tituloH4Detalles = document.querySelector('.titulo-principal-detalles')
+const btnBuild = document.querySelector(".btn-build")
+const contendorVideos= document.querySelector(".mostrar-videos");
+let btClose = document.querySelector('.btd-close');
+
+mostrarVideo =()=>{
+    contendorVideos.classList.remove("disabled");
+    contendorVideos.innerHTML = `<button class="btd-close">Cerrar</button>
+    <iframe width="800" height="600" src="https://www.youtube.com/embed/xZYTOe-9haM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+}
+
 const search = () => {
     const texto = searchInput.value.toLowerCase();
     divProductos.innerHTML = "";
     for (let producto of listaDeProductos) {
         let titulo = producto.titulo.toLowerCase();
         if (titulo.indexOf(texto) !== -1) {
-            changeTitleAside.classList.add("dissable")
+            changeTitleAside.classList.add("disabled")
             listMenu.classList.remove("list-menu")
             listMenu.classList.add("searchresult")
             mostarResultados.classList.remove("div-tienda")
@@ -51,10 +61,10 @@ const search = () => {
     }
 };
 cargarProductos = (productosElegidos) => {
-    searchResultado.classList.add("dissable")
-    tituloH4Detalles.classList.add("dissable")
+    searchResultado.classList.add("disabled")
+    tituloH4Detalles.classList.add("disabled")
     tituloH4Detalles.classList.remove("active")
-    changeTitle.classList.remove("dissable")
+    changeTitle.classList.remove("disabled")
     
     divProductos.innerHTML = "";
     productosElegidos.forEach((producto) => {
@@ -80,11 +90,11 @@ cargarProductosDetallado = (productosElegidos) => {
     divProductos.innerHTML = "";
     searchResultado.innerHTML = "";
     productosElegidos.forEach((producto) => {
-        changeTitleAside.classList.add("dissable")
-        changeTitle.classList.add("dissable")
-        tituloH4Detalles.classList.remove("dissable")
+        changeTitleAside.classList.add("disabled")
+        changeTitle.classList.add("disabled")
+        tituloH4Detalles.classList.remove("disabled")
         tituloH4Detalles.classList.add("active")
-        searchResultado.classList.remove("dissable")
+        searchResultado.classList.remove("disabled")
         listMenu.classList.remove("list-menu")
         listMenu.classList.add("searchresult")
         mostarResultados.classList.remove("div-tienda")
@@ -136,8 +146,10 @@ const productosCarrito = [];
 
 const agregarCarrito = (e) => {
     const idBtn = e.currentTarget.id;
+   
     const productoAdd = listaDeProductos.find(producto => producto.id == idBtn);
     if (productosCarrito.some(producto => producto.id == idBtn)) {
+        
         const index = productosCarrito.findIndex(producto => producto.id == idBtn)
         productosCarrito[index].cantidad++;
     } else {
@@ -165,7 +177,7 @@ btnCategory.forEach(boton => {
         e.currentTarget.classList.add("active");
         if (e.currentTarget.id != "todos") {
             
-            changeTitleAside.classList.remove("dissable")
+            changeTitleAside.classList.remove("disabled")
             listMenu.classList.add("list-menu")
             listMenu.classList.remove("searchresult")
             mostarResultados.classList.add("div-tienda")
@@ -178,7 +190,7 @@ btnCategory.forEach(boton => {
             refreshBtnAdd();
         } else {
             
-            changeTitleAside.classList.remove("dissable")
+            changeTitleAside.classList.remove("disabled")
             listMenu.classList.add("list-menu")
             listMenu.classList.remove("searchresult")
             mostarResultados.classList.add("div-tienda")
@@ -197,5 +209,10 @@ function actualizarTotal() {
     const totalCalculado = productosCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
     cartTotal.innerText = `$${totalCalculado}`;
 }
+closeVideo=()=>{
+    contendorVideos.classList.add("disabled")
+}
+btn-close.addEventListener('click', closeVideo )
+btnBuild.addEventListener('click', mostrarVideo)
 searchInput.addEventListener('keyup', search);
 agregarBtn.addEventListener('click', search);
