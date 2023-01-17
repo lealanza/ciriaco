@@ -16,11 +16,17 @@ const cartTotal = document.querySelector('.cart-total')
 const tituloH4Detalles = document.querySelector('.titulo-principal-detalles')
 const btnBuild = document.querySelector(".btn-build")
 const contendorVideos= document.querySelector(".mostrar-videos");
-let btClose = document.querySelector('.btd-close');
+const btnClose = document.querySelector(".btd-close");
+const pageSite = document.querySelector (".main");
+const overlay = document.querySelector(".overlay");
 
-mostrarVideo =()=>{
+const mostrarVideo =()=>{
+    contendorVideos.classList.add("mostrar-videos")
     contendorVideos.classList.remove("disabled");
-    contendorVideos.innerHTML = `<button class="btd-close">Cerrar</button>
+    overlay.classList.add("show-overlay");
+    btnClose.classList.remove("disabled");
+    btnClose.classList.add("btd-close")
+    contendorVideos.innerHTML = `
     <iframe width="800" height="600" src="https://www.youtube.com/embed/xZYTOe-9haM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
 }
 
@@ -126,24 +132,19 @@ const mostarDetalles = (e) => {
     const productoid= listaDeProductos.filter(producto => producto.id == idBtn);
     cargarProductosDetallado(productoid);
 }
-
-    
-
 const refreshBtnAdd = () => {
     btnAddProduct = document.querySelectorAll('.btd-add-product');
     btnAddProduct.forEach(boton => {
         boton.addEventListener("click", agregarCarrito)
-        
     });
     btnDetailsProducts = document.querySelectorAll('.btd-product');
     btnDetailsProducts.forEach(boton => {
         boton.addEventListener("click", mostarDetalles)
-        
     });
-
+   
 }
-const productosCarrito = [];
-
+let productosCarrito = JSON.parse(localStorage.getItem("productos-carrito")) || [];;
+console.log(productosCarrito)
 const agregarCarrito = (e) => {
     const idBtn = e.currentTarget.id;
    
@@ -207,12 +208,29 @@ btnCategory.forEach(boton => {
 
 function actualizarTotal() {
     const totalCalculado = productosCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
-    cartTotal.innerText = `$${totalCalculado}`;
+    cartTotal.innerText = `$${totalCalculado}.00`;
 }
-closeVideo=()=>{
-    contendorVideos.classList.add("disabled")
-}
-btn-close.addEventListener('click', closeVideo )
-btnBuild.addEventListener('click', mostrarVideo)
+const cerrarVideo = () => {
+    contendorVideos.classList.remove("mostrar-videos")
+    contendorVideos.classList.add("disabled");
+    btnClose.classList.add("disabled");
+    overlay.classList.remove("show-overlay");
+    overlay.classList.add("disabled");
+    btnClose.classList.remove("btd-close")
+};
+
+const scrolling = ()=>{
+    overlay.classList.remove("show-overlay");
+    contendorVideos.classList.add("disabled");
+    btnClose.classList.add("disabled");
+    btnClose.classList.remove("btd-close")
+    contendorVideos.classList.remove("mostrar-videos")
+};
+document.addEventListener('DOMContentLoaded', refreshNumberCart)
+document.addEventListener("DOMContentLoaded", actualizarTotal)
+document.addEventListener("DOMContentLoaded", cerrarVideo)
+window.addEventListener('scroll', scrolling)
+btnClose.addEventListener('click', cerrarVideo)
+btnBuild.addEventListener('click', mostrarVideo);
 searchInput.addEventListener('keyup', search);
 agregarBtn.addEventListener('click', search);
