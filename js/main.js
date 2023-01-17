@@ -19,7 +19,34 @@ const contendorVideos= document.querySelector(".mostrar-videos");
 const btnClose = document.querySelector(".btd-close");
 const pageSite = document.querySelector (".main");
 const overlay = document.querySelector(".overlay");
+const menuResponsive = document.querySelector(".menu-responsive")
+const contenedorMenu = document.querySelector(".contenedor-menu")
+const menuResponsiveAction = () => {
+   
+    contenedorMenu.innerHTML=`<div class="active" id="list-menu">
+    <h4 class="titulo-principal">
+    <a id="todos" class="btn-categoria btn-aside">
+        Todos
+    </a>
+    <a id="cascos" class="btn-categoria btn-aside">
+        Cascos
+    </a>
+    <a id="grupos" class="btn-categoria btn-aside">
+        Grupos
+    </a>
+    <a id="mtb" class="btn-categoria btn-aside">
+        Mtb
+    </a>
+    <a id="ruta" class="btn-categoria btn-aside">
+        Ruta
+    </a>
+    <a id="componentes" class="btn-categoria btn-aside">
+        Componentes
+    </a>
+</div>`
+};
 
+//se muestra un video en el hero
 const mostrarVideo =()=>{
     contendorVideos.classList.add("mostrar-videos")
     contendorVideos.classList.remove("disabled");
@@ -29,7 +56,7 @@ const mostrarVideo =()=>{
     contendorVideos.innerHTML = `
     <iframe width="800" height="600" src="https://www.youtube.com/embed/xZYTOe-9haM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
 }
-
+//buscador de productos
 const search = () => {
     const texto = searchInput.value.toLowerCase();
     divProductos.innerHTML = "";
@@ -66,6 +93,7 @@ const search = () => {
             
     }
 };
+//se cargan todos los prodcutos en el DOM
 cargarProductos = (productosElegidos) => {
     searchResultado.classList.add("disabled")
     tituloH4Detalles.classList.add("disabled")
@@ -92,6 +120,7 @@ cargarProductos = (productosElegidos) => {
     });
     refreshBtnAdd();
 };
+//se renderiza el detalle segun el producto seleccionado
 cargarProductosDetallado = (productosElegidos) => {
     divProductos.innerHTML = "";
     searchResultado.innerHTML = "";
@@ -143,6 +172,7 @@ const refreshBtnAdd = () => {
     });
    
 }
+//carga de productos en el carrito y local storage
 let productosCarrito = JSON.parse(localStorage.getItem("productos-carrito")) || [];;
 console.log(productosCarrito)
 const agregarCarrito = (e) => {
@@ -162,7 +192,7 @@ const agregarCarrito = (e) => {
     refreshNumberCart();
     localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
 }
-
+//actuzaliza el numerito del carrito
 const refreshNumberCart = () => {
     let numerito = productosCarrito.reduce((acc, producto) => acc + producto.cantidad, 0)
     numberCart.innerHTML = numerito;
@@ -175,7 +205,7 @@ cargarProductos(listaDeProductos);
 btnCategory.forEach(boton => {
     boton.addEventListener("click", (e) => {
         btnCategory.forEach(boton => boton.classList.remove("active"));
-        e.currentTarget.classList.add("active");
+        
         if (e.currentTarget.id != "todos") {
             
             changeTitleAside.classList.remove("disabled")
@@ -204,7 +234,7 @@ btnCategory.forEach(boton => {
         }
     })
 });
-
+//se mantiene el numero de prodcutos guardado en el local storage
 
 function actualizarTotal() {
     const totalCalculado = productosCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
@@ -225,6 +255,9 @@ const scrolling = ()=>{
     btnClose.classList.add("disabled");
     btnClose.classList.remove("btd-close")
     contendorVideos.classList.remove("mostrar-videos")
+    contenedorMenu.classList.remove("active")
+    contenedorMenu.classList.add("disabled")
+    
 };
 document.addEventListener('DOMContentLoaded', refreshNumberCart)
 document.addEventListener("DOMContentLoaded", actualizarTotal)
@@ -234,3 +267,4 @@ btnClose.addEventListener('click', cerrarVideo)
 btnBuild.addEventListener('click', mostrarVideo);
 searchInput.addEventListener('keyup', search);
 agregarBtn.addEventListener('click', search);
+menuResponsive.addEventListener('click', menuResponsiveAction)
