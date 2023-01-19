@@ -921,15 +921,14 @@ div.search button:hover {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    
 }
 
 .hero-img {
-    width: 1000px;
-    height: 400px;
+    width: 900px;
+    height: 300px;
     background-image: url(./imagenes/hero/hero.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+   background-size: cover;
     border-radius: 20px;
 }
 
@@ -965,13 +964,14 @@ div.search button:hover {
     display: flex;
 }*/
 .mostrar-videos {
-    top: 20%;
-    left: 30%;
-    position: absolute;
-    z-index: 100;
+    width: 500px;
+    height: 400px;
 }
 
 iframe {
+    width: 500px;
+    height: 400px;
+    border-radius: 20px;;
     box-shadow: 0px 0px 10px 0px black;
 }
 
@@ -1150,7 +1150,8 @@ nav .mega .products .text-content {
     flex-direction: column;
     align-items: center;
     gap: 0.5em;
-    flexitem margin-top: 0.5em;
+    
+    margin-top: 0.5em;
     position: absolute;
     bottom: 4em;
     width: var(--porcent100);
@@ -1285,16 +1286,14 @@ nav .mega .products .text-content h4 {
     }
 
     .mostrar-videos {
-        top: 50%;
-        right: 50%;
-        left: 50%;
-        max-width: 600px;
-        max-height: 400px;
+       
+        max-width: 500px;
+        max-height: 500px;
     }
 
     iframe {
-        max-width: 600px;
-        max-height: 300px;
+        width: 500px;
+        height: 500px;
     }
 
     .videos-container {

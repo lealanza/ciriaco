@@ -15,15 +15,17 @@ const mostarResultados = document.querySelector('.div-tienda')
 const cartTotal = document.querySelector('.cart-total')
 const tituloH4Detalles = document.querySelector('.titulo-principal-detalles')
 const btnBuild = document.querySelector(".btn-build")
-const contendorVideos= document.querySelector(".mostrar-videos");
+const contendorVideos = document.querySelector(".mostrar-videos");
+const heroImg = document.querySelector(".hero-img")
 const btnClose = document.querySelector(".btd-close");
-const pageSite = document.querySelector (".main");
+const pageSite = document.querySelector(".main");
 const overlay = document.querySelector(".overlay");
 const menuResponsive = document.querySelector(".menu-responsive")
 const contenedorMenu = document.querySelector(".contenedor-menu")
+const videoDelete = document.querySelector(".video-iframe")
 const menuResponsiveAction = () => {
-   
-    contenedorMenu.innerHTML=`<div class="active" id="list-menu">
+
+    contenedorMenu.innerHTML = `<div class="active" id="list-menu">
     <h4 class="titulo-principal">
     <a id="todos" class="btn-categoria btn-aside">
         Todos
@@ -47,15 +49,13 @@ const menuResponsiveAction = () => {
 };
 
 //se muestra un video en el hero
-const mostrarVideo =()=>{
+const mostrarVideo = () => {
     contendorVideos.classList.add("mostrar-videos")
     contendorVideos.classList.remove("disabled");
-    overlay.classList.add("show-overlay");
-    btnClose.classList.remove("disabled");
-    btnClose.classList.add("btd-close")
-    contendorVideos.innerHTML = `
-    <iframe width="800" height="600" src="https://www.youtube.com/embed/xZYTOe-9haM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    heroImg.classList.add("disabled")
+    contendorVideos.innerHTML=`<iframe  class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/xZYTOe-9haM"></iframe>`
 }
+
 //buscador de productos
 const search = () => {
     const texto = searchInput.value.toLowerCase();
@@ -90,7 +90,7 @@ const search = () => {
             <h3 class="producto-titulo">Producto no encontrado</h3>
         `;
         searchResultado.append(div);
-            
+
     }
 };
 //se cargan todos los prodcutos en el DOM
@@ -99,10 +99,10 @@ cargarProductos = (productosElegidos) => {
     tituloH4Detalles.classList.add("disabled")
     tituloH4Detalles.classList.remove("active")
     changeTitle.classList.remove("disabled")
-    
+
     divProductos.innerHTML = "";
     productosElegidos.forEach((producto) => {
-        
+
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="producto">
@@ -116,7 +116,7 @@ cargarProductos = (productosElegidos) => {
             </div>
         </div>`;
         divProductos.append(div);
-       
+
     });
     refreshBtnAdd();
 };
@@ -136,9 +136,9 @@ cargarProductosDetallado = (productosElegidos) => {
         mostarResultados.classList.add("div-tienda-resultado")
         const div = document.createElement('div');
         const fichaResult = JSON.stringify(producto.ficha);
-        tituloH4Detalles.innerHTML =producto.titulo;
-        if(fichaResult==="undefined"){
-           console.log(fichaResult)
+        tituloH4Detalles.innerHTML = producto.titulo;
+        if (fichaResult === "undefined") {
+            console.log(fichaResult)
         }
         div.innerHTML = `
         <div class="producto-contendor-resultado">
@@ -158,7 +158,7 @@ cargarProductosDetallado = (productosElegidos) => {
 };
 const mostarDetalles = (e) => {
     const idBtn = e.currentTarget.id;
-    const productoid= listaDeProductos.filter(producto => producto.id == idBtn);
+    const productoid = listaDeProductos.filter(producto => producto.id == idBtn);
     cargarProductosDetallado(productoid);
 }
 const refreshBtnAdd = () => {
@@ -170,24 +170,24 @@ const refreshBtnAdd = () => {
     btnDetailsProducts.forEach(boton => {
         boton.addEventListener("click", mostarDetalles)
     });
-   
+
 }
 //carga de productos en el carrito y local storage
 let productosCarrito = JSON.parse(localStorage.getItem("productos-carrito")) || [];;
 console.log(productosCarrito)
 const agregarCarrito = (e) => {
     const idBtn = e.currentTarget.id;
-   
+
     const productoAdd = listaDeProductos.find(producto => producto.id == idBtn);
     if (productosCarrito.some(producto => producto.id == idBtn)) {
-        
+
         const index = productosCarrito.findIndex(producto => producto.id == idBtn)
         productosCarrito[index].cantidad++;
     } else {
         productoAdd.cantidad = 1;
         productosCarrito.push(productoAdd);
     }
-    
+
     actualizarTotal();
     refreshNumberCart();
     localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
@@ -205,9 +205,9 @@ cargarProductos(listaDeProductos);
 btnCategory.forEach(boton => {
     boton.addEventListener("click", (e) => {
         btnCategory.forEach(boton => boton.classList.remove("active"));
-        
+
         if (e.currentTarget.id != "todos") {
-            
+
             changeTitleAside.classList.remove("disabled")
             listMenu.classList.add("list-menu")
             listMenu.classList.remove("searchresult")
@@ -220,13 +220,13 @@ btnCategory.forEach(boton => {
             cargarProductos(productoBtn)
             refreshBtnAdd();
         } else {
-            
+
             changeTitleAside.classList.remove("disabled")
             listMenu.classList.add("list-menu")
             listMenu.classList.remove("searchresult")
             mostarResultados.classList.add("div-tienda")
             mostarResultados.classList.remove("div-tienda-resultado")
-           
+
             changeTitle.innerHTML = "Todos los productos"
             changeTitleAside.innerHTML = "Todos los productos"
             cargarProductos(listaDeProductos)
@@ -240,30 +240,25 @@ function actualizarTotal() {
     const totalCalculado = productosCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
     cartTotal.innerText = `$${totalCalculado}.00`;
 }
-const cerrarVideo = () => {
-    contendorVideos.classList.remove("mostrar-videos")
-    contendorVideos.classList.add("disabled");
-    btnClose.classList.add("disabled");
-    overlay.classList.remove("show-overlay");
-    overlay.classList.add("disabled");
-    btnClose.classList.remove("btd-close")
-};
+function removerVideo () {
+    $( ".video-iframe" ).remove();
+    
+}
 
-const scrolling = ()=>{
+const scrolling = () => {
     overlay.classList.remove("show-overlay");
     contendorVideos.classList.add("disabled");
-    btnClose.classList.add("disabled");
-    btnClose.classList.remove("btd-close")
     contendorVideos.classList.remove("mostrar-videos")
     contenedorMenu.classList.remove("active")
     contenedorMenu.classList.add("disabled")
+    heroImg.classList.remove("disabled")
     
 };
 document.addEventListener('DOMContentLoaded', refreshNumberCart)
 document.addEventListener("DOMContentLoaded", actualizarTotal)
-document.addEventListener("DOMContentLoaded", cerrarVideo)
+window.addEventListener('scroll', removerVideo)
 window.addEventListener('scroll', scrolling)
-btnClose.addEventListener('click', cerrarVideo)
+
 btnBuild.addEventListener('click', mostrarVideo);
 searchInput.addEventListener('keyup', search);
 agregarBtn.addEventListener('click', search);
