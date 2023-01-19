@@ -108,7 +108,7 @@ main {
 }
 
 .contaier {
-    max-width: 1000px;
+    
     margin: 0 auto;
     padding: 0 0.938em;
 }
@@ -135,12 +135,13 @@ main {
 }
 
 .flexitem {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-    margin-left: 10px;
-
-}
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        margin-left: 10px;
+        flex-direction: row;
+        justify-content: center;
+    }
 
 .flexcol {
     display: flex;
@@ -878,6 +879,9 @@ iframe {
     justify-content: space-between;
     align-items: flex-start;
 }
+.new_footer>ul{
+    margin: 10px;
+}
 
 .stockOut {
     background-color: red;
@@ -907,12 +911,11 @@ iframe {
 
 }
 
-
-#main-footer {
-    border-top-left-radius: var(--porcent50);
-    border-top-right-radius: var(--porcent50);
+.main-footer {
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
     margin-top: 2rem;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(19, 51, 230, 1) 40%, rgba(33, 63, 232, 1) 60%, rgba(255, 255, 255, 1) 100%);
+    background: var(--color3);
     color: var(--color5);
     height: 100px;
     display: flex;
@@ -921,18 +924,6 @@ iframe {
     font-size: 18px;
     width: auto;
 }
-
-
-
-
-
-.container {
-    width: 1000px;
-    padding: 0 2em;
-}
-
-
-
 .header-nav {
     padding: 0;
     margin: 0;
@@ -947,137 +938,9 @@ iframe {
 }
 
 
-
-nav li.has-child:hover .mega {}
-
-nav .mega .wrapper {
-    display: flex;
-}
-
-nav .mega h4 {
-    font-size: 0.8em;
-    text-transform: uppercase;
-    color: var(--color7);
-}
-
-nav .mega ul {
-    font-size: var(--font-small);
-}
-
-nav .mega .women-brands {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 180px;
-}
-
-nav .mega .women-brands li {
-    min-width: 80px;
-}
-
-nav .mega .view-all {
-    margin-top: 1em;
-}
-
-nav .mega .products {
-    flex: 2;
-    padding: 0;
-    align-items: center;
-    position: relative;
-    margin: auto;
-}
-
-nav .mega .products .row {
-    top: -20px;
-    width: var(--porcent100);
-}
-
-nav .mega .products .media {
-    height: 500px;
-}
-
-nav .mega .products .text-content {
-    line-height: initial;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5em;
-    
-    margin-top: 0.5em;
-    position: absolute;
-    bottom: 4em;
-    width: var(--porcent100);
-}
-
-nav .mega .products .text-content h4 {
-    font-size: 2em;
-    font-weight: var(--fw8);
-    text-align: center;
-    color: var(--color5);
-}
-
 .header-main .right {
     max-width: 600px;
     margin-left: auto;
-}
-
-.dpt-menu {
-    position: absolute;
-    top: var(--porcent100);
-    width: 300px;
-    background-color: var(--color5);
-    border: 1px solid var(--color7);
-    border-top: 0;
-    border-bottom: 0;
-}
-
-.dpt-menu>ul>li>a {
-    font-weight: var(--fw5);
-    padding: 0 1.5em;
-    color: var(--color1);
-    border-bottom: 1px solid var(--color7);
-
-
-}
-
-.dpt-menu .has-child>ul,
-.dpt-menu .mega {
-    cursor: pointer;
-    position: static;
-    top: 0;
-    width: var(--porcent100);
-    height: auto;
-    min-height: var(--porcent50);
-    padding: 1.5em;
-    font-size: var(--font-small);
-    line-height: 2.5em;
-    border: 1px solid var(--color7);
-    border-top: 0;
-    display: none;
-}
-
-
-.dpt-menu .has-child> :where(ul, .mega)::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-}
-
-.dpt-menu .mega {
-    width: auto;
-    min-width: var(--porcent100);
-}
-
-.top-brands {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    text-transform: uppercase;
-    color: var(--color5);
-    width: 250px;
 }
 
 .div-container-productos {
@@ -1125,7 +988,7 @@ nav .mega .products .text-content h4 {
     }
     .div.search input {
         line-height: 3.25em;
-        padding: 0 25em 0px 2.5em;
+        padding: 0 6em 0px 3.2em;
         border: 0;
         outline: 0;
         width: var(--porcent100);
@@ -1138,6 +1001,7 @@ nav .mega .products .text-content h4 {
         height: 10vh;
         width: 100vw;
         display: flex;
+        padding: 0 2em;
         justify-content: space-between;
     }
 
@@ -1219,18 +1083,7 @@ nav .mega .products .text-content h4 {
 
     .list-menu {
         display: none;
-    }/*
-    .active{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        position: sticky;
-        top: 20px;
-        right: 100%;
-        height: 100vh;
-        width: 120px;
-        text-align: center;
-    }*/
+    }
     .product-container {
         margin: auto;
         width: auto;
@@ -1268,8 +1121,6 @@ nav .mega .products .text-content h4 {
     .productos-detalles {
         margin-top: 1rem;
         padding: 0.5rem;
-        border-bottom-left-radius: 1rem;
-        border-bottom-right-radius: 1rem;
         background-color: var(--color5);
         display: flex;
         flex-direction: column;
@@ -1294,6 +1145,7 @@ nav .mega .products .text-content h4 {
 
     .new_footer {
         width: auto;
+        margin: 30px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -1306,8 +1158,6 @@ nav .mega .products .text-content h4 {
         margin-bottom: 20px;
         width: auto;
         height: 2px;
-
-
         background: rgb(255, 255, 255);
         background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(19, 51, 230, 1) 40%, rgba(33, 63, 232, 1) 60%, rgba(255, 255, 255, 1) 100%);
     }
@@ -1326,12 +1176,6 @@ nav .mega .products .text-content h4 {
         margin: 40px;
         width: auto;
     }
-    
-
-    /*.icon-small {
-        font-size: 0.75em;
-        margin-left: auto;
-    }*/
     #titulo-aside {
         display: none;
     }
@@ -1344,6 +1188,16 @@ nav .mega .products .text-content h4 {
     }
     div.search input {
        display: none;
+    }
+    .main-footer {
+        background-color: var(--color3);
+        color: var(--color5);
+        height: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 18px;
+        width: auto;
     }
 }
 
@@ -1411,4 +1265,5 @@ nav .mega .products .text-content h4 {
         max-width: 300px;
         max-height: 300px;
     }
+    
 }
