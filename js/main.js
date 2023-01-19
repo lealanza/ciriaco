@@ -23,29 +23,11 @@ const overlay = document.querySelector(".overlay");
 const menuResponsive = document.querySelector(".menu-responsive")
 const contenedorMenu = document.querySelector(".contenedor-menu")
 const videoDelete = document.querySelector(".video-iframe")
+const heroContainer = document.querySelector(".hero-container")
+const rowBanner = document.querySelector(".row-banner")
 const menuResponsiveAction = () => {
 
-    contenedorMenu.innerHTML = `<div class="active" id="list-menu">
-    <h4 class="titulo-principal">
-    <a id="todos" class="btn-categoria btn-aside">
-        Todos
-    </a>
-    <a id="cascos" class="btn-categoria btn-aside">
-        Cascos
-    </a>
-    <a id="grupos" class="btn-categoria btn-aside">
-        Grupos
-    </a>
-    <a id="mtb" class="btn-categoria btn-aside">
-        Mtb
-    </a>
-    <a id="ruta" class="btn-categoria btn-aside">
-        Ruta
-    </a>
-    <a id="componentes" class="btn-categoria btn-aside">
-        Componentes
-    </a>
-</div>`
+    contenedorMenu.innerHTML = ``
 };
 
 //se muestra un video en el hero
@@ -64,6 +46,10 @@ const search = () => {
         let titulo = producto.titulo.toLowerCase();
         if (titulo.indexOf(texto) !== -1) {
             changeTitleAside.classList.add("disabled")
+            heroContainer.classList.add("disabled")
+            heroContainer.classList.remove("hero-container")
+            rowBanner.classList.remove("row-banner")
+            rowBanner.classList.add("disabled")
             listMenu.classList.remove("list-menu")
             listMenu.classList.add("searchresult")
             mostarResultados.classList.remove("div-tienda")
@@ -75,7 +61,7 @@ const search = () => {
                 <div class="productos-detalles">
                     <h3 class="producto-titulo">${producto.titulo}</h3>
                     <p class="producto-precio">$${producto.precio}</p>
-                    <button class="btd-product" id="${producto.id}" data-id='${producto.id}'>Detalles</button>
+                    <button class="btd-product" id="${producto.id}"  data-id='${producto.id}'>Detalles</button>
                     <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</button>
                 </div>
             </div>`;
@@ -99,10 +85,11 @@ cargarProductos = (productosElegidos) => {
     tituloH4Detalles.classList.add("disabled")
     tituloH4Detalles.classList.remove("active")
     changeTitle.classList.remove("disabled")
-
+    rowBanner.classList.add("row-banner")
+    heroContainer.classList.add("hero-container")
     divProductos.innerHTML = "";
     productosElegidos.forEach((producto) => {
-
+        
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="producto">
@@ -110,8 +97,8 @@ cargarProductos = (productosElegidos) => {
             <div class="productos-detalles">
                 <h3 class="producto-titulo">${producto.titulo}</h3>
                 <p class="producto-precio">$${producto.precio}</p>
-                <button class="btd-product" id="${producto.id}" data-id='${producto.id}'>Detalles</button>
-                <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</button>
+                <a class="btd-product" id="${producto.id}" data-id='${producto.id}'>Detalles</a>
+                <a class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</a>
 
             </div>
         </div>`;
@@ -130,8 +117,12 @@ cargarProductosDetallado = (productosElegidos) => {
         tituloH4Detalles.classList.remove("disabled")
         tituloH4Detalles.classList.add("active")
         searchResultado.classList.remove("disabled")
+        heroContainer.classList.add("disabled")
+        heroContainer.classList.remove("hero-container")
         listMenu.classList.remove("list-menu")
         listMenu.classList.add("searchresult")
+        rowBanner.classList.remove("row-banner")
+            rowBanner.classList.add("disabled")
         mostarResultados.classList.remove("div-tienda")
         mostarResultados.classList.add("div-tienda-resultado")
         const div = document.createElement('div');
@@ -147,7 +138,7 @@ cargarProductosDetallado = (productosElegidos) => {
                 <h3 class="producto-titulo-detalles">${producto.titulo}</h3>
                 <p>${producto.description}</p>
                 <p class="producto-precio-detalles">$${producto.precio}</p>
-                <button class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'> Comprar </button>
+                <a href="#tineda" class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'> Comprar </a>
                 </div>
                 
         </div>`;
@@ -242,7 +233,6 @@ function actualizarTotal() {
 }
 function removerVideo () {
     $( ".video-iframe" ).remove();
-    
 }
 
 const scrolling = () => {
