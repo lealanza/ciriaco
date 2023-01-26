@@ -25,10 +25,8 @@ const contenedorMenu = document.querySelector(".contenedor-menu")
 const videoDelete = document.querySelector(".video-iframe")
 const heroContainer = document.querySelector(".hero-container")
 const rowBanner = document.querySelector(".row-banner")
-const menuResponsiveAction = () => {
-
-    contenedorMenu.innerHTML = ``
-};
+const successModal = document.querySelector(".add-modal")
+const headerNav  = document.querySelector(".menu-responsive");
 
 //se muestra un video en el hero
 const mostrarVideo = () => {
@@ -37,6 +35,12 @@ const mostrarVideo = () => {
     heroImg.classList.add("disabled")
     contendorVideos.innerHTML=`<iframe  class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/xZYTOe-9haM"></iframe>`
 }
+
+const toggleMenu = (event) =>{
+    this.classList.toggle('is-active');
+    document.querySelector( ".menuppal" ).classList.toggle("is_active");
+    event.preventDefault();
+  }
 
 //buscador de productos
 const search = () => {
@@ -178,7 +182,7 @@ const agregarCarrito = (e) => {
         productoAdd.cantidad = 1;
         productosCarrito.push(productoAdd);
     }
-
+    showSuccesModal('El producto se ha agregado al carrito');
     actualizarTotal();
     refreshNumberCart();
     localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
@@ -191,7 +195,13 @@ const refreshNumberCart = () => {
 
 
 cargarProductos(listaDeProductos);
-
+const showSuccesModal = msg => {
+    successModal.classList.add('active-modal');
+    successModal.textContent = msg;
+    setTimeout(() => {
+      successModal.classList.remove('active-modal');
+    }, 1500);
+  };
 
 btnCategory.forEach(boton => {
     boton.addEventListener("click", (e) => {
@@ -252,4 +262,4 @@ window.addEventListener('scroll', scrolling)
 btnBuild.addEventListener('click', mostrarVideo);
 searchInput.addEventListener('keyup', search);
 agregarBtn.addEventListener('click', search);
-menuResponsive.addEventListener('click', menuResponsiveAction)
+headerNav.addEventListener('click', toggleMenu)

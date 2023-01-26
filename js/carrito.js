@@ -10,6 +10,7 @@ const botonVaciar = document.querySelector("#carrito-acciones-vaciar");
 const contenedorTotal = document.querySelector("#total");
 const botonComprar = document.querySelector("#carrito-acciones-comprar");
 const contenedorCarritoAccionesDerecha = document.querySelector(".carrito-acciones-derecha")
+const successModal = document.querySelector(".add-modal")
 
 
 function cargarProductosCarrito() {
@@ -81,7 +82,7 @@ function eliminarDelCarrito(e) {
         contenedorCarritoAcciones.classList.remove("carrito-acciones")
     }
 }
-console.log(productosCarrito)
+
 if(productosCarrito==null){
     
     contenedorCarritoAcciones.classList.add("disabled")
@@ -102,13 +103,24 @@ function actualizarTotal() {
     const totalCalculado = productosCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
     total.innerText = `$${totalCalculado}`;
 }
+const showSuccesModal = msg => {
+    successModal.classList.add('active-modal-cart');
+    successModal.textContent = msg;
+    setTimeout(() => {
+      successModal.classList.remove('active-modal-cart');
+      setTimeout(()=>{
+        window.location.href = 'index.html'
+      }, 1000) 
+    }, 1500);
+  };
+
 
 botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
     
     productosCarrito.length = 0;
     localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
-    
+    showSuccesModal('Gracias por tu compra!');
     contenedorCarritoVacio.classList.add("disabled");
     contenedorCarritoProductos.classList.add("disabled");
     contenedorCarritoAcciones.classList.add("disabled");
