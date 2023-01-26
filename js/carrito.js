@@ -71,20 +71,20 @@ function actualizarBotonesEliminar() {
 
 function eliminarDelCarrito(e) {
     const idBoton = e.currentTarget.id;
-    const index = productosCarrito.findIndex(producto => producto.id === idBoton);
+    const index = productosCarrito.findIndex(producto => producto.id == idBoton);
     productosCarrito.splice(index, 1);
     cargarProductosCarrito();
     localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
     console.log(productosCarrito.length)
     if(productosCarrito.length==0){
         localStorage.clear();
+        showSuccesModal('Tu carrito ahora esta vacio');
         contenedorCarritoAcciones.classList.add("disabled")
         contenedorCarritoAcciones.classList.remove("carrito-acciones")
     }
 }
 
 if(productosCarrito==null){
-    
     contenedorCarritoAcciones.classList.add("disabled")
     contenedorCarritoAcciones.classList.remove("carrito-acciones")
 }
@@ -94,6 +94,7 @@ function vaciarCarrito() {
     localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
     cargarProductosCarrito();
     localStorage.clear();
+    showSuccesModal('Tu carrito ahora esta vacio');
     contenedorCarritoAcciones.classList.add("disabled");
     contenedorCarritoAcciones.classList.remove("carrito-acciones")
 }
@@ -107,20 +108,26 @@ const showSuccesModal = msg => {
     successModal.classList.add('active-modal-cart');
     successModal.textContent = msg;
     setTimeout(() => {
-      successModal.classList.remove('active-modal-cart');
-      setTimeout(()=>{
-        window.location.href = 'index.html'
-      }, 1000) 
-    }, 1500);
+      successModal.classList.remove('active-modal-cart'); 
+      reDirrecionar();
+    }, 3000);
+   
   };
+
+  const reDirrecionar = () =>{
+       alert("Será redireccionado al inicio")
+       setTimeout(()=>{
+       window.location.href = 'index.html'
+      }, 1000)
+}
+  
 
 
 botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
-    
+    showSuccesModal('Gracias por tu compra!');
     productosCarrito.length = 0;
     localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
-    showSuccesModal('Gracias por tu compra!');
     contenedorCarritoVacio.classList.add("disabled");
     contenedorCarritoProductos.classList.add("disabled");
     contenedorCarritoAcciones.classList.add("disabled");
@@ -128,5 +135,5 @@ function comprarCarrito() {
     contenedorCarritoComprado.classList.remove("disabled");
     contenedorTotal.classList.add("disabled")
     localStorage.clear()
-
+    
 }

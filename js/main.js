@@ -19,14 +19,14 @@ const contendorVideos = document.querySelector(".mostrar-videos");
 const heroImg = document.querySelector(".hero-img")
 const btnClose = document.querySelector(".btd-close");
 const pageSite = document.querySelector(".main");
-const overlay = document.querySelector(".overlay");
 const menuResponsive = document.querySelector(".menu-responsive")
 const contenedorMenu = document.querySelector(".contenedor-menu")
 const videoDelete = document.querySelector(".video-iframe")
 const heroContainer = document.querySelector(".hero-container")
 const rowBanner = document.querySelector(".row-banner")
 const successModal = document.querySelector(".add-modal")
-const headerNav  = document.querySelector(".menu-responsive");
+const btnEnviarFormu  = document.querySelector(".btn-self-style");
+
 
 //se muestra un video en el hero
 const mostrarVideo = () => {
@@ -74,10 +74,14 @@ const search = () => {
         }
         refreshBtnAdd();
     }
-    if (searchResultado.innerHTML === "") {
+    if (searchResultado.innerHTML =="") {
         const div = document.createElement('div');
         div.innerHTML = `
-            <h3 class="producto-titulo">Producto no encontrado</h3>
+        <div class="producto">
+                <div class="productos-detalles">
+                    <h3 class="producto-titulo">Producto no encontrado</h3>
+                </div>
+        </div>
         `;
         searchResultado.append(div);
 
@@ -101,7 +105,7 @@ cargarProductos = (productosElegidos) => {
             <div class="productos-detalles">
                 <h3 class="producto-titulo">${producto.titulo}</h3>
                 <p class="producto-precio">$${producto.precio}</p>
-                <a class="btd-product" id="${producto.id}" data-id='${producto.id}'>Detalles</a>
+                <a class="btd-product" id="${producto.id}" data-id='${producto.id}' href="#tienda">Detalles</a>
                 <a class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</a>
 
             </div>
@@ -136,7 +140,7 @@ cargarProductosDetallado = (productosElegidos) => {
             console.log(fichaResult)
         }
         div.innerHTML = `
-        <div class="producto-contendor-resultado">
+        <div class="producto-contendor-resultado" id="producto-contendor-resultado">
             <img class="prodcuto-imagen" src="${producto.imagen}">
             <div class="productos-detalles-resultado">
                 <h3 class="producto-titulo-detalles">${producto.titulo}</h3>
@@ -243,23 +247,28 @@ function actualizarTotal() {
 }
 function removerVideo () {
     $( ".video-iframe" ).remove();
+    
+
 }
 
 const scrolling = () => {
-    overlay.classList.remove("show-overlay");
     contendorVideos.classList.add("disabled");
     contendorVideos.classList.remove("mostrar-videos")
-    contenedorMenu.classList.remove("active")
-    contenedorMenu.classList.add("disabled")
     heroImg.classList.remove("disabled")
     
 };
+
+const reloadWeb=()=>{
+    showSuccesModal('Gracias por enviar la consulta')
+    setTimeout(()=>{
+        window.location.href = 'index.html'
+      }, 2000)
+}
 document.addEventListener('DOMContentLoaded', refreshNumberCart)
 document.addEventListener("DOMContentLoaded", actualizarTotal)
 window.addEventListener('scroll', removerVideo)
 window.addEventListener('scroll', scrolling)
-
+btnEnviarFormu.addEventListener('click', reloadWeb)
 btnBuild.addEventListener('click', mostrarVideo);
 searchInput.addEventListener('keyup', search);
 agregarBtn.addEventListener('click', search);
-headerNav.addEventListener('click', toggleMenu)
