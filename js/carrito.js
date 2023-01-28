@@ -12,7 +12,26 @@ const botonComprar = document.querySelector("#carrito-acciones-comprar");
 const contenedorCarritoAccionesDerecha = document.querySelector(".carrito-acciones-derecha")
 const successModal = document.querySelector(".add-modal")
 
+const toggleButton = document.getElementById('button-menu')
+const navWrapper = document.getElementById('nav')
 
+toggleButton.addEventListener('click',() => {
+  toggleButton.classList.toggle('close')
+  navWrapper.classList.toggle('show')
+})
+
+navWrapper.addEventListener('click',e => {
+  if(e.target.id === 'nav'){
+    navWrapper.classList.remove('show')
+    toggleButton.classList.remove('close')
+  }
+})
+
+const scrolling = () => {
+    navWrapper.classList.remove('show')
+    toggleButton.classList.remove('close')
+
+};
 function cargarProductosCarrito() {
     if (productosCarrito && productosCarrito.length > 0) {
         contenedorCarritoVacio.classList.add("disabled");
@@ -137,3 +156,4 @@ function comprarCarrito() {
     localStorage.clear()
     
 }
+window.addEventListener('scroll', scrolling)

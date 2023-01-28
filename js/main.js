@@ -19,20 +19,35 @@ const contendorVideos = document.querySelector(".mostrar-videos");
 const heroImg = document.querySelector(".hero-img")
 const btnClose = document.querySelector(".btd-close");
 const pageSite = document.querySelector(".main");
-const menuResponsive = document.querySelector(".menu-responsive")
-const contenedorMenu = document.querySelector(".contenedor-menu")
+
 const videoDelete = document.querySelector(".video-iframe")
 const heroContainer = document.querySelector(".hero-container")
 const rowBanner = document.querySelector(".row-banner")
 const successModal = document.querySelector(".add-modal")
 const btnEnviarFormu  = document.querySelector(".btn-self-style");
+const contactos = document.querySelector(".section-container")
+
+
+const toggleButton = document.getElementById('button-menu')
+const navWrapper = document.getElementById('nav')
+
+toggleButton.addEventListener('click',() => {
+  toggleButton.classList.toggle('close')
+  navWrapper.classList.toggle('show')
+})
+
+navWrapper.addEventListener('click',e => {
+  if(e.target.id === 'nav'){
+    navWrapper.classList.remove('show')
+    toggleButton.classList.remove('close')
+  }
+})
 
 
 //se muestra un video en el hero
 const mostrarVideo = () => {
-    contendorVideos.classList.add("mostrar-videos")
-    contendorVideos.classList.remove("disabled");
-    heroImg.classList.add("disabled")
+    contendorVideos.classList.toggle("disabled");
+    heroImg.classList.toggle("disabled")
     contendorVideos.innerHTML=`<iframe  class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/xZYTOe-9haM"></iframe>`
 }
 
@@ -49,11 +64,13 @@ const search = () => {
     for (let producto of listaDeProductos) {
         let titulo = producto.titulo.toLowerCase();
         if (titulo.indexOf(texto) !== -1) {
-            changeTitleAside.classList.add("disabled")
+            changeTitleAside.classList.toggle("disabled")
+            contactos.classList.add("disabled")
             heroContainer.classList.add("disabled")
             heroContainer.classList.remove("hero-container")
             rowBanner.classList.remove("row-banner")
             rowBanner.classList.add("disabled")
+            searchResultado.classList.add("disabled")
             listMenu.classList.remove("list-menu")
             listMenu.classList.add("searchresult")
             mostarResultados.classList.remove("div-tienda")
@@ -90,9 +107,9 @@ const search = () => {
 //se cargan todos los prodcutos en el DOM
 cargarProductos = (productosElegidos) => {
     searchResultado.classList.add("disabled")
-    tituloH4Detalles.classList.add("disabled")
-    tituloH4Detalles.classList.remove("active")
-    changeTitle.classList.remove("disabled")
+    tituloH4Detalles.classList.toggle("disabled")
+    changeTitle.classList.toggle("disabled")
+    contactos.classList.remove("disabled")
     rowBanner.classList.add("row-banner")
     heroContainer.classList.add("hero-container")
     divProductos.innerHTML = "";
@@ -130,7 +147,8 @@ cargarProductosDetallado = (productosElegidos) => {
         listMenu.classList.remove("list-menu")
         listMenu.classList.add("searchresult")
         rowBanner.classList.remove("row-banner")
-            rowBanner.classList.add("disabled")
+        rowBanner.classList.add("disabled")
+        contactos.classList.add("disabled")
         mostarResultados.classList.remove("div-tienda")
         mostarResultados.classList.add("div-tienda-resultado")
         const div = document.createElement('div');
@@ -212,7 +230,7 @@ btnCategory.forEach(boton => {
         btnCategory.forEach(boton => boton.classList.remove("active"));
 
         if (e.currentTarget.id != "todos") {
-
+            contactos.classList.remove("disabled")
             changeTitleAside.classList.remove("disabled")
             listMenu.classList.add("list-menu")
             listMenu.classList.remove("searchresult")
@@ -225,13 +243,13 @@ btnCategory.forEach(boton => {
             cargarProductos(productoBtn)
             refreshBtnAdd();
         } else {
-
+            searchResultado.classList.add("disabled")
             changeTitleAside.classList.remove("disabled")
             listMenu.classList.add("list-menu")
             listMenu.classList.remove("searchresult")
             mostarResultados.classList.add("div-tienda")
             mostarResultados.classList.remove("div-tienda-resultado")
-
+            contactos.classList.remove("disabled")
             changeTitle.innerHTML = "Todos los productos"
             changeTitleAside.innerHTML = "Todos los productos"
             cargarProductos(listaDeProductos)
@@ -255,7 +273,9 @@ const scrolling = () => {
     contendorVideos.classList.add("disabled");
     contendorVideos.classList.remove("mostrar-videos")
     heroImg.classList.remove("disabled")
-    
+    navWrapper.classList.remove('show')
+    toggleButton.classList.remove('close')
+
 };
 
 const reloadWeb=()=>{

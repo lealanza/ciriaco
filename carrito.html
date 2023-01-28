@@ -14,46 +14,32 @@
 <body>
     <div id="page" class="site">
         <header class="header-container">
-            <div class="header-nav">
-                <div class="container">
-
-                    <div class="wrapper flexitem">
-                        <div class="left flexitem">
-                            <a href="index.html">
-                                <div class="logo"></div>
-                            </a>
-                            <nav class="">
-                                <ul class="flexitem second-links">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="index.html#tienda">Shop</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="right">
-                            <ul class="flexitem second-links">
-                                <li><a href="registro.html"><i class="ri-login-box-line" title="registrarse"></i></a></li>
-                                <li><a href="login.html"><i class="ri-user-line" title="mi cuenta"></i></a></li>
-
-                                <li><a href="carrito.html" class="iscart">
-                                        <div class="icon-large">
-                                            <i class="ri-shopping-cart-line"></i>
-                                            <div class="fly-item"><span id="numerito"
-                                                    class="item-number numerito">0</span></div>
-                                        </div>
-                                        <div class="icon-text">
-                                            <div class="mini-text">Total</div>
-                                            <div class="cart-total">$0.00</div>
-                                        </div>
-                                    </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a class="menu-responsive"><span class="i ri-menu-2-line">
-                            <div class="contenedor-menu"></div>
-                        </span></a>
+            <div class="wrapper-cart flexitem">
+                <div class="left flexitem">
+                    <a href="index.html">
+                        <div class="logo"></div>
+                    </a>
                 </div>
-
+                <div class="header-nav-cart">
+                    <nav id="nav" class="main-nav">
+                        <div class="right nav-links">
+                            <a href="index.html" class="link-item">Home</a>
+                            <a href="index.html" class="link-item">Shop</a>
+                            <a href="registro.html" class="link-item"><i class="ri-login-box-line"
+                                    title="registrarse"></i></a>
+                            <a href="login.html" class="link-item"><i class="ri-user-line" title="mi cuenta"></i></a>
+                        </div>
+                </nav>
+                <button id="button-menu" class="button-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+    
             </div>
+    
+            </div>
+    
         </header>
         <main>
             <div class="product-container" id="tienda">
