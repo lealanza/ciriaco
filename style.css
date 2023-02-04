@@ -178,7 +178,7 @@ main {
 
 .icon-large {
     font-size: 1.75em;
-    padding: 0 0.75em 0 0;
+    padding: 3px;
 }
 
 .mobile-hide {
@@ -736,7 +736,7 @@ div.search button:hover {
 
 .contenedor-carrito {
     width: 600px;
-    min-height: 100vh;
+    min-height: 300px;
 }
 
 .carrito-acciones {
@@ -746,8 +746,8 @@ div.search button:hover {
     align-items: center;
     flex-direction: row;
     position: sticky;
-    left: 100%;
-    height: 10vh;
+    left: 100px;
+    height: 100px;
 }
 
 .carrito-acciones-total {
@@ -789,14 +789,15 @@ div.search button:hover {
 }
 
 .hero-img {
-    width: 900px;
-    height: 300px;
+    width: 500px;
+    height: 400px;
     background-image: url(./imagenes/hero/hero.jpg);
     background-size: cover;
     border-radius: 20px;
 }
 
 .text-container {
+    max-width: 300px;
     margin: 10px;
 }
 
@@ -866,6 +867,13 @@ iframe {
     flex-direction: column;
     align-items: center;
 }
+.flexitem-cart{
+    width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
 .row-banner {
     margin: 30px;
@@ -882,7 +890,7 @@ iframe {
 
 }
 
-.main-footer {
+#main-footer {
     border-top-left-radius: 10%;
     border-top-right-radius: 10%;
     margin-top: 2rem;
@@ -921,7 +929,7 @@ iframe {
 }
 
 .active-modal {
-    width: 30%;
+    width: 300px;
     height: 50px;
     padding: 5px;
     background-color: var(--color1);
@@ -1111,6 +1119,7 @@ iframe {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: relative;
 }
 
 .button-menu span {
@@ -1142,6 +1151,23 @@ iframe {
 
 
 @media screen and (min-width:1030px) {
+    .div-tienda {
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: 0.5fr 3fr;
+    }
+    .btn-aside {
+        border: 3px solid var(--color1);
+        color: var(--color5);
+        border-radius: 1rem;
+        gap: 10px;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 1rem;
+        background-color: var(--color3);
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
     .button-menu {
         display: none;
     }
@@ -1175,7 +1201,7 @@ iframe {
         position: sticky;
         top: 120px;
         right: 120%;
-        height: 100vh;
+        height: 100px;
         width: 120px;
         text-align: center;
     }
@@ -1271,11 +1297,11 @@ iframe {
     }
 
     .hero-img {
-        display: none;
+        max-width: 500px;
+        max-height: 500px;
     }
 
-    .mostrar-videos {
-
+    .mostrar-viteos {
         max-width: 500px;
         max-height: 500px;
     }
@@ -1413,16 +1439,16 @@ iframe {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        font-size: 0.7em;
+        font-size: 15px;
+        color: var(--color1);
+    }
+    .new_footer h3{
+        color: var(--color7);
+        text-decoration: underline;
     }
 
     .div-line-container {
-        margin-top: 40px;
-        margin-bottom: 20px;
-        width: auto;
-        height: 2px;
-        background: rgb(255, 255, 255);
-        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(19, 51, 230, 1) 40%, rgba(33, 63, 232, 1) 60%, rgba(255, 255, 255, 1) 100%);
+        display: none;
     }
 
     .searchresult {
@@ -1460,20 +1486,25 @@ iframe {
         margin: auto;
     }
 
-    .main-footer {
+    #main-footer {
         background-color: var(--color3);
         color: var(--color5);
         height: 100px;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        font-size: 18px;
+        font-size: 12px;
         width: auto;
     }
 
     .logo {
         width: 60px;
         height: 40px;
+    }
+    .contenedor-carrito {
+        width: auto;
+        min-height: auto;
+        
     }
 }
 
@@ -1553,7 +1584,10 @@ iframe {
         color: var(--color1);
         height: var(--porcent100);
     }
-
+    .hero-img {
+        max-width: 300px;
+        max-height: 300px;
+    }
     .product-container {
         margin: auto;
         width: auto;
@@ -1612,6 +1646,34 @@ iframe {
         background-color: var(--color3);
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
+    }
+    .carrito-producto {
+        width: 300px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+    }
+    .div-line {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        width: 300px;
+        height: 2px;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(19, 51, 230, 1) 40%, rgba(33, 63, 232, 1) 60%, rgba(255, 255, 255, 1) 100%);
+    }
+    .carrito-acciones {
+        margin: 40px;
+        display: flex;
+        flex-direction: column;
+        position: sticky;
+        left: 100px;
+        height: 100px;
+        align-content: center;
+        align-items: center;
     }
 
     iframe,

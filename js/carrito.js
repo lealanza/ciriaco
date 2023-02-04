@@ -1,6 +1,4 @@
 const productosCarrito = JSON.parse(localStorage.getItem("productos-carrito"));
-
-
 const contenedorCarritoVacio = document.querySelector("#carrito-vacio");
 const contenedorCarritoProductos = document.querySelector("#carrito-productos");
 const contenedorCarritoAcciones = document.querySelector(".carrito-acciones");
@@ -11,7 +9,6 @@ const contenedorTotal = document.querySelector("#total");
 const botonComprar = document.querySelector("#carrito-acciones-comprar");
 const contenedorCarritoAccionesDerecha = document.querySelector(".carrito-acciones-derecha")
 const successModal = document.querySelector(".add-modal")
-
 const toggleButton = document.getElementById('button-menu')
 const navWrapper = document.getElementById('nav')
 
@@ -107,7 +104,8 @@ if(productosCarrito==null){
     contenedorCarritoAcciones.classList.add("disabled")
     contenedorCarritoAcciones.classList.remove("carrito-acciones")
 }
-botonVaciar.addEventListener("click", vaciarCarrito);
+
+//funcion para vaciar el carrito
 function vaciarCarrito() {
     productosCarrito.length = 0;
     localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
@@ -123,26 +121,27 @@ function actualizarTotal() {
     const totalCalculado = productosCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
     total.innerText = `$${totalCalculado}`;
 }
+
+//muesta el modal al finalizar la compra
 const showSuccesModal = msg => {
     successModal.classList.add('active-modal-cart');
     successModal.textContent = msg;
     setTimeout(() => {
       successModal.classList.remove('active-modal-cart'); 
+      successModal.classList.add('disabled');
       reDirrecionar();
     }, 3000);
    
   };
-
-  const reDirrecionar = () =>{
+//vuelve al index
+const reDirrecionar = () =>{
        alert("Será redireccionado al inicio")
+       
        setTimeout(()=>{
        window.location.href = 'index.html'
       }, 1000)
 }
-  
-
-
-botonComprar.addEventListener("click", comprarCarrito);
+//funcion para realizar la compra del carrito
 function comprarCarrito() {
     showSuccesModal('Gracias por tu compra!');
     productosCarrito.length = 0;
@@ -153,7 +152,9 @@ function comprarCarrito() {
     contenedorCarritoAcciones.classList.remove("carrito-acciones")
     contenedorCarritoComprado.classList.remove("disabled");
     contenedorTotal.classList.add("disabled")
-    localStorage.clear()
-    
+    localStorage.clear()    
 }
+
+botonComprar.addEventListener("click", comprarCarrito);
+botonVaciar.addEventListener("click", vaciarCarrito);
 window.addEventListener('scroll', scrolling)

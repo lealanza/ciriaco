@@ -19,15 +19,12 @@ const contendorVideos = document.querySelector(".mostrar-videos");
 const heroImg = document.querySelector(".hero-img")
 const btnClose = document.querySelector(".btd-close");
 const pageSite = document.querySelector(".main");
-
 const videoDelete = document.querySelector(".video-iframe")
 const heroContainer = document.querySelector(".hero-container")
 const rowBanner = document.querySelector(".row-banner")
 const successModal = document.querySelector(".add-modal")
 const btnEnviarFormu  = document.querySelector(".btn-self-style");
 const contactos = document.querySelector(".section-container")
-
-
 const toggleButton = document.getElementById('button-menu')
 const navWrapper = document.getElementById('nav')
 
@@ -35,28 +32,23 @@ toggleButton.addEventListener('click',() => {
   toggleButton.classList.toggle('close')
   navWrapper.classList.toggle('show')
 })
-
 navWrapper.addEventListener('click',e => {
   if(e.target.id === 'nav'){
     navWrapper.classList.remove('show')
     toggleButton.classList.remove('close')
   }
 })
-
-
 //se muestra un video en el hero
 const mostrarVideo = () => {
     contendorVideos.classList.toggle("disabled");
     heroImg.classList.toggle("disabled")
     contendorVideos.innerHTML=`<iframe  class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/xZYTOe-9haM"></iframe>`
 }
-
 const toggleMenu = (event) =>{
     this.classList.toggle('is-active');
     document.querySelector( ".menuppal" ).classList.toggle("is_active");
     event.preventDefault();
-  }
-
+}
 //buscador de productos
 const search = () => {
     const texto = searchInput.value.toLowerCase();
@@ -91,7 +83,7 @@ const search = () => {
         }
         refreshBtnAdd();
     }
-    if (searchResultado.innerHTML =="") {
+    if (searchResultado.innerHTML ==" ") {
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="producto">
@@ -101,20 +93,18 @@ const search = () => {
         </div>
         `;
         searchResultado.append(div);
-
     }
 };
 //se cargan todos los prodcutos en el DOM
 cargarProductos = (productosElegidos) => {
     searchResultado.classList.add("disabled")
     tituloH4Detalles.classList.toggle("disabled")
-    changeTitle.classList.toggle("disabled")
+    changeTitle.classList.remove("disabled")
     contactos.classList.remove("disabled")
     rowBanner.classList.add("row-banner")
     heroContainer.classList.add("hero-container")
     divProductos.innerHTML = "";
     productosElegidos.forEach((producto) => {
-        
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="producto">
@@ -124,7 +114,6 @@ cargarProductos = (productosElegidos) => {
                 <p class="producto-precio">$${producto.precio}</p>
                 <a class="btd-product" id="${producto.id}" data-id='${producto.id}' href="#tienda">Detalles</a>
                 <a class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</a>
-
             </div>
         </div>`;
         divProductos.append(div);
@@ -187,17 +176,14 @@ const refreshBtnAdd = () => {
     btnDetailsProducts.forEach(boton => {
         boton.addEventListener("click", mostarDetalles)
     });
-
 }
 //carga de productos en el carrito y local storage
 let productosCarrito = JSON.parse(localStorage.getItem("productos-carrito")) || [];;
 console.log(productosCarrito)
 const agregarCarrito = (e) => {
     const idBtn = e.currentTarget.id;
-
     const productoAdd = listaDeProductos.find(producto => producto.id == idBtn);
     if (productosCarrito.some(producto => producto.id == idBtn)) {
-
         const index = productosCarrito.findIndex(producto => producto.id == idBtn)
         productosCarrito[index].cantidad++;
     } else {
@@ -214,9 +200,9 @@ const refreshNumberCart = () => {
     let numerito = productosCarrito.reduce((acc, producto) => acc + producto.cantidad, 0)
     numberCart.innerHTML = numerito;
 }
-
-
+//llama a la funcion para mostrar todos los productos en el DOM
 cargarProductos(listaDeProductos);
+//MUESTRA EL MODAL
 const showSuccesModal = msg => {
     successModal.classList.add('active-modal');
     successModal.textContent = msg;
@@ -224,11 +210,10 @@ const showSuccesModal = msg => {
       successModal.classList.remove('active-modal');
     }, 1500);
   };
-
+//Lista menu lateral y filtrado 
 btnCategory.forEach(boton => {
     boton.addEventListener("click", (e) => {
-        btnCategory.forEach(boton => boton.classList.remove("active"));
-
+        btnCategory.forEach(boton => boton.classList.toggle("active"));
         if (e.currentTarget.id != "todos") {
             contactos.classList.remove("disabled")
             changeTitleAside.classList.remove("disabled")
@@ -268,14 +253,12 @@ function removerVideo () {
     
 
 }
-
 const scrolling = () => {
     contendorVideos.classList.add("disabled");
     contendorVideos.classList.remove("mostrar-videos")
     heroImg.classList.remove("disabled")
     navWrapper.classList.remove('show')
     toggleButton.classList.remove('close')
-
 };
 
 const reloadWeb=()=>{
