@@ -24,7 +24,7 @@ const heroContainer = document.querySelector(".hero-container")
 const rowBanner = document.querySelector(".row-banner")
 const successModal = document.querySelector(".add-modal")
 const btnEnviarFormu  = document.querySelector(".btn-self-style");
-const contactos = document.querySelector(".section-container")
+const contactos = document.querySelector(".div-line-contact")
 const toggleButton = document.getElementById('button-menu')
 const navWrapper = document.getElementById('nav')
 
