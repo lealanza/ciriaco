@@ -489,6 +489,9 @@ div.search button:hover {
     background-color: var(--color5);
     color: var(--color1);
     transition: var(--trans-background-color);
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .search-icon {
@@ -1080,7 +1083,7 @@ iframe {
     display: flex;
     flex-direction: column;
     width: 70%;
-    height: 240px;
+    height: 100%;
     align-items: center;
     justify-content: flex-start;
 }
@@ -1096,7 +1099,8 @@ iframe {
 .link-item::after {
     position: absolute;
     content: "";
-    background-color: black;
+    color: var(--color5);
+    background-color: var(--color1);
     bottom: -5px;
     left: 0;
     width: 0%;
