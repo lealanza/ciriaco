@@ -23,11 +23,9 @@ navWrapper.addEventListener('click',e => {
     toggleButton.classList.remove('close')
   }
 })
-
 const scrolling = () => {
     navWrapper.classList.remove('show')
     toggleButton.classList.remove('close')
-
 };
 function cargarProductosCarrito() {
     if (productosCarrito && productosCarrito.length > 0) {
@@ -61,13 +59,10 @@ function cargarProductosCarrito() {
                 </button>
                 <div class="div-line"></div>
             `;
-    
             contenedorCarritoProductos.append(div);
-        })
-    
+        })    
     actualizarBotonesEliminar();
     actualizarTotal();
-	
     } else {
         contenedorCarritoVacio.classList.remove("disabled");
         contenedorCarritoProductos.classList.add("disabled");
@@ -84,7 +79,6 @@ function actualizarBotonesEliminar() {
         boton.addEventListener("click", eliminarDelCarrito);
     });
 }
-
 function eliminarDelCarrito(e) {
     const idBoton = e.currentTarget.id;
     const index = productosCarrito.findIndex(producto => producto.id == idBoton);
@@ -99,12 +93,10 @@ function eliminarDelCarrito(e) {
         contenedorCarritoAcciones.classList.remove("carrito-acciones")
     }
 }
-
 if(productosCarrito==null){
     contenedorCarritoAcciones.classList.add("disabled")
     contenedorCarritoAcciones.classList.remove("carrito-acciones")
 }
-
 //funcion para vaciar el carrito
 function vaciarCarrito() {
     productosCarrito.length = 0;
@@ -115,13 +107,10 @@ function vaciarCarrito() {
     contenedorCarritoAcciones.classList.add("disabled");
     contenedorCarritoAcciones.classList.remove("carrito-acciones")
 }
-
-
 function actualizarTotal() {
     const totalCalculado = productosCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
     total.innerText = `$${totalCalculado}`;
 }
-
 //muesta el modal al finalizar la compra
 const showSuccesModal = msg => {
     successModal.classList.add('active-modal-cart');
@@ -154,7 +143,6 @@ function comprarCarrito() {
     contenedorTotal.classList.add("disabled")
     localStorage.clear()    
 }
-
 botonComprar.addEventListener("click", comprarCarrito);
 botonVaciar.addEventListener("click", vaciarCarrito);
 window.addEventListener('scroll', scrolling)

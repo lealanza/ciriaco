@@ -153,7 +153,7 @@ cargarProductosDetallado = (productosElegidos) => {
                 <h3 class="producto-titulo-detalles">${producto.titulo}</h3>
                 <p>${producto.description}</p>
                 <p class="producto-precio-detalles">$${producto.precio}</p>
-                <a href="#tineda" class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'> Comprar </a>
+                <a class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'> Comprar </a>
                 </div>
                 
         </div>`;
@@ -179,7 +179,6 @@ const refreshBtnAdd = () => {
 }
 //carga de productos en el carrito y local storage
 let productosCarrito = JSON.parse(localStorage.getItem("productos-carrito")) || [];;
-console.log(productosCarrito)
 const agregarCarrito = (e) => {
     const idBtn = e.currentTarget.id;
     const productoAdd = listaDeProductos.find(producto => producto.id == idBtn);
@@ -260,7 +259,6 @@ const scrolling = () => {
     navWrapper.classList.remove('show')
     toggleButton.classList.remove('close')
 };
-
 const reloadWeb=()=>{
     showSuccesModal('Gracias por enviar la consulta')
     setTimeout(()=>{

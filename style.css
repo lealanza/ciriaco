@@ -996,6 +996,10 @@ iframe {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(./imagenes/hero/hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .register-form-login {
@@ -1004,6 +1008,7 @@ iframe {
 
 .register-form {
     font-size: 16px;
+    color: var(--color5);
     border: 1px solid black;
     border-radius: 15px;
     gap: 15px;
