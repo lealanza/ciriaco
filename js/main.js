@@ -42,7 +42,7 @@ navWrapper.addEventListener('click',e => {
 const mostrarVideo = () => {
     contendorVideos.classList.toggle("disabled");
     heroImg.classList.toggle("disabled")
-    contendorVideos.innerHTML=`<iframe  class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/xZYTOe-9haM"></iframe>`
+    contendorVideos.innerHTML=`<iframe  class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/zHfTIWXIGuw"></iframe>`
 }
 const toggleMenu = (event) =>{
     this.classList.toggle('is-active');
@@ -247,10 +247,9 @@ function actualizarTotal() {
     const totalCalculado = productosCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
     cartTotal.innerText = `$${totalCalculado}.00`;
 }
+// funcion para remover y parar el video en el dom y evitar que se siga ejecutando en segundo plano
 function removerVideo () {
     $( ".video-iframe" ).remove();
-    
-
 }
 const scrolling = () => {
     contendorVideos.classList.add("disabled");
@@ -258,6 +257,7 @@ const scrolling = () => {
     heroImg.classList.remove("disabled")
     navWrapper.classList.remove('show')
     toggleButton.classList.remove('close')
+    removerVideo()
 };
 const reloadWeb=()=>{
     showSuccesModal('Gracias por enviar la consulta')
@@ -267,7 +267,6 @@ const reloadWeb=()=>{
 }
 document.addEventListener('DOMContentLoaded', refreshNumberCart)
 document.addEventListener("DOMContentLoaded", actualizarTotal)
-window.addEventListener('scroll', removerVideo)
 window.addEventListener('scroll', scrolling)
 btnEnviarFormu.addEventListener('click', reloadWeb)
 btnBuild.addEventListener('click', mostrarVideo);
