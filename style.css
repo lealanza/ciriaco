@@ -566,7 +566,9 @@ div.search button:hover {
     align-items: center;
 }
 
-
+.prodcuto-imagen {
+    border-radius: 2rem;
+}
 
 .productos-detalles {
     margin-top: -2rem;
