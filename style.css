@@ -852,6 +852,7 @@ iframe {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    color: var(--color1);
 }
 
 .new_footer>ul {
