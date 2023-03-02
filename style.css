@@ -566,10 +566,7 @@ div.search button:hover {
     align-items: center;
 }
 
-.prodcuto-imagen {
-    max-width: 80%;
-    border-radius: 2rem;
-}
+
 
 .productos-detalles {
     margin-top: -2rem;
@@ -709,7 +706,6 @@ div.search button:hover {
 
 
 .product-container {
-
     margin: auto;
     width: 1000px;
     display: flex;
@@ -796,6 +792,8 @@ div.search button:hover {
     height: 400px;
     background-image: url(./imagenes/dream_build/dream.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 20px;
 }
 
@@ -1000,6 +998,8 @@ iframe {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100vw;
+    height: 100vh;
 }
 
 .register-form-login {
@@ -1214,10 +1214,31 @@ iframe {
         width: 120px;
         text-align: center;
     }
+    .body-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(./imagenes/hero/hero.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
 }
 
 @media (max-width:1024px) {
-
+    .body-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(./imagenes/hero/hero.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:cover ;
+        width: 100vw;
+        height: 100vh;
+    }
     .header-top .wrapper {
         font-size: var(--font-smaller);
     }
@@ -1299,10 +1320,9 @@ iframe {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
+        flex-direction: row;
         gap: 20px;
         color: var(--color1);
-
     }
 
     .hero-img {
@@ -1516,7 +1536,22 @@ iframe {
         
     }
 }
-
+@media(max-width: 736px) {
+    .hero-container {
+        width: 600px;
+        height: auto;
+        margin: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: var(--color1);
+    }
+    .hero-img{
+        background-position: center;
+    }    
+}
 @media(max-width: 650px) {
     .header-container {
         display: flex;
@@ -1529,6 +1564,17 @@ iframe {
         background-color: var(--color3);
         flex-direction: row;
         align-items: center;
+    }
+    .hero-container {
+        max-width: 300px;
+        height: auto;
+        margin: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        color: var(--color1);
     }
 
     .menu-responsive {
