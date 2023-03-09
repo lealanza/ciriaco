@@ -37,10 +37,10 @@ function cargarProductosCarrito() {
         productosCarrito.forEach(producto => {
             const div = document.createElement("div");
             div.classList.add("carrito-producto");
-            div.innerHTML = `
+            div.innerHTML = `<div class="carrito-producto-detalles">
+
                 <img class="carrito-producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
                 <div class="carrito-producto-titulo">
-                    <small>Título</small>
                     <h3>${producto.titulo}</h3>
                 </div>
                 <div class="carrito-producto-cantidad">
@@ -56,7 +56,7 @@ function cargarProductosCarrito() {
                     <p>$${producto.precio * producto.cantidad}</p>
                 </div>
                 <button class="carrito-producto-eliminar" id="${producto.id}"><i class="ri-delete-bin-line"></i></i>
-                </button>
+                </button></div>
                 <div class="div-line"></div>
             `;
             contenedorCarritoProductos.append(div);

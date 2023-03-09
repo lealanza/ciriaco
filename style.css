@@ -611,15 +611,21 @@ div.search button:hover {
     border-radius: 1rem;
     text-transform: uppercase;
     font-weight: 500;
+    
     font-size: 1rem;
     background-color: var(--color3);
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
-
-.carrito-producto-eliminar {
+.carrito-acciones-comprar{
+    width: 200px;
+}
+.carrito-acciones-vaciar{
+    width: 200px;
+    background-color: rgb(247, 123, 123);
+}.carrito-producto-eliminar {
     border-radius: var(--porcent50);
-    color: var(--color1);
+    color: red;
     width: 30px;
     height: 30px;
     border-color: var(--color1);
@@ -725,16 +731,27 @@ div.search button:hover {
 
 .carrito-producto {
     text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+   
     border-bottom: 14px solid var(--gradient);
     align-items: center;
     justify-content: center;
     align-content: center;
     justify-items: center;
-
+    flex-direction: column;
 }
 
+.carrito-producto-detalles{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    border-bottom: 14px solid var(--gradient);
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
 .contenedor-carrito {
     width: 600px;
     min-height: 300px;
@@ -757,7 +774,7 @@ div.search button:hover {
 }
 
 .carrito-producto-imagen {
-    width: 30%;
+    width: 40%;
 }
 
 .div-line-container {
@@ -857,6 +874,24 @@ iframe {
 
 .new_footer>ul {
     margin: 10px;
+}
+.new_footer a{
+    text-align: center;
+    margin: 5px;
+    font-size: 16px;
+}
+.new_footer>ul:nth-child(2){
+    border-left: 1px solid;
+    border-right: 1px solid;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.ul-container{
+    text-align: center;
+      
 }
 
 .stockOut {
@@ -1091,7 +1126,7 @@ iframe {
     display: flex;
     flex-direction: column;
     width: 70%;
-    height: 100%;
+    height: 300px;
     align-items: center;
     justify-content: flex-start;
 }
@@ -1463,6 +1498,48 @@ iframe {
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
     }
+    .div-cart-productos {
+        margin: auto;
+        display: flex;
+        max-width: 1000px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .carrito-producto{
+        width: 650px;
+        text-align: center;
+        display: flex;
+        border-bottom: 14px solid var(--gradient);
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        flex-direction: column;
+    }
+    .carrito-producto-detalles{
+        text-align: center;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        border-bottom: 14px solid var(--gradient);
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        max-width: 500px;
+    }
+    .carrito-acciones {
+        gap: 25px;
+        margin: auto;
+        top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        position: sticky;
+        left: 100px;
+        height: 100px;
+        max-width: 450px;
+    }
 
     .new_footer {
         width: auto;
@@ -1555,7 +1632,7 @@ iframe {
         background-position: center;
     }    
 }
-@media(max-width: 650px) {
+@media(max-width: 700px) {
     .header-container {
         display: flex;
         justify-content: space-evenly;
@@ -1715,6 +1792,18 @@ iframe {
         align-content: center;
         justify-items: center;
     }
+    .carrito-producto-detalles{
+        text-align: center;
+        display: flex;
+        border-bottom: 14px solid var(--gradient);
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        flex-direction: column;
+    }
+    
+
     .div-line {
         margin-top: 40px;
         margin-bottom: 20px;
@@ -1746,7 +1835,7 @@ iframe {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         font-size: 8px;
     }
 

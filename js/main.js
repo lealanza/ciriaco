@@ -1,5 +1,6 @@
 const divProductos = document.getElementById('div-container-productos');
 const btnCategory = document.querySelectorAll('.btn-categoria');
+
 const changeTitle = document.getElementById('titulo-principal');
 const changeTitleAside = document.getElementById('titulo-aside');
 let btnAddProduct = document.querySelectorAll(".btd-add-product");
@@ -27,7 +28,6 @@ const btnEnviarFormu  = document.querySelector(".btn-self-style");
 const contactos = document.querySelector(".div-line-contact")
 const toggleButton = document.getElementById('button-menu')
 const navWrapper = document.getElementById('nav')
-
 toggleButton.addEventListener('click',() => {
   toggleButton.classList.toggle('close')
   navWrapper.classList.toggle('show')
@@ -112,7 +112,7 @@ cargarProductos = (productosElegidos) => {
             <div class="productos-detalles">
                 <h3 class="producto-titulo">${producto.titulo}</h3>
                 <p class="producto-precio">$${producto.precio}</p>
-                <a class="btd-product" id="${producto.id}" data-id='${producto.id}' href="#tienda">Detalles</a>
+                <a class="btd-product" id="${producto.id}" data-id='${producto.id}'>Detalles</a>
                 <a class="btd-add-product" id="${producto.id}" data-id='${producto.id}' data-nombre='${producto.nombre}' data-precio='${producto.precio}' data-imagen='${producto.imagen}' data-descripcion='${producto.descripcion}'>Agregar</a>
             </div>
         </div>`;
